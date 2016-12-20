@@ -14,6 +14,14 @@ import AuthTool  from './services/auth-tool';
 
 // resource
 import accountRes from './resources/account-res';
+import economyGdpRes from './resources/economy-gdpres';
+import economyKeqiangRes from './resources/economy-keqiangres';
+import economyTaxRes from './resources/economy-taxres';
+import economyPowerRes from './resources/power-res';
+import environmentRes from './resources/environment-res';
+import populationRes from './resources/population-res';
+import populationStructureRes from './resources/population-structureres';
+import privilegeRes from './resources/privilege-res';
 
 // directive
 
@@ -58,6 +66,14 @@ angular.module('camille',
 
   // factory 初始化
   .factory('accountRes', accountRes)
+  .factory('economyGdpRes', economyGdpRes)
+  .factory('economyKeqiangRes', economyKeqiangRes)
+  .factory('economyTaxRes', economyTaxRes)
+  .factory('economyPowerRes', economyPowerRes)
+  .factory('environmentRes', environmentRes)
+  .factory('populationRes', populationRes)
+  .factory('populationStructureRes', populationStructureRes)
+  .factory('privilegeRes', privilegeRes)
 
   // directive 初始化
   
