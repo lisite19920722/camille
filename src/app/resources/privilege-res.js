@@ -1,7 +1,7 @@
 export default ($resource, BASE_URL) => {
     'ngInject';
     return {
-        Environment: function (headers) {
+        Environment: (headers) => {
             return $resource(BASE_URL + '/privilege/environment', {}, {
                 get: {
                     method: 'GET',
@@ -9,7 +9,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        Economy: function (headers) {
+        Economy: (headers) => {
             return $resource(BASE_URL + '/privilege/economy', {}, {
                 get: {
                     method: 'GET',
@@ -17,7 +17,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        Population: function (headers) {
+        Population: (headers) => {
             return $resource(BASE_URL + '/privilege/population', {}, {
                 get: {
                     method: 'GET',

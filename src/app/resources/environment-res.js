@@ -2,7 +2,7 @@ export default ($resource, BASE_URL) => {
     'ngInject';
 
     return {
-        getAirCondition: function (headers){
+        getAirCondition: (headers) => {
             return $resource('http://apis.baidu.com/apistore/weatherservice/recentweathers?cityid=101190408', {}, {
                 get: {
                     method: 'GET',
@@ -10,7 +10,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         }, 
-        getAirQuality: function (headers){
+        getAirQuality: (headers) => {
             return $resource(BASE_URL+'/environment/air/air_quality', {}, {
         	    get: {
         	        method: 'GET',
@@ -18,7 +18,7 @@ export default ($resource, BASE_URL) => {
         	    },
             });
         },
-        getAirPollution: function (headers){
+        getAirPollution: (headers) => {
             return $resource(BASE_URL+'/environment/air/air_pollution', {}, {
                 get: {
                     method: 'GET',
@@ -26,7 +26,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getWaterQuality: function (headers){
+        getWaterQuality: (headers) => {
             return $resource(BASE_URL+'/environment/water/water_quality', {}, {
         	    get: {
         	        method: 'GET',
@@ -34,7 +34,7 @@ export default ($resource, BASE_URL) => {
         	    },
             });
         }, 
-        getWaterPollution: function (headers){
+        getWaterPollution: (headers) => {
             return $resource(BASE_URL+'/environment/water/water_pollution', {}, {
                 get: {
                     method: 'GET',

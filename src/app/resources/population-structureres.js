@@ -2,7 +2,7 @@ export default ($resource, BASE_URL) => {
     'ngInject';
 
     return {
-        PopulationStructure: function (headers) {
+        PopulationStructure: (headers) => {
             return $resource(BASE_URL + '/population/insert_population_structure', {}, {
                 post: {
                     method: 'POST',
@@ -10,7 +10,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        PeopleEmployInsurance: function (headers) {
+        PeopleEmployInsurance: (headers) => {
             return $resource(BASE_URL + '/population/insert_employ_insurance', {}, {
                 post: {
                     method: 'POST',
@@ -18,7 +18,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        isShowDataPanel: function (headers) {
+        isShowDataPanel: (headers) => {
             return $resource(BASE_URL + '/data/isshow', {}, {
                 get: {
                     method: 'GET',
@@ -26,7 +26,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        schoolNumDataInsert: function (headers) {
+        schoolNumDataInsert: (headers) => {
             return $resource(BASE_URL + '/population/insert_school', {}, {
                 post: {
                     method: 'POST',
@@ -34,7 +34,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        laborGdpRelationInsert:function (headers) {
+        laborGdpRelationInsert: (headers) => {
             return $resource(BASE_URL + '/population/insert_labor_gdp_relation', {}, {
                 post: {
                     method: 'POST',

@@ -2,7 +2,7 @@ export default ($resource, BASE_URL) => {
     'ngInject';
 
     return {
-        getYearTax: function (headers){
+        getYearTax: (headers) => {
             return $resource(BASE_URL+'/economy/yearTax', {}, {
                 get: {
                     method: 'GET',
@@ -10,7 +10,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getYearTaxDetail: function(headers){
+        getYearTaxDetail: (headers) => {
             return $resource(BASE_URL+"/economy/taxDetail/:year", {
                 year:'@year'
             }, {

@@ -1,7 +1,7 @@
 export default ($resource, BASE_URL) => {
     'ngInject';
     return {
-        getTotal: function (headers){
+        getTotal: (headers) => {
             return $resource(BASE_URL+'/power/total', {}, {
                 get: {
                     method: 'GET',
@@ -9,7 +9,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getIndustry: function (headers){
+        getIndustry: (headers) => {
             return $resource(BASE_URL+'/power/industry/total/:year', {
                 year:'@year',
             }, {
@@ -19,7 +19,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getIndustryYear: function (headers){
+        getIndustryYear: (headers) => {
             return $resource(BASE_URL+'/power/industry/:industryId', {
                 industryId:'@industryId',
             }, {
@@ -29,7 +29,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getIndustrySeason: function (headers){
+        getIndustrySeason: (headers) => {
             return $resource(BASE_URL+'/power/industry/:industryId/:year', {
                 industryId:'@industryId',
                 year:'@year',
@@ -40,7 +40,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getEnterpriseAverage: function (headers){
+        getEnterpriseAverage: (headers) => {
             return $resource(BASE_URL+'/power/enterprise/average', {}, {
                 get: {
                     method: 'GET',
@@ -48,7 +48,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getEnterpriseYear: function (headers){
+        getEnterpriseYear: (headers) => {
             return $resource(BASE_URL+'/power/enterprise/:enterpriseId', {
                 enterpriseId:'@enterpriseId',
             }, {
@@ -58,7 +58,7 @@ export default ($resource, BASE_URL) => {
                 },
             });
         },
-        getEnterpriseSeason: function (headers){
+        getEnterpriseSeason: (headers) => {
             return $resource(BASE_URL+'/power/enterprise/:enterpriseId/:year', {
                 enterpriseId:'@enterpriseId',
                 year:'@year',

@@ -2,7 +2,7 @@ export default ($resource, BASE_URL) => {
     'ngInject';
 
     return {
-        getYearDetail: function(headers){
+        getYearDetail: (headers) => {
             return $resource(BASE_URL+"/economy/yearKeqiang/:year", {
                 year:'@year'
             }, {

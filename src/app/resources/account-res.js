@@ -6,9 +6,8 @@
 export default ($resource, BASE_URL) => {
 	'ngInject';
 	return {
-		account: function (headers) {
-            return 
-            $resource(BASE_URL + '/account/:id', {
+		account: (headers) => {
+            return $resource(BASE_URL + '/account/:id', {
         			id: '@id'
 	        	}, {
 	          	get: {
@@ -25,9 +24,8 @@ export default ($resource, BASE_URL) => {
 	        	}
         	});
     	},
-    	accountMobile: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/mobile/:mobile', {
+    	accountMobile: (headers) => {
+    		return $resource(BASE_URL + '/account/mobile/:mobile', {
     			mobile: '@mobile'
     		}, {
     			get: {
@@ -40,9 +38,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountSms: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/sms', {}, {
+    	accountSms: (headers) => {
+    		return $resource(BASE_URL + '/account/sms', {}, {
     			get: {
     				method: 'GET',
     				headers: headers
@@ -53,9 +50,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountPassword: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/password', {}, {
+    	accountPassword: (headers) => {
+    		return $resource(BASE_URL + '/account/password', {}, {
     			post: {
     				method: 'POST',
     				headers: headers
@@ -66,9 +62,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountPasswordSms: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/password/sms', {}, {
+    	accountPasswordSms: (headers) => {
+    		return $resource(BASE_URL + '/account/password/sms', {}, {
     			post: {
     				method: 'POST',
     				headers: headers
@@ -79,9 +74,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountAuthentication: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/authentication', {}, {
+    	accountAuthentication: (headers) => {
+    		return $resource(BASE_URL + '/account/authentication', {}, {
     			post: {
     				method: 'POST',
     				headers: headers
@@ -96,9 +90,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountProfile: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/profile', {}, {
+    	accountProfile: (headers) => {
+    		return $resource(BASE_URL + '/account/profile', {}, {
     			get: {
     				method: 'GET',
     				headers: headers
@@ -109,9 +102,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountCompany: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/company', {}, {
+    	accountCompany: (headers) => {
+    		return $resource(BASE_URL + '/account/company', {}, {
     			get: {
     				method: 'GET',
     				headers: headers
@@ -122,9 +114,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountIcon: function (headers) {
-    		return 
-    		$resource(BASE_URL + '/account/icon/:attachId', {
+    	accountIcon: (headers) => {
+    		return $resource(BASE_URL + '/account/icon/:attachId', {
     			attachId: '@attachId'
     		}, {
     			put: {
@@ -133,9 +124,8 @@ export default ($resource, BASE_URL) => {
     			}
     		});
     	},
-    	accountProfileSetting: function(headers){
-    		return 
-    		$resource(BASE_URL + '/account/profile/setting', {}, {
+    	accountProfileSetting: (headers) => {
+    		return $resource(BASE_URL + '/account/profile/setting', {}, {
     			put: {
     				method: 'PUT',
     				headers: headers
