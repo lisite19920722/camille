@@ -31,7 +31,7 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
                     console.log("自动登录, 用户信息验证成功");
                     // 存储登陆用户data和token
                     AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
-                    $state.go('app.in.power');
+                    $state.go('app.in.home');
                 } else if (data.code == "801") {
                     $scope.errMessage = "密码已变更, 请重新登陆";
                 } else {
@@ -69,7 +69,7 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
                 // 存储登陆用户data和token
                 AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
 
-    			$state.go('app.in.power');
+    			$state.go('app.in.home');
     		} else if (data.code == "801") {
                 $scope.errMessage = "账号/密码不匹配!";
             } else {

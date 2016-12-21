@@ -32,16 +32,31 @@ import privilegeRes from './resources/privilege-res';
 import appCtrl from './appCtrl';
 import portalCtrl from './auth/portal/portalCtrl';
 import inCtrl from './in/inCtrl';
-import powerCtrl from './in/power/powerCtrl';
+import homeCtrl from './in/home/homeCtrl';
 
 // 经济模块Controller
-
+import gdpCtrl from './in/economy/gdp/gdpCtrl';
+import gdponeCtrl from './in/economy/gdp/one/oneCtrl';
+import kqCtrl from './in/economy/kq/kqCtrl';
+import kqoneCtrl from './in/economy/kq/one/oneCtrl';
+import powerCtrl from './in/economy/power/powerCtrl';
+import poweroneCtrl from './in/economy/power/one/oneCtrl';
+import taxCtrl from './in/economy/tax/taxCtrl';
+import taxoneCtrl from './in/economy/tax/one/oneCtrl';
 
 //环境模块Controller
-
+import airCtrl from './in/environment/air/airCtrl';
+import aironeCtrl from './in/environment/air/one/oneCtrl';
+import waterCtrl from './in/environment/water/waterCtrl';
+import wateroneCtrl from './in/environment/water/one/oneCtrl';
 
 // 人口模块Controller
-
+import structureCtrl from './in/population/structure/structureCtrl';
+import structureoneCtrl from './in/population/structure/one/oneCtrl';
+import laborCtrl from './in/population/labor/laborCtrl';
+import laboroneCtrl from './in/population/labor/one/oneCtrl';
+import popothersCtrl from './in/population/popothers/popothersCtrl';
+import popothersoneCtrl from './in/population/popothers/one/oneCtrl';
 
 
 angular.module('camille',
@@ -83,14 +98,30 @@ angular.module('camille',
   .controller('appCtrl', appCtrl)
   .controller('portalCtrl', portalCtrl)
   .controller('inCtrl', inCtrl)
-  .controller('powerCtrl', powerCtrl)
+  .controller('homeCtrl', homeCtrl)
 
   // 经济controllers
-  
+  .controller('gdpCtrl', gdpCtrl)
+  .controller('gdponeCtrl', gdponeCtrl)
+  .controller('kqCtrl', kqCtrl)
+  .controller('kqoneCtrl', kqoneCtrl)
+  .controller('powerCtrl', powerCtrl)
+  .controller('poweroneCtrl', poweroneCtrl)
+  .controller('taxCtrl', taxCtrl)  
+  .controller('taxoneCtrl', taxoneCtrl)
   
   // 环境controllers
-  
+  .controller('airCtrl', airCtrl)
+  .controller('aironeCtrl', aironeCtrl)
+  .controller('waterCtrl', waterCtrl)
+  .controller('wateroneCtrl', wateroneCtrl)
 
   // 人口controllers
-  
+  .controller('structureCtrl', structureCtrl)
+  .controller('structureoneCtrl', structureoneCtrl)
+  .controller('laborCtrl', laborCtrl)
+  .controller('laboroneCtrl', laboroneCtrl)
+  .controller('popothersCtrl', popothersCtrl)
+  .controller('popothersoneCtrl', popothersoneCtrl)
+
   ;
