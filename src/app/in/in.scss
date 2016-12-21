@@ -21,8 +21,11 @@
 }
 .soraka-menu-module {
 	background-color: #fff;
-	.soraka-menu-navbar-top {
-		background-color: $bgDarkBlue;
+	.soraka-home-body {
+		padding-bottom: 0;
+	}
+	.soraka-navbar-top {
+		background-color: rgb(28, 43, 54);
 		span {
 			font-size: 0.9em;
 		}
@@ -33,99 +36,61 @@
 			color: #fff;
 		}
 	}
-	.soraka-menu-navbar-bottom {
-		background-color: $bgDarkBlue;
-		.soraka-menu-navbar-bottomleft{
-			margin-top: 13px;
-			font-size: 17px;
-			margin-left: 1em;
-			color: #fff;
-			i {
-				margin-right: 0.5em;
-			}
-		}
-		#footlabel {
-			display: block;
-			margin: 10px auto 0 auto;
-			font-size: 10px;
-			font-weight: 100;
-			color: #eee;
-			text-align: center;
-		}
+	.soraka-navbar-bottom {
+		min-height: 0;
 	}
 }
 .soraka-sidebar-left {
-	background-color: $bgLightGrey;
-	@include font();
-	.soraka-sidebar-header {
-		height: 50px;
-		color: #eee;
-		background-color: $bgDarkBlue;
-		i {
-			position: absolute;
-			font-size: 20px;
-			top: 16px;
-			left: 10px;
+	.scrollable-content {
+		background-color: rgb(28, 43, 54);
+		color: rgb(134, 159, 177);
+		img {
+			margin-top: 25px;
+			margin-left: 20px;
+			height: 25px;
 		}
-		span {
-			position: absolute;
-			top: 19px;
-			left: 32px;
-			line-height: 15px;
+		.title {
+			display: block;
+			padding: 5px 20px;
+			margin-top: 20px;
+			color: rgb(92, 121, 143);
 		}
 	}
-	.sidebar-left-d1 {
-		background-color: #fff;
-		width: 100%;
-		height: 7em;
-		border-bottom: 1px solid $cborder;
-		border-top: 1px solid $cborder;
-		.sidebar-left-homepage {
-			background: radial-gradient(6em 5em, #eee, #eee, #fff);
-			width: 49%;
-			height: 100%;
-			text-align: center;
-			display: inline-block;
-			// border-right: 1px solid $cborder;
+	.nav {
+		font-size: 16px;
+	}
+	.nav .out-li {
+		a {
+			padding: 10px 20px;
+			color: rgb(134, 159, 177);
+			border-bottom: 2px groove rgba(0,0,0,.5);
+			&:hover, &:focus, &:active {
+				background-color: rgb(28, 43, 54);
+				color: #fff;
+			}
 			i {
-				margin-top: 0.2em;
-			}
-			span {
-				display: block;
-				margin-top: 0.2em;
-			}
-		}
-		.sidebar-left-me {
-			background: radial-gradient(6em 5em, #eee, #eee, #fff);
-			width: 45%;
-			height: 100%;
-			text-align: center;
-			display: inline-block;
-			i {
-				margin-top: 0.2em;
-			}
-			span {
-				display: block;
-				margin-top: 0.2em;
+				margin-right: 10px;
+				width: 20px;
+				color: rgb(23, 151, 190);
 			}
 		}
 	}
-	.sidebar-left-mesetting {
-		@include bgc();
-		@include menurow();
-		border-bottom: 1px solid $cborder;
-		&:focus, &:active {
-			background-color: red;
+	.nav .out-li:first-child a {
+		border-top: 2px groove rgba(0,0,0,.5);
+	}
+	.nav .inner-ul {
+		background-color: rgb(217, 222, 228);
+		box-shadow: 0 0 2px #333 inset;
+		font-size: 13px;
+		li a {
+			padding: 8px 20px;
+			color: #555;
+			border-bottom: 1px groove #fff;
+			&:hover, &:focus, &:active {
+				background: rgb(186, 192, 196);
+				box-shadow: 0 0 1px #333 inset;
+				color: #000;
+			}
 		}
-	}
-	.sidebar-left-timesetting {
-		@include bgc();
-		@include menurow();
-		border-bottom: 1px solid $cborder;
-	}
-	.sidebar-left-logout {
-		@include bgc();
-		@include menurow();
-		border-bottom: 1px solid $cborder;
 	}
 }

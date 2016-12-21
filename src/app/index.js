@@ -32,7 +32,7 @@ import privilegeRes from './resources/privilege-res';
 import appCtrl from './appCtrl';
 import portalCtrl from './auth/portal/portalCtrl';
 import inCtrl from './in/inCtrl';
-import homeCtrl from './in/home/homeCtrl';
+import powerCtrl from './in/power/powerCtrl';
 
 // 经济模块Controller
 
@@ -83,7 +83,7 @@ angular.module('camille',
   .controller('appCtrl', appCtrl)
   .controller('portalCtrl', portalCtrl)
   .controller('inCtrl', inCtrl)
-  .controller('homeCtrl', homeCtrl)
+  .controller('powerCtrl', powerCtrl)
 
   // 经济controllers
   

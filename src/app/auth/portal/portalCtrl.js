@@ -31,7 +31,7 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
                     console.log("自动登录, 用户信息验证成功");
                     // 存储登陆用户data和token
                     AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
-                    $state.go('app.in.home');
+                    $state.go('app.in.power');
                 } else if (data.code == "801") {
                     $scope.errMessage = "密码已变更, 请重新登陆";
                 } else {
@@ -60,7 +60,6 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
             'X-Password': encryptPassword($scope.loginPassword, $scope.loginAccount)
     	};
     	qService.httpPost(accountRes.accountAuthentication, {}, info, {}).then((data) => {
-            console.log(data);
     		if (data.code == "200") {
                 // 如果用户选择自动登录, 则将其用户名和密码存到本地
                 if ($scope.isAutoLogin) {
@@ -70,7 +69,7 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
                 // 存储登陆用户data和token
                 AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
 
-    			$state.go('app.in.home');
+    			$state.go('app.in.power');
     		} else if (data.code == "801") {
                 $scope.errMessage = "账号/密码不匹配!";
             } else {

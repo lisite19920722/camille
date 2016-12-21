@@ -23,13 +23,12 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/in.html', 
       controller: 'inCtrl'
     })
-    .state('app.in.home', {
-      url: '/home',
-      templateUrl: 'app/in/home/home.html',
-      controller: 'homeCtrl'
-    })
     // 经济
-    
+    .state('app.in.power', {
+      url: '/power',
+      templateUrl: 'app/in/power/power.html',
+      controller: 'powerCtrl'
+    })
 
     // 环境
 
