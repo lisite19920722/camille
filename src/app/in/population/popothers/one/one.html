@@ -1,1 +1,321 @@
 minsheng 第一个界面
+
+<div class="wrapper lter b-b bg-white">
+  <div class="subview3_title">太仓市民生分析预测BI</div>
+</div>
+<div class="wrapper bg-white">
+ <div class="details-content">
+   <div class="zzh-container" style="width:1200px" >
+     <div class="panel panel-primary" style="margin-top: 50px;">
+       <div class="panel-heading">
+         人口与就业
+       </div>
+
+       <div class="panel-body" style="padding:0">
+
+         <div class="row">
+           <div class="col-md-8 chart-panel">
+             <highchart style="height:500px;" config="jobf"></highchart>
+           </div>
+           <div class="col-md-4">
+             <p class="fill-margin"></p>
+             <div>
+              <div class="col-md-12" style="padding-top:0.5em;padding-left:0px">
+                <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
+                  <span class="text-white font-thin h1 block"><span id="oldManProportion">81.07</span>%</span>
+                  <span class="text-xs"><span id="populationPreYear1">2016</span>年太仓市就业率</span>
+                </div>
+              </div>
+              
+              
+              <div class="col-md-12 " style="padding-top:0.5em;padding-left:0px">
+                <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
+                  <span class="text-white font-thin h1 block">41.1万</span>
+                  <span class="text-xs">2016年太仓市就业人数</span>
+                </span>
+              </div>
+            </div>
+
+
+
+            <div class="pull-left">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+              </span>
+              <span class="h4">一句话解读</span>
+              <br/>
+
+              <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span></div>
+                </small>
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">详情分析：{{selectSite}}</span></div>
+                </small>
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>就业人数分析预测采用的是灰色预测模型。</span></div>
+                </small>
+              </div>
+            </div>
+            <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+            <hr>
+            <div class="btn-group dropdown">
+
+             <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" style="width:8em;margin-left:5px;">年份选择<span class="caret"></span><tton>
+              <ul class="dropdown-menu">
+               <button ng-repeat="bttn in buttonMap3" class="btn btn-primary" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click3(bttn)">{{bttn.label}}</button>
+             </ul>
+             <br>
+             <br>
+             <button ng-click="showTotalTable()" class="btn btn-primary" style="width:8em;margin-left:5px;">查看数据详情</button>
+           </div>
+         </div>
+
+
+       </div>
+     </div>
+
+
+
+     <div style="width:1198px;height:1px;margin:0px auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+     <div class="row">
+       <div class="col-md-8 chart-panel">
+         <highchart style="height:500px;" config="jobt"></highchart>
+       </div>
+
+       <div class="col-md-4">
+         <p class="fill-margin"></p>
+         
+         <div class="ioc-panel-desc">
+
+          <div class="col-md-12" style="padding-top:0.5em;padding-left:0px">
+            <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
+              <span class="text-white font-thin h1 block"><span id="oldManProportion">81.07</span>%</span>
+              <span class="text-xs"><span id="populationPreYear1">2016</span>年太仓市就业率</span>
+            </div>
+          </div>
+
+
+          <div class="col-md-12 " style="padding-top:0.5em;padding-left:0px">
+
+          </div>
+          <div style="height:3px"></div>
+          
+        </div>
+        
+        <div class="pull-left">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x text-info"></i>
+            <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+          </span>
+          <span class="h4">一句话解读</span>
+          <br />
+          <small class="block m-t-xs" style="margin-left:10px">
+            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span></div>
+          </small>
+          <small class="block m-t-xs" style="margin-left:10px">
+            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">详情分析：{{selectSite}}</span></div>
+          </small>
+          <small class="block m-t-xs" style="margin-left:10px">
+            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>就业人数分析预测采用的是灰色预测模型。</span></div>
+          </small>
+        </div>
+      </div>
+      <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+      <hr>
+      <div class="btn-group dropdown" style="margin-left:20px">
+        <button class="btn btn-primary">年份选择</button>
+        <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+        <br>
+        <button ng-click="showTotalTable()" class="btn btn-primary" style="width:8em;margin-left:5px;">查看数据详情</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="zzh-container" style="width:1200px;">
+ <div class="row" style="margin-top: 20px;">
+   <div class="col-md-12">
+     <div class="panel panel-primary" style="margin-top: 20px;">
+       <div class="panel-heading">
+         人口与城镇基本养老保险
+       </div>
+       <div class="panel-body" style="padding:0;height:600px">
+
+         <div class="row">
+
+           <div class="col-md-8 chart-panel" >
+             <highchart config="money"  style="width:100%;height: 600px"></highchart>
+           </div>
+
+
+           <div class="col-md-4">
+               <div style="margin-top:0px;padding-top:10px">
+               <highchart id="containered" config="containered" style="width:300px;height:300px"></highchart>
+               </div>
+             <p class="fill-margin" style="margin-top:0px">2016年三大产业所占比例</p>
+             <div class="ioc-panel-desc">
+               <p class="ioc-panel-desc-title">
+                 
+               </p>
+              
+                
+
+
+             </div>
+
+             <div class="pull-left">
+                
+               
+               <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+              </span>
+              <span class="h4">一句话解读</span>
+              <br />
+              <small class="block m-t-xs" style="margin-left:10px">
+                <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：老龄人口比例的增加，就业人口走势平稳，养老保险支大于收，随着老龄人口比例减少，养老保险结余将有所改善。</span></div>
+              </small>
+              <small class="block m-t-xs" style="margin-left:10px">
+                <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">详情分析：{{selectSite}}</span></div>
+              </small>
+              <small class="block m-t-xs" style="margin-left:10px">
+                <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>人口与城镇基本养老保险分析预测采用的是灰色预测模型法。</span></div>
+              </small>
+
+              
+            </div>
+            <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+            <hr>
+
+            <div class="btn-group dropdown">
+
+              <button class="btn btn-primary">年份选择</button>
+              <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+              <ul class="dropdown-menu">
+               <button ng-repeat="bttn in buttonMap5" class="btn btn-primary" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click5(bttn)">{{bttn.label}}</button>
+             </ul>
+
+           </div>
+
+           <div style="height:10px"></div>
+
+
+         </div>
+
+
+       </div>
+
+     </div>
+
+
+   </div>
+ </div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="bg-white">
+ <div class="zzh-container" style="width:1200px;margin-bottom:20px">
+   <div class="row">
+     <div class="col-md-12" >
+       <div class="panel panel-primary" style="margin-top: 10px;height:540px">
+         <div class="panel-heading">
+           人口与教育
+         </div>
+         <div class="panel-body" style="padding:0">
+
+           <div class="row">
+             <div class=" col-md-12">
+               <div class="col-md-8 chart-panel">
+                 <highchart id="school" config="school" style="width:95%;height:485px"></highchart>
+
+
+               </div>
+
+               <div class="col-md-4">
+                <p class="fill-margin"></p>
+                <div class="ioc-panel-desc">
+                 <p class="ioc-panel-desc-title">
+
+                 </p>
+                 <div style="height:3px"></div>
+
+
+               </div>
+
+
+               <div class="pull-left">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x text-info"></i>
+                  <i class="icon-bulb fa-stack-1x text-white fa-spin"></i>
+                </span>
+                <span class="h4">一句话解读</span>
+                <br />
+                <div style="margin-right:10px">
+                  <small class="block m-t-xs" style="margin-left:10px">
+                    <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：随着二孩政策放开，出生人口增多，小学数量会有所增加。</span></div>
+                  </small>
+                  <small class="block m-t-xs" style="margin-left:10px">
+                    <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">详情分析：{{selectSite}}</span></div>
+                  </small>
+                  <small class="block m-t-xs" style="margin-left:10px">
+                    <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>人口与教育分析预测采用的是灰色预测模型法。</span></div>
+                  </small>
+
+                  
+                </div>
+              </div>
+              <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+              <hr />
+              <div class="btn-group dropdown">
+                <button class="btn btn-primary">年份选择</button>
+                <button class="btn btn-primary" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                <br>
+                <br>
+                
+                <button ng-click="showTotalTable()" class="btn m-b-xs btn-primary pull-left" style="margin-left:0;font-weight:bold">详细数据列表</button>
+              </ul>
+            </div>
+
+
+          </div>
+          
+
+        </div>
+        <div class="bg-white fc-datatable" ng-if="totalshow">
+      <div class="panel panel-default paddingmargin0em">
+        <div class="panel-heading"><center>数据详情</center></div> 
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+             <tr st-select-row="row" class="ng-scope ng-isolate-scope"><th><center>年份</center></th><th>2007年</th><th>2008年</th><th>2008年</th><th>2010年</th><th>2011年</th><th>2012年</th><th>2013年</th><th>2014年</th><th>2015年</th><th>2016年</th></tr>
+             <tr st-select-row="row" class="ng-scope ng-isolate-scope"><td>太仓城区小学生人口</td><td>1.20万</td><td>1.21万</td><td>1.22万</td><td>1.23万</td><td>1.24万</td><td>1.25万</td><td>1.26万</td><td>1.27万</td><td>1.29万</td><td>1.29万</td></tr>
+             <tr st-select-row="row" class="ng-scope ng-isolate-scope"><td>浏河镇小学生人口</td><td>1.20万</td><td>1.21万</td><td>1.22万</td><td>1.23万</td><td>1.24万</td><td>1.25万</td><td>1.26万</td><td>1.27万</td><td>1.29万</td><td>1.29万</td></tr>
+             <tr st-select-row="row" class="ng-scope ng-isolate-scope"><td>城厢镇小学生人口</td><td>1.20万</td><td>1.21万</td><td>1.22万</td><td>1.23万</td><td>1.24万</td><td>1.25万</td><td>1.26万</td><td>1.27万</td><td>1.29万</td><td>1.29万</td></tr>
+             <tr st-select-row="row" class="ng-scope ng-isolate-scope"><td>浮桥镇小学生人口</td><td>1.20万</td><td>1.21万</td><td>1.22万</td><td>1.23万</td><td>1.24万</td><td>1.25万</td><td>1.26万</td><td>1.27万</td><td>1.29万</td><td>1.29万</td></tr>
+
+           </table>
+         </div>
+       </div>
+
+
+
+     </div>
+   </div>
+
+
+ </div>
+</div>
+
+</div>
+
+</div>
+</div>
