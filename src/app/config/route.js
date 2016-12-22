@@ -85,6 +85,21 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/environment/air/one/one.html',
       controller: 'aironeCtrl'
     })
+    .state('app.in.air.two', {
+      url: '/two',
+      templateUrl: 'app/in/environment/air/two/two.html',
+      controller: 'airtwoCtrl'
+    })
+    .state('app.in.air.three', {
+      url: '/three',
+      templateUrl: 'app/in/environment/air/three/three.html',
+      controller: 'airthreeCtrl'
+    })
+    .state('app.in.air.four', {
+      url: '/four',
+      templateUrl: 'app/in/environment/air/four/four.html',
+      controller: 'airfourCtrl'
+    })
     .state('app.in.water', {
       abstract: true,
       url: '/water',
@@ -95,6 +110,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       url: '/one',
       templateUrl: 'app/in/environment/water/one/one.html',
       controller: 'wateroneCtrl'
+    })
+    .state('app.in.water.two', {
+      url: '/two',
+      templateUrl: 'app/in/environment/water/two/two.html',
+      controller: 'watertwoCtrl'
+    })
+    .state('app.in.water.three', {
+        url: '/three',
+        templateUrl: 'app/in/environment/water/three/three.html',
+        controller: 'waterthreeCtrl'
     })
     
     // 人口
