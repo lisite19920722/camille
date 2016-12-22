@@ -1,0 +1,37 @@
+<div class="sidebar sidebar-left soraka-sidebar-left">
+	<div class="scrollable">
+		<div class="scrollable-content">
+			<img src="/assets/icons/logo-white.png">
+			<span class="title">查看</span>
+			<ul class="nav">
+				<li class="out-li">
+					<a href="javascript:void(0);" class="auto first" id="economyA"><i class="fa fa-money" aria-hidden="true"></i></i>经济BI<i class="fa fa-angle-down fa-angle-up pull-right" id="economyI" aria-hidden="true"></i></a>
+				</li>
+				<ul class="nav inner-ul" id="economyUl">
+					<li><a href="javascript:void(0);" ui-sref="app.in.gdp.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="economyGDP">GDP分析预测</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.tax.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="economyTax">税收分析预测</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.kq.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="economyKQ">克强指数</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.power.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="economyPower">工业用电量与经济增长关联分析</a></li>
+				</ul>
+				<li class="out-li">
+					<a href="javascript:void(0);" class="auto" id="environmentA"><i class="fa fa-tree" aria-hidden="true"></i>环境BI<i class="fa fa-angle-down fa-angle-up pull-right" id="environmentI" aria-hidden="true"></i></a>
+				</li>
+				<ul class="nav inner-ul" id="environmentUl">
+					<li><a href="javascript:void(0);" ui-sref="app.in.air.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="environmentAir">空气质量分析预测</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.water.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="environmentWater">水质量评价分析</a></li>
+				</ul>
+				<li class="out-li">
+					<a href="javascript:void(0);" class="auto" id="populationA"><i class="fa fa-users" aria-hidden="true"></i>人口BI<i class="fa fa-angle-down fa-angle-up pull-right" id="populationI" aria-hidden="true"></i></a>
+				</li>
+				<ul class="nav inner-ul" id="populationUl">
+					<li><a href="javascript:void(0);" ui-sref="app.in.structure.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="populationStructure">人口结构分析预测</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.labor.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="populationLabor">劳动力人口与经济关联分析预测</a></li>
+					<li><a href="javascript:void(0);" ui-sref="app.in.popothers.one" class="auto inner-li" ui-turn-off='uiSidebarLeft' id="populationLive">民生分析预测</a></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="app soraka-menu-module">
+	<div ui-view></div>
+</div>

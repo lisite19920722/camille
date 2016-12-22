@@ -1,0 +1,96 @@
+@mixin font() {
+	font-size: 10px;
+	span {
+		font-size: 15px;	
+	}
+	color: $fontBlack;
+}
+@mixin bgc() {
+	background-color: #fff;
+}
+@mixin menurow() {
+	padding: 1em 2em;
+	height: 50px;
+	background: radial-gradient(#eee, #eee, #fff);
+	span {
+		display: inline-block;
+		margin-left: 1em;
+		position: relative;
+		top: -0.5em;
+	}
+}
+.soraka-menu-module {
+	background-color: #fff;
+	.soraka-home-body {
+		padding-bottom: 0;
+	}
+	.soraka-navbar-top {
+		background-color: rgb(28, 43, 54);
+		span {
+			font-size: 0.9em;
+		}
+		.soraka-menu-navbar-topright {
+			margin-top: 13px;
+			font-size: 17px;
+			margin-right: 0.5em;
+			color: #fff;
+		}
+	}
+	.soraka-navbar-bottom {
+		min-height: 0;
+	}
+}
+.soraka-sidebar-left {
+	.scrollable-content {
+		background-color: rgb(28, 43, 54);
+		color: rgb(134, 159, 177);
+		img {
+			margin-top: 25px;
+			margin-left: 20px;
+			height: 25px;
+		}
+		.title {
+			display: block;
+			padding: 5px 20px;
+			margin-top: 20px;
+			color: rgb(92, 121, 143);
+		}
+	}
+	.nav {
+		font-size: 16px;
+	}
+	.nav .out-li {
+		a {
+			padding: 10px 20px;
+			color: rgb(134, 159, 177);
+			border-bottom: 2px groove rgba(0,0,0,.5);
+			&:hover, &:focus, &:active {
+				background-color: rgb(28, 43, 54);
+				color: #fff;
+			}
+			i {
+				margin-right: 10px;
+				width: 20px;
+				color: rgb(23, 151, 190);
+			}
+		}
+	}
+	.nav .out-li:first-child a {
+		border-top: 2px groove rgba(0,0,0,.5);
+	}
+	.nav .inner-ul {
+		background-color: rgb(217, 222, 228);
+		box-shadow: 0 0 2px #333 inset;
+		font-size: 13px;
+		li a {
+			padding: 8px 20px;
+			color: #555;
+			border-bottom: 1px groove #fff;
+			&:hover, &:focus, &:active {
+				background: rgb(186, 192, 196);
+				box-shadow: 0 0 1px #333 inset;
+				color: #000;
+			}
+		}
+	}
+}

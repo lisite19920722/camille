@@ -1,0 +1,32 @@
+<div class="navbar navbar-app navbar-absolute-top power-navbar-top">
+	<div class="power-choose" ui-turn-on='laborChoiceDropdown'><i class="fa fa-angle-down fa-2x" aria-hidden="true"></i><span>选择子项</span></div>
+	<ul class="dropdown-menu power-dropdown-ul"
+		ui-outer-click="Ui.turnOff('laborChoiceDropdown')"
+		ui-outer-click-if="Ui.active('laborChoiceDropdown')"
+		role="menu"
+		ui-show="laborChoiceDropdown"
+		ui-state="laborChoiceDropdown"
+		ui-turn-off="laborChoiceDropdown">
+		<li id=""><a ui-sref="app.in.labor.one" ng-click="" href="javascript:void(0)">户籍人口结构分析预测</a></li>
+		<li class="divider"></li>
+		<li id=""><a ui-sref="app.in.labor.one" ng-click="" href="javascript:void(0)">常住人口总量分析预测</a></li>
+		<li class="divider"></li>
+		<li id=""><a ui-sref="app.in.labor.one" ng-click="" href="javascript:void(0)">当前各乡镇常住人口自然增长率分析</a></li>
+	</ul>
+	<div class="btn-group pull-left">
+		<div class="btn btn-navbar color-w opacity100" ui-toggle='uiSidebarLeft'>
+			<i class="fa fa-bars"></i>
+			导航
+		</div>
+	</div>
+</div>
+<div class="app-body power-app-body">
+	<div ng-show="loading" class="app-content-loading">
+		<i class="fa fa-spinner fa-spin loading-spinner"></i>
+	</div>
+	<div class="app-content">
+		<div ui-view></div>
+	</div>
+</div>
+<div class="navbar navbar-app navbar-absolute-bottom power-navbar-bottom">
+</div>
