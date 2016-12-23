@@ -145,6 +145,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/population/labor/one/one.html',
       controller: 'laboroneCtrl'
     })
+    .state('app.in.labor.two', {
+      url: '/two',
+      templateUrl: 'app/in/population/labor/two/two.html',
+      controller: 'labortwoCtrl'
+    })
+    .state('app.in.labor.three', {
+      url: '/three',
+      templateUrl: 'app/in/population/labor/three/three.html',
+      controller: 'laborthreeCtrl'
+    })
     .state('app.in.popothers', {
       abstract: true,
       url: '/popothers',
