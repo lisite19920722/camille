@@ -1,4 +1,4 @@
-export default ($scope, $rootScope, qService) => {
+export default ($scope, $rootScope, qService, environmentRes, $http) => {
 	'ngInject';
     
 };
