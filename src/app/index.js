@@ -62,6 +62,7 @@ import laborCtrl from './in/population/labor/laborCtrl';
 import laboroneCtrl from './in/population/labor/one/oneCtrl';
 import popothersCtrl from './in/population/popothers/popothersCtrl';
 import popothersoneCtrl from './in/population/popothers/one/oneCtrl';
+import popotherseducationCtrl from './in/population/popothers/one/educationCtrl';
 
 
 angular.module('camille',
@@ -133,5 +134,5 @@ angular.module('camille',
   .controller('laboroneCtrl', laboroneCtrl)
   .controller('popothersCtrl', popothersCtrl)
   .controller('popothersoneCtrl', popothersoneCtrl)
-
+  .controller('popotherseducationCtrl',popotherseducationCtrl);
   ;
