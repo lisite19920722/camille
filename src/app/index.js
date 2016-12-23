@@ -47,8 +47,13 @@ import taxoneCtrl from './in/economy/tax/one/oneCtrl';
 //环境模块Controller
 import airCtrl from './in/environment/air/airCtrl';
 import aironeCtrl from './in/environment/air/one/oneCtrl';
+import airtwoCtrl from './in/environment/air/two/twoCtrl';
+import airthreeCtrl from './in/environment/air/three/threeCtrl';
+import airfourCtrl from './in/environment/air/four/fourCtrl';
 import waterCtrl from './in/environment/water/waterCtrl';
 import wateroneCtrl from './in/environment/water/one/oneCtrl';
+import watertwoCtrl from './in/environment/water/two/twoCtrl';
+import waterthreeCtrl from './in/environment/water/three/threelCtrl';
 
 // 人口模块Controller
 import structureCtrl from './in/population/structure/structureCtrl';
@@ -113,8 +118,13 @@ angular.module('camille',
   // 环境controllers
   .controller('airCtrl', airCtrl)
   .controller('aironeCtrl', aironeCtrl)
+  .controller('airtwoCtrl', airtwoCtrl)
+  .controller('airthreeCtrl', airthreeCtrl)
+  .controller('airfourCtrl', airfourCtrl)
   .controller('waterCtrl', waterCtrl)
   .controller('wateroneCtrl', wateroneCtrl)
+  .controller('watertwoCtrl', watertwoCtrl)
+  .controller('waterthreeCtrl', waterthreeCtrl)
 
   // 人口controllers
   .controller('structureCtrl', structureCtrl)
