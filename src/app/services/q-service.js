@@ -6,12 +6,13 @@ export default ($q, $state, $sessionStorage) => {
 	'ngInject';
 
 	let TOKEN_KEY = 'x-auth-token';
-	let tempToken = '1949de2d70624181ae84ad0cca62c35d';
+	let tempToken = '22ca04ee34df49d6aace8a627a2c30cb';
 	return {
 		httpGetWithToken: (resource, parameters, headers) => {
 			return $q((resolve, reject) => {
 				// headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
 				headers['X-Auth-Token'] = tempToken;
+				headers['X-Workspace-Id'] = 1;
 				resource(headers).get(parameters,
 				(value, responseHeaders) => {
 					value.headers = responseHeaders ? responseHeaders() : "";
@@ -26,6 +27,7 @@ export default ($q, $state, $sessionStorage) => {
 			return $q((resolve, reject) => {
 				// headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
 				headers['X-Auth-Token'] = tempToken;
+				headers['X-Workspace-Id'] = 1;
 				resource(headers).post(parameters,body,
 				(value, responseHeaders) => {
 					value.headers = responseHeaders ? responseHeaders() : "";

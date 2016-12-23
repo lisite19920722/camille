@@ -1,0 +1,104 @@
+<header>
+  <hgroup>
+    <h4>当前位置:</h4>
+  </hgroup>
+  <nav>
+    <span>经济</span>>>
+    <span>GDP</span>>>
+    <span>年各季度GDP数据</span>
+  </nav>
+</header>
+<section>
+  <div id="topheader">
+    年度GDP数据可视化
+  </div>
+  <div id="contain">
+    <highchart   id ="chart1" config ="monthGDPChart"></highchart>
+  </div>
+  <div id="controlcontain">
+    <div class="showstyle"><span>图表展示方式</span></div>
+    <div class="ebutton ebuttonActive" ng-click = "monthexchange('column')" id="column">柱状图</div>
+    <div class="ebutton" ng-click = "monthexchange('line')" id="line">折线图</div>
+    <div class="ebutton" ng-click = "monthexchange('spline')" id="spline">曲线图</div>
+    <div class="ebutton" ng-click = "monthexchange('area')" id="area">区域图</div>
+    <div class="showstyle"><span>当前展示年份</span></div>
+    <div class="ebutton " ng-click="changeyear('2014')" id="2014">2014年</div>
+    <div class="ebutton" ng-click="changeyear('2015')" id="2015">2015年</div>
+    <div class="ebutton ebuttonActive" ng-click="changeyear('2016')" id="2016">2016年</div>
+  </div>
+  <details open>
+    <summary>一句话解读</summary>
+    <div id="sentence">
+      <i class="fa fa-circle" ></i>
+        <div>
+            <span>年度GDP预测模型为:基于时间序列的自回归积分滑动平均模型</span>
+        </div>
+    </div>
+  </details>
+  <details open>
+    <summary>数据模型</summary>
+    <div id="sentence">
+         <i class="fa fa-circle"></i>
+             <div>
+                <span>预测结果分析:预计今年GDP增速相对于上一年有所放缓</span>
+             </div>
+    </div>
+  </details>
+  <div id="topheader">
+    年度GDP数据详情
+  </div>
+  <div id="navid" style="margin-top: 20px;">
+      <div  class="nav2 navactive"id="history"ng-click = "monthcheckforecast()">
+        <div   >历史与预测数据</div>
+      </div>
+      <div  class="nav3"id="eerror"ng-click = "monthcheckdeviation()">
+        <div   >预测误差</div>
+      </div>
+  </div>
+ <div  ng-if="monthforecast">
+                    <table class="table table-bordered" style="margin-bottom: 0px" >
+                        <tr>
+                            <th class="active" style="text-align: center; width: 20%" >季度</th>
+                            <th class="active" style="text-align: center;">第一季度</th>
+                            <th class="active" style="text-align: center;">第二季度</th>
+                            <th class="active" style="text-align: center;">第三季度</th>
+                            <th class="active" style="text-align: center;">第四季度</th>
+                        </tr>
+                        <tr>
+                            <td class="info" >GDP真实值(亿元)</td>
+                            <td class="info">{{gdpquarterrealvalue[0]}}</td>
+                            <td class="info">{{gdpquarterrealvalue[1]}}</td>
+                            <td class="info">{{gdpquarterrealvalue[2]}}</td>
+                            <td class="info">{{gdpquarterrealvalue[3]}}</td>
+                        </tr>
+                        <tr>
+                            <td class="info">GDP预测值(亿元)</td>
+                            <td class="info">{{gdpquarterforcastvalue[0]}}</td>
+                            <td class="info">{{gdpquarterforcastvalue[1]}}</td>
+                            <td class="info">{{gdpquarterforcastvalue[2]}}</td>
+                            <td class="info">{{gdpquarterforcastvalue[3]}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-if="monthdeviation">
+                    <table class="table table-bordered" style="margin-bottom: 0px" >
+                        <tr>
+                            <th class="active" style = "text-align: center;width:20%">季度</th>
+                            <th class="active" style = "text-align: center;">第一季度</th>
+                            <th class="active" style = "text-align: center;">第二季度</th>
+                            <th class="active" style = "text-align: center;">第三季度</th>
+                            <th class="active" style = "text-align: center;">第四季度</th>
+                        </tr>
+                        <tr>
+                            <td class="info">误差(%)</td>
+                            <td class="info">{{montherrorRate[0]}}</td>
+                            <td class="info">{{montherrorRate[1]}}</td>
+                            <td class="info">{{montherrorRate[2]}}</td>
+                            <td class="info">{{montherrorRate[3]}}</td>
+                        </tr>
+                    </table>
+                </div>
+</section>
+
+
+

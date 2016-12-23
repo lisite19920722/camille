@@ -40,6 +40,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/economy/gdp/one/one.html',
       controller: 'gdponeCtrl'
     })
+    .state('app.in.gdp.two', {
+      url: '/one',
+      templateUrl: 'app/in/economy/gdp/two/two.html',
+      controller: 'gdptwoCtrl'
+    })
+    .state('app.in.gdp.three', {
+      url: '/one',
+      templateUrl: 'app/in/economy/gdp/three/three.html',
+      controller: 'gdpthreeCtrl'
+    })
     .state('app.in.kq', {
       abstract: true,
       url: '/kq',

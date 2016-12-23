@@ -1,0 +1,127 @@
+header{
+  z-index:2;
+}
+h4{
+  padding:5px;
+}
+#economycontent{
+  margin-top:60px;
+  height:500px;
+  z-index:100;
+}
+nav{
+  padding-left:10px;
+  span{
+  font-size:1.2em;
+  color:#A9A9A9;
+  }
+}
+#topheader{
+  height:25px;
+  width:100%;
+  color:white;
+  background-color:#4682B4;
+  border-top-right-radius:12.5px;
+  border-bottom-right-radius:12.5px;
+  padding:3px;
+}
+#navid{
+  display:flex;
+  .navcontent{
+    font-size:1.2em;
+    text-shadow:1px 1px 1px lightgray;
+  }
+  
+  .nav2{
+   display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:66%;
+  height:35px;
+  border:3.5px solid   lightgray;
+  background-color:#A9A9A9;
+  color:white;
+  }
+  .nav3{
+   display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:33%;
+  height:35px;
+  border:3.5px solid   lightgray;
+  background-color:#A9A9A9;
+  color:white;
+  }
+  .navactive{
+  border:3.5px solid   #B0E0E6;
+  background-color: #5F9EA0;
+  color:white
+  }
+}
+
+section{
+  margin-top:20px;
+  height:600px;
+  overflow:scroll;
+  padding:5px;
+}
+#contain{
+  height:420px;
+  border-bottom:2px dotted gray;
+  padding:0px;
+}
+#controlcontain{
+  height:100px;
+  border-bottom:2px dotted gray;
+  padding:5px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:center;
+}
+.ebutton{
+  width:16%;
+  border:2px solid gray;
+  margin:2px;
+  height:25px;
+  border-radius:12.5px;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  background-color:lightgray;
+  color:white;
+}
+.ebuttonActive{
+  background-color:#5F9EA0;
+  border:2px solid #B0E0E6;
+}
+.showstyle{
+  width:25%;
+  height:25px;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  border-top-right-radius:12.5px;
+  border-bottom-right-radius:12.5px;
+  background-color:#5F9EA0;
+  color:white;
+}
+summary{
+  background-color:#5F9EA0;
+  color:white;
+}
+#sentence{
+  display:flex;
+  flex-direction:row;
+  justify-content:flex-start;
+  padding:5px;
+}
+details{
+  margin-top:5px;
+}
+

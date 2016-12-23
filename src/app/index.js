@@ -24,7 +24,7 @@ import populationStructureRes from './resources/population-structureres';
 import privilegeRes from './resources/privilege-res';
 
 // directive
-
+ import gdpdirective from './in/economy/gdp/template/gdpdirective';
 // filter
 
 // controllers
@@ -37,6 +37,8 @@ import homeCtrl from './in/home/homeCtrl';
 // 经济模块Controller
 import gdpCtrl from './in/economy/gdp/gdpCtrl';
 import gdponeCtrl from './in/economy/gdp/one/oneCtrl';
+import gdptwoCtrl from './in/economy/gdp/two/twoCtrl';
+import gdpthreeCtrl from './in/economy/gdp/three/threeCtrl';
 import kqCtrl from './in/economy/kq/kqCtrl';
 import kqoneCtrl from './in/economy/kq/one/oneCtrl';
 import powerCtrl from './in/economy/power/powerCtrl';
@@ -65,7 +67,7 @@ angular.module('camille',
   // 配置全局常量
   .constant('lcConfig', config)
   .constant('moment', window.moment)
-  .constant('BASE_URL', 'http://10.60.36.95:8080/api') // 测试
+  .constant('BASE_URL', 'http://100.64.2.64:8080/api') // 测试
   // .constant('BASE_URL', '/api') // 发布
 
   // 基础配置
@@ -91,7 +93,7 @@ angular.module('camille',
   .factory('privilegeRes', privilegeRes)
 
   // directive 初始化
-  
+  .directive('gdpdirective',gdpdirective)
   // filter 初始化
 
   // controllers 初始化
@@ -103,6 +105,8 @@ angular.module('camille',
   // 经济controllers
   .controller('gdpCtrl', gdpCtrl)
   .controller('gdponeCtrl', gdponeCtrl)
+  .controller('gdptwoCtrl', gdptwoCtrl)
+  .controller('gdpthreeCtrl', gdpthreeCtrl)
   .controller('kqCtrl', kqCtrl)
   .controller('kqoneCtrl', kqoneCtrl)
   .controller('powerCtrl', powerCtrl)

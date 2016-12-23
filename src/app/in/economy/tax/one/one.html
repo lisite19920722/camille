@@ -1,1 +1,158 @@
-tax 第一个界面
+<header>
+  <hgroup>
+    <h4>当前位置:</h4>
+  </hgroup>
+  <nav>
+    <span>经济</span>>>
+    <span>税收</span>>>
+    <span>年度税收收入</span>
+  </nav>
+</header>
+<section>
+  <div id="topheader">
+    年度GDP数据可视化
+  </div>
+  <div id="contain">
+     <highchart id="yearTaxChart"  config="yearTaxChart" />
+  </div>
+  <div id="controlcontain">
+    <div class="showstyle"><span>图表展示方式</span></div>
+    <div class="ebutton ebuttonActive" ng-click = "changeViewsYear()" id="column">柱状图</div>
+    <div class="ebutton" ng-click = "changeViewsYear()" id="line">折线图</div>
+  </div>
+  <details open>
+    <summary>一句话解读</summary>
+    <div id="sentence">
+      <i class="fa fa-circle" style="margin-top: 1%"></i>
+        <div>
+            <span>年度GDP预测模型为:基于时间序列的自回归积分滑动平均模型</span>
+        </div>
+    </div>
+  </details>
+  <details open>
+    <summary>数据模型</summary>
+    <div id="sentence">
+         <i class="fa fa-circle"></i>
+             <div>
+                <span>预测结果分析:预计今年GDP增速相对于上一年有所放缓</span>
+             </div>
+    </div>
+  </details>
+  <div id="topheader">
+    年度GDP数据详情
+  </div>
+  <div id="navid" style="margin-top: 20px;">
+      <div  class="nav2 navactive"id="history"ng-click = "checkforecast()">
+        <div   >历史与预测数据</div>
+      </div>
+      <div  class="nav3"id="eerror"ng-click = "checkdeviation()">
+        <div   >预测误差</div>
+      </div>
+  </div>
+  <div class = "col-md-12 table-responsive" style = "border-top:1px solid #428bca;padding:0px;width:97.5%;"  ng-if = "forecast">
+                    <table class = "table table-bordered" style="margin-bottom:2px" >
+                        <tr>
+                            <th class = "active" style = "text-align: center;">年份</th>
+                            <th class = "active" style = "text-align: center;">2007</th>
+                            <th class = "active" style = "text-align: center;">2008</th>
+                            <th class = "active" style = "text-align: center;">2009</th>
+                            <th class = "active" style = "text-align: center;">2010</th>
+                            <th class = "active" style = "text-align: center;">2011</th>
+                            <th class = "active" style = "text-align: center;">2012</th>
+                            <th class = "active" style = "text-align: center;">2013</th>
+                        </tr>
+                        <tr>
+                            <td class = "info">GDP真实值(亿元)</td>
+                            <td class = "info">{{gdprealvalue[0]}}</td>
+                            <td class = "info">{{gdprealvalue[1]}}</td>
+                            <td class = "info">{{gdprealvalue[2]}}</td>
+                            <td class = "info">{{gdprealvalue[3]}}</td>
+                            <td class = "info">{{gdprealvalue[4]}}</td>
+                            <td class = "info">{{gdprealvalue[5]}}</td>
+                            <td class = "info">{{gdprealvalue[6]}}</td>
+                        </tr>
+                        <tr>
+                            <td class = "info">GDP预测值(亿元)</td>
+                            <td class = "info">{{gdpforecastvalue[0]}}</td>
+                            <td class = "info">{{gdpforecastvalue[1]}}</td>
+                            <td class = "info">{{gdpforecastvalue[2]}}</td>
+                            <td class = "info">{{gdpforecastvalue[3]}}</td>
+                            <td class = "info">{{gdpforecastvalue[4]}}</td>
+                            <td class = "info">{{gdpforecastvalue[5]}}</td>
+                            <td class = "info">{{gdpforecastvalue[6]}}</td>
+                        </tr>
+                        <tr>
+                            <th class = "active" style = "text-align: center;">年份</th>
+                            <th class = "active" style = "text-align: center;">2013</th>
+                            <th class = "active" style = "text-align: center;">2014</th>
+                            <th class = "active" style = "text-align: center;">2015</th>
+                            <th class = "active" style = "text-align: center;">2016</th>
+                            <th class = "active" style = "text-align: center;">2017</th>
+                            <th class = "active" style = "text-align: center;">2018</th>
+                        </tr>
+                        <tr>
+                            <td class = "info">GDP真实值(亿元)</td>
+                            <td class = "info">{{gdprealvalue[6]}}</td>
+                            <td class = "info">{{gdprealvalue[7]}}</td>
+                            <td class = "info">{{gdprealvalue[8]}}</td>
+                            <td class = "info">--</td>
+                            <td class = "info">--</td>
+                            <td class = "info">--</td>
+                        </tr>
+                        <tr>
+                            <td class = "info">GDP预测值(亿元)</td>
+                            <td class = "info">{{gdpforecastvalue[6]}}</td>
+                            <td class = "info">{{gdpforecastvalue[7]}}</td>
+                            <td class = "info">{{gdpforecastvalue[8]}}</td>
+                            <td class = "info">{{gdpforecastvalue[9]}}</td>
+                            <td class = "info">{{gdpforecastvalue[10]}}</td>
+                            <td class = "info">{{gdpforecastvalue[11]}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div  ng-if="deviation">
+            <table class="table table-bordered table-responsive" style="margin-bottom: 0px "  >
+                            <tr>
+                                <th class = "active" style = "text-align: center; width:14% ">年份</th>
+                                <th class = "active" style = "text-align: center;">2007</th>
+                                <th class = "active" style = "text-align: center;">2008</th>
+                                <th class = "active" style = "text-align: center;">2009</th>
+                                <th class = "active" style = "text-align: center;">2010</th>
+                                <th class = "active" style = "text-align: center;">2011</th>
+                                <th class = "active" style = "text-align: center;">2012</th>
+                                <th class = "active" style = "text-align: center;">2013</th>
+                            </tr>
+                            <tr>
+                                <td class = "info">GDP预测误差(%)</td>
+                                <td class = "info">{{errorvalue[0]}}</td>
+                                <td class = "info">{{errorvalue[1]}}</td>
+                                <td class = "info">{{errorvalue[2]}}</td>
+                                <td class = "info">{{errorvalue[3]}}</td>
+                                <td class = "info">{{errorvalue[4]}}</td>
+                                <td class = "info">{{errorvalue[5]}}</td>
+                                <td class = "info">{{errorvalue[6]}}</td>
+                            </tr>
+                            <tr>
+                                <th class = "active" style = "text-align: center; width:14% ">年份</th>                              
+                                <th class = "active" style = "text-align: center;">2014</th>
+                                <th class = "active" style = "text-align: center;">2015</th>
+                                <th class = "active" style = "text-align: center;">2016</th>
+                                <th class = "active" style = "text-align: center;">2017</th>
+                                <th class = "active" style = "text-align: center;">2018</th>
+                            </tr>
+                            <tr>
+                                <td class = "info">GDP预测误差(%)</td>
+                                <td class = "info">{{errorvalue[7]}}</td>
+                                <td class = "info">{{errorvalue[8]}}</td>
+                                <td class = "info">--</td>
+                                <td class = "info">--</td>
+                                <td class = "info">--</td>
+                            </tr>
+            </table>
+        </div>
+</section>
+
+
+
