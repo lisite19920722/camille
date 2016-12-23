@@ -1,1 +1,113 @@
-water 第三个界面
+<!-- 盒子3 -->
+<!-- 水质监测站及其附近污水处理厂查看 -->
+<div class="panel panel-primary" style="margin-top: 30px;margin-left:auto;margin-right:auto;">
+    <div class="topbar">
+        <h4 class="cgq_title">水质监测站及其附近污水处理厂查看</h4>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="panel panel-primary" style="height: 680px">
+                    <div class="panel-body">
+                        <!--高德地图容器-->
+                        <div style="height: 650px; border: #ccc solid 1px;" id="map_canvas_BI"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel panel-primary" style="height: 680px">
+                    <div class="panel-body">
+                        <h4>水质监测站</h4>
+                        <div style="margin-top:10px;font-size:16px">
+                            <ul class="list-group" style="overflow: auto;overflow-x:hidden;height:120px">
+                                <li class="list-group-item" style="height:40px;" ng-repeat="waterQualityOne in waterQualityMarkerList2">
+                                    <span class="badge glyphicon glyphicon-exclamation-sign"></span>
+                                    {{waterQualityOne.monitor}}
+                                    <span class="glyphicon glyphicon-hand-right"></span>
+                                    <a style="cursor: pointer" ng-click="btn_waterEnvironmentAnalysisElementsList(waterQualityOne)">查看</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                        <div ng-show="tableStatus.allWaterQualityFailArr">
+                            <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                <tr>
+                                    <th style="width:20%">监测点</th>
+                                    <th style="width:20%">溶解氧</th>
+                                    <th style="width:15%">KMnO4</th>
+                                    <th style="width:15%">氨氮</th>
+                                    <th style="width:15%">总磷</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="overflow: auto;overflow-x:hidden" ng-show="tableStatus.allWaterQualityFailArr">
+                            <table class="table table-hover table-responsive" style="font-size:14px">
+                                <tr ng-repeat="waterQualityOne in waterQualityMarkerList2">
+                                    <td style="width:20%">{{waterQualityOne.monitor}}</td>
+                                    <td style="width:20%"><span>{{waterQualityOne.index_o2.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_kmno4.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_nh4n.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_p.toFixed(2)}}</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-show="tableStatus.allWaterQualityArr">
+                            <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
+                                <tr>
+                                    <th style="width:20%">监测点</th>
+                                    <th style="width:20%">溶解氧</th>
+                                    <th style="width:15%">KMnO4</th>
+                                    <th style="width:15%">氨氮</th>
+                                    <th style="width:15%">总磷</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="overflow: auto;overflow-x:hidden" ng-show="tableStatus.allWaterQualityArr">
+                            <table class="table table-hover table-responsive" style="font-size:14px">
+                                <tr ng-repeat="waterQualityOne in waterQualityMarkerList">
+                                    <td style="width:20%">{{waterQualityOne.monitor}}</td>
+                                    <td style="width:20%"><span>{{waterQualityOne.index_o2.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_kmno4.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_nh4n.toFixed(2)}}</span></td>
+                                    <td style="width:15%"><span>{{waterQualityOne.index_p.toFixed(2)}}</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div ng-show="tableStatus.allWaterQualityElementsArr" style="font-size:16px">
+                            <div class="panel panel-primary">
+                                <div class="panel-body" id="source_analysis">
+                                    <h4>附近排污点</h4>
+                                    <hr>
+                                    <div>
+                                        <table class="table table-hover table-responsive"  style="font-size:14px;margin-bottom:0px">
+                                            <tr>
+                                                <th style="width:30%">企业</th>
+                                                <th style="width:25%">排放量<br/>(吨)</th>
+                                                <th style="width:15%">COD<br/>(mg/L)</th>
+                                                <th style="width:15%">氨氮<br/>(mg/L)</th>
+                                                <th style="width:15%">总磷<br/>(mg/L)</th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="overflow: auto; overflow-x:hidden;height:180px">
+                                        <table class="table table-hover table-responsive"  style="font-size:14px">
+                                            <tr ng-repeat="wasteWaterOne in wasteWaterAnalysisMarker">
+                                                <td style="width:25%">{{wasteWaterOne.monitor}}</td>
+                                                <td style="width:25%"><span>{{wasteWaterOne.index_discharge[1].toFixed(2)}}</span></td>
+                                                <td style="width:17%"><span>{{wasteWaterOne.index_cod.toFixed(2)}}</span></td>
+                                                <td style="width:17%"><span>{{wasteWaterOne.index_nh4n.toFixed(2)}}</span></td>
+                                                <td style="width:16%"><span>{{wasteWaterOne.index_p.toFixed(2)}}</span></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div><button type="button" class="btn btn-block btn-success" ng-click="btn_waterEnvironmentAllList()" ng-show="tableStatus.allWaterQualityFailArrNav" >列出所有监测点</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 盒子3结束 -->
