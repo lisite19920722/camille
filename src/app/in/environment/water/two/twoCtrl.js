@@ -1,8 +1,5 @@
 export default ($scope, $rootScope, qService, environmentRes, $http) => {
     'ngInject';
-    (function() {
-        document.body.scrollIntoView();
-    })();
     //--------------------------waterPollutionGetPromise----------------------------
     var waterPollutionGetParams = {
         // 'id':1,
