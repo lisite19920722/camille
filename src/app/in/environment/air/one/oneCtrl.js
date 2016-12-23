@@ -252,7 +252,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
             position: [121.106157,31.466373],//图标大小
             icon: new AMap.Icon({
                 size: new AMap.Size(40, 50),
-                image: "/images/marker_sprite.png",
+                image: "/assets/images/environment/marker_sprite.png",
             })//太仓市气象局
         });
         //-----------------------盒子3天气模块地图结束-----------------------
@@ -379,7 +379,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                 map:map,
                 icon: new AMap.Icon({
                     size: new AMap.Size(40, 50),
-                    image: "/images/marker_sprite.png",
+                    image: "/assets/images/environment/marker_sprite.png",
                 })
             });
             var marker2 = new AMap.Marker({
@@ -387,7 +387,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                 map:map,
                 icon: new AMap.Icon({
                     size: new AMap.Size(40, 50),
-                    image: "/images/marker_sprite.png",
+                    image: "/assets/images/environment/marker_sprite.png",
                 })
             });
             // 设置marker的label标签(绿色的圆角矩形)
@@ -2145,21 +2145,21 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
             position: [121.180359,31.653057],//图标大小
             icon: new AMap.Icon({
                 size: new AMap.Size(40, 50),
-                image: "/images/marker_sprite.png",
+                image: "/assets/images/environment/marker_sprite.png",
             })//华能国际电力电厂
         });
         var marker5 = new AMap.Marker({
             position: [121.244154,31.592104],//图标大小
             icon: new AMap.Icon({
                 size: new AMap.Size(40, 50),
-                image: "/images/marker_sprite.png",
+                image: "/assets/images/environment/marker_sprite.png",
             })//玖龙纸业
         });
         var marker6 = new AMap.Marker({
             position: [121.252561,31.582579],//图标大小
             icon: new AMap.Icon({
                 size: new AMap.Size(40, 50),
-                image: "/images/marker_sprite.png",
+                image: "/assets/images/environment/marker_sprite.png",
             })//太仓港协鑫发电
         });
         //------------------------盒子3工业废气模块地图结束-------------------------
