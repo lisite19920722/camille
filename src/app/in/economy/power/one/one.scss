@@ -1,0 +1,72 @@
+.power-one-module {
+	background-color: rgb(248, 248, 248);
+	@mixin box-padding() {
+		
+	}
+	@mixin title() {
+		display: block;
+		padding: 3px 15px;
+		font-size: 13px;
+		color: rgb(153, 153, 153);
+	}
+	@mixin content() {
+		background-color: #fff;
+		box-shadow: 0 5px 5px -5px rgb(153, 153, 153) inset,
+					0 -5px 5px -5px rgb(153, 153, 153) inset;
+		display: block;
+	}
+	.current-position {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 5px 15px 15px;
+			@include content();		
+		}
+	}
+	.chart-area {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 5px 0 15px;
+			@include content();
+		}
+	}
+	.one-word {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 5px 15px 15px;
+			@include content();
+		}
+	}
+	.calculate-model {
+		@include box-padding();
+		.title {
+			@include title();
+		}	
+		.content {
+			padding: 5px 15px 15px;
+			@include content();
+		}
+	}
+	.detail-data {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			td {
+				text-align: center;
+			}
+			background-color: #fff;
+			box-shadow: 0 5px 5px -5px rgb(153, 153, 153) inset,
+						0 -5px 5px -5px rgb(153, 153, 153) inset;
+		}	
+	}
+}
