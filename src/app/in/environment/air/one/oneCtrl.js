@@ -30,7 +30,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     var airConditionGetHeaders = {
         'apikey':'8a2ea9c51525a5332967ae13c1454deb',
     };
-    var airConditionGetPromise = ResTool.httpGet(EnvironmentRes.getAirCondition, airConditionGetParams, airConditionGetHeaders);
+    var airConditionGetPromise = qService.httpGetWithToken(environmentRes.getAirCondition, airConditionGetParams, airConditionGetHeaders);
     airConditionGetPromise.then(function(data){
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
@@ -267,7 +267,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     var airQualityGetHeaders = {
 
     };
-    var airQualityGetPromise = ResTool.httpGetWithWorkspace(EnvironmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
+    var airQualityGetPromise = qService.httpGetWithToken(environmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
     airQualityGetPromise.then(function(data){
         // console.log(data.data);
         //盒子2的Highcharts的日期,若今日是6月8日,box2Date就是6月1日~6月7日
@@ -2034,7 +2034,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     var airPollutionGetHeaders = {
 
     };
-    var airPollutionGetPromise = ResTool.httpGetWithWorkspace(EnvironmentRes.getAirPollution, airPollutionGetParams, airPollutionGetHeaders);
+    var airPollutionGetPromise = qService.httpGetWithToken(environmentRes.getAirPollution, airPollutionGetParams, airPollutionGetHeaders);
     airPollutionGetPromise.then(function(data){
         // console.log(data.data);
         $scope.pollutionDischarge=data.data[0];
