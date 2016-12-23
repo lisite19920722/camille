@@ -53,7 +53,7 @@ import airfourCtrl from './in/environment/air/four/fourCtrl';
 import waterCtrl from './in/environment/water/waterCtrl';
 import wateroneCtrl from './in/environment/water/one/oneCtrl';
 import watertwoCtrl from './in/environment/water/two/twoCtrl';
-import waterthreeCtrl from './in/environment/water/three/threelCtrl';
+import waterthreeCtrl from './in/environment/water/three/threeCtrl';
 
 // 人口模块Controller
 import structureCtrl from './in/population/structure/structureCtrl';
