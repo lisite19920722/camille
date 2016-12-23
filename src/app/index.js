@@ -60,6 +60,8 @@ import structureCtrl from './in/population/structure/structureCtrl';
 import structureoneCtrl from './in/population/structure/one/oneCtrl';
 import laborCtrl from './in/population/labor/laborCtrl';
 import laboroneCtrl from './in/population/labor/one/oneCtrl';
+import labortwoCtrl from './in/population/labor/two/twoCtrl';
+import laborthreeCtrl from './in/population/labor/three/threeCtrl';
 import popothersCtrl from './in/population/popothers/popothersCtrl';
 import popothersoneCtrl from './in/population/popothers/one/oneCtrl';
 import popotherseducationCtrl from './in/population/popothers/one/educationCtrl';
@@ -132,6 +134,8 @@ angular.module('camille',
   .controller('structureoneCtrl', structureoneCtrl)
   .controller('laborCtrl', laborCtrl)
   .controller('laboroneCtrl', laboroneCtrl)
+  .controller('labortwoCtrl', labortwoCtrl)
+  .controller('laborthreeCtrl', laborthreeCtrl)
   .controller('popothersCtrl', popothersCtrl)
   .controller('popothersoneCtrl', popothersoneCtrl)
   .controller('popotherseducationCtrl',popotherseducationCtrl);
