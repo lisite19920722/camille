@@ -8,6 +8,11 @@ export default ($q, $state, $sessionStorage) => {
 	let TOKEN_KEY = 'x-auth-token';
 	let tempToken = '08b5d1545eae48f783e5a9683b3073fd';
 	let workspaceId = 1;
+	const successHandler = (value) => {
+		if (value.code == "502") {
+			$state.go("portal");
+		}
+	}
 	return {
 		httpGetWithToken: (resource, parameters, headers) => {
 			return $q((resolve, reject) => {
@@ -17,6 +22,7 @@ export default ($q, $state, $sessionStorage) => {
 				headers['X-Workspace-Id'] = workspaceId;
 				resource(headers).get(parameters,
 				(value, responseHeaders) => {
+					successHandler(value);
 					value.headers = responseHeaders ? responseHeaders() : "";
 					resolve(value);
 				}, 
@@ -33,6 +39,7 @@ export default ($q, $state, $sessionStorage) => {
 				headers['X-Workspace-Id'] = workspaceId;
 				resource(headers).post(parameters,body,
 				(value, responseHeaders) => {
+					successHandler(value);
 					value.headers = responseHeaders ? responseHeaders() : "";
 					resolve(value);
 				}, 

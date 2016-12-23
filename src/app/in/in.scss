@@ -1,47 +1,8 @@
-@mixin font() {
-	font-size: 10px;
-	span {
-		font-size: 15px;	
-	}
-	color: $fontBlack;
+.camille-app {
+	background-color: #fff;	
 }
-@mixin bgc() {
-	background-color: #fff;
-}
-@mixin menurow() {
-	padding: 1em 2em;
-	height: 50px;
-	background: radial-gradient(#eee, #eee, #fff);
-	span {
-		display: inline-block;
-		margin-left: 1em;
-		position: relative;
-		top: -0.5em;
-	}
-}
-.soraka-menu-module {
-	background-color: #fff;
-	.soraka-home-body {
-		padding-bottom: 0;
-	}
-	.soraka-navbar-top {
-		background-color: rgb(28, 43, 54);
-		span {
-			font-size: 0.9em;
-		}
-		.soraka-menu-navbar-topright {
-			margin-top: 13px;
-			font-size: 17px;
-			margin-right: 0.5em;
-			color: #fff;
-		}
-	}
-	.soraka-navbar-bottom {
-		min-height: 0;
-	}
-}
-.soraka-sidebar-left {
-	.scrollable-content {
+.camille-sidebar-left {
+	.camille-siderbar-content {
 		background-color: rgb(28, 43, 54);
 		color: rgb(134, 159, 177);
 		img {
