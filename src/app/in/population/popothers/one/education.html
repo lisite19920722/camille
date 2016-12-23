@@ -1,0 +1,98 @@
+
+    <!--第三个大的莫块开始-->
+    
+
+      <div class="panel panel-primary">
+        <div class="topbar">
+          <h4 class="cgq_title">人口与教育</h4>
+        </div>
+
+        <!-- 添加空的div，填充竖线 -->
+        <div class="row">
+          <div class="col-md-8 chart-panel"></div>
+        </div>
+        <div class="row" >
+          <div class="col-md-8 chart-panel">
+            <highchart id="school" config="school"></highchart>
+          </div>
+          <div class="col-md-4">
+
+
+            <div class="pull-left">
+              <div style="height:15px"></div>
+              <span class="fa-stack fa-lg" style="margin-left:5px">
+                <i class="fa fa-circle fa-stack-2x text-info"></i>
+                <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
+              </span>
+              <span class="h4">一句话解读</span>
+              
+           <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="float:left;margin-bottom:0.4em;">数据分析：<span id="school1">{{school1}}</span></div>
+                </small>
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">结论：<span id="school2">{{school2}}</span></div>
+                </small>
+                <small class="block m-t-xs">
+                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>人口与教育分析预测采用的是灰色预测模型。</span></div>
+                </small>
+              </div>
+
+            </div>
+            <div style="height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+
+            <div class="btn-group dropdown" style="margin-left:7px;" >
+              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">年份选择<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a ng-repeat="bttn in buttonMap8" ng-model="predictionModal" style="margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click8(bttn)">{{bttn.label}}</a></li>
+              </ul>
+            </div>
+            <!--详细数据按钮开始-->
+
+            <div class="col-md-12 cgq_marginaround1em" style="margin-left:-8px;">
+              <div style="height:15px"></div>
+              <button ng-click="showPopulationDetail3()" style="width:90px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
+            </div>
+            <!--详细数据按钮结束-->
+          </div>
+        </div>
+        <!--学校数量表格开始-->
+
+
+        <!--表格前的横线 开始-->
+        <div style="height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+        <!--表格前的横线 结束-->
+
+        <div class="bg-white fc-datatable"  ng-if="totalshow3" style="border:0px">
+          <div class="panel-heading"><center><strong>{{employyear3}}年年度各城镇中小学数量分析预测表</strong></center></div>
+          <div class="panel panel-default paddingmargin0em" >
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+              <tr class="ng-scope ng-isolate-scope">
+                <td>地区</td>
+                <td ng-repeat="num in townName track by $index"> {{num}}</td>
+              </tr>
+              <tr class="ng-scope ng-isolate-scope">
+                <td >小学数量（所）</td>
+                <td ng-repeat="num in school.series[0].data  track by $index">{{num}}</td>
+              </tr>     
+              <tr class="ng-scope ng-isolate-scope">
+                <td >初中数量（所）</td>
+                <td ng-repeat="num in school.series[1].data  track by $index">{{num}}</td>
+              </tr>
+              <tr class="ng-scope ng-isolate-scope">
+                <td >高中数量（所）</td>
+                <td ng-repeat="num in school.series[2].data  track by $index">{{num}}</td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+        <!--表格结束-->
+
+      </div>
+    
+    <div style="border:1px solid green;height:200px">
+       <div style="border:1px solid green;height:40px">
+       <center style="font-size:20px;font-color:pink">人口与教育模块</center>
+       </div>
+    </div>
