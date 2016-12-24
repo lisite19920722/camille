@@ -1,133 +1,126 @@
 <!--盒子2-->
-<div class="col-md-12">
-    <div class="panel panel-primary" style="margin-top: 2em;margin-bottom:2em;">
-        <!--标题栏-->
-        <div class="panel-heading">
-            <h4>按天空气质量分析预测</h4>
-        </div>
-        <!--图表正文-->
-        <div class="panel-body" style="padding:0">
-            <div class="row">
-                <!--echart-->
-                <div class="col-md-8 chart-panel" style="padding:1em 1em 1em 4em;border-right:0">
-                    <highchart  id="aqilinechart"  config="aqilinechart"  style="width:95%;height:660px"></highchart>
+<div class="panel panel-primary" style="margin-bottom:0;border-bottom: 0;border-left:0; border-right: 0;
+    height:{{windowHeight-50}}px;overflow: scroll">
+    <!--标题栏-->
+    <div class="panel-heading">
+        <h4>按天空气质量分析预测</h4>
+    </div>
+    <!--图表正文-->
+    <div class="panel-body" style="padding:0">
+        <!--右侧栏-->
+        <div style="padding:0;border-left:1px solid lightgrey;">
+            <div>
+                <div style="background: #00B7E2;text-align: center">
+                    <br>
+                    <h1 style="font-size:25px;color: white">实时空气质量状况</h1>
+                    <span style="font-size:14px;color: white">采样时间:{{box2Today}}8时</span>
+                    <!-- <span style="font-size:65%">采样时间:5月31日8时</span> -->
+                    <h2>
+                        <span style="font-size:60px;color: white">{{box24Index.aqi}}</span>
+                        <!-- <span class="text-2x text-lt">65</span> -->
+                        <span style="font-size:14px;color: white" >{{airQualityLevel}}</span>
+                        <!-- <span class="text-xs>优</span> -->
+                    </h2>
+                    <br>
                 </div>
-                <!--右侧栏-->
-                <div class="col-md-4" style="padding:0.3em 1.8em 1em 1em;border-left:1px solid lightgrey;">
-                    <div>
-                        <div style="background: #00B7E2;text-align: center">
-                            <br>
-                            <h1 style="font-size:25px;color: white">实时空气质量状况</h1>
-                            <span style="font-size:14px;color: white">采样时间:{{box2Today}}8时</span>
-                            <!-- <span style="font-size:65%">采样时间:5月31日8时</span> -->
-                            <h2>
-                                <span style="font-size:60px;color: white">{{box24Index.aqi}}</span>
-                                <!-- <span class="text-2x text-lt">65</span> -->
-                                <span style="font-size:14px;color: white" >{{airQualityLevel}}</span>
-                                <!-- <span class="text-xs>优</span> -->
-                            </h2>
-                            <br>
-                        </div>
-                        <ul class="list-group">
-                            <li class="list-group-item">
-                                <span class="badge bg-danger">{{box24Index.firstElement}}</span>
-                                <!-- <span class="badge bg-danger">PM2.5</span> -->
-                                <span class="badge bg-danger"></span>
-                                <i class="glyphicon glyphicon-certificate" style="color:#88cb26"></i> 首要污染物
-                            </li>
-                            <li class="list-group-item" ng-click = "openHealthList()">
-                                <span class="badge bg-fail" style="cursor:pointer">{{openorclose}}</span>
-                                <i class="glyphicon glyphicon-user" style="color:#88cb26"></i> 对健康的影响
-                            </li>
-                            <li class="list-group-item" ng-if="ishealthopen">
-                                <i class="text-success"></i>
-                                <span class="fc-list-content">&nbsp;&nbsp;{{healthEffect}}</span>
-                                <!-- <span style="margin-left: 1em">空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响</span> -->
-                            </li>
-                            <li class="list-group-item" ng-click = "openSuggestionList()">
-                                <span class="badge bg-fail" style="cursor:pointer">{{openorclose1}}</span>
-                                <i class="glyphicon glyphicon-edit" style="color:#88cb26"></i> 建议措施
-                            </li>
-                            <li class="list-group-item" ng-if="issuggestionopen">
-                                <i class="text-success"></i>
-                                <span class="fc-list-content">{{proposedMeasure}}</span>
-                                <!-- <span style="margin-left: 1em">极少数异常敏感人群应减少户外运动</span> -->
-                            </li>
-                        </ul>
-                    </div>
-                    <!--空气质量预测-->
-                    <div class="pull-left" class="col-md-2">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                            <i class="fa fa-bullhorn fa-stack-1x text-white"></i>
-                        </span>
-                    </div>
-                    <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0;margin-bottom:1em">&nbsp;未来空气质量预报</h3>
-                    <div class="col-md-12" style="font-size:80%;padding:0">
-                        <div class="panel panel-default">
-                            <table class="table table-striped m-b-none">
-                                <thead>
-                                <tr>
-                                    <th style="width:30%;">时段</th>
-                                    <th style="width:35%;">空气质量</th>
-                                    <th style="width:35%;">首要污染物</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="sparkline inline">今日夜间</div>
-                                    </td>
-                                    <td>&nbsp;&nbsp;&nbsp;{{box2AQI[0].aqi}}</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;{{box2AQI[0].firstElement}}
-                                    </td>
-                                    <!-- <td>&nbsp;&nbsp;&nbsp;45</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;SO2
-                                    </td> -->
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="sparkline inline">明日上午</div>
-                                    </td>
-                                    <td>&nbsp;&nbsp;&nbsp;{{box2AQI[1].aqi}}</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;{{box2AQI[1].firstElement}}
-                                    </td>
-                                    <!-- <td>&nbsp;&nbsp;&nbsp;49</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;O3
-                                    </td> -->
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="sparkline inline">明日下午</div>
-                                    </td>
-                                    <td>&nbsp;&nbsp;&nbsp;{{box2AQI[2].aqi}}</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;{{box2AQI[2].firstElement}}
-                                    </td>
-                                    <!-- <td>&nbsp;&nbsp;&nbsp;60</td>
-                                    <td style="color:#f05050">
-                                        <i></i>&nbsp;CO
-                                    </td> -->
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="pull-left" class="col-md-2">
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                             <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
-                    <div class="col-md-12" style="margin-bottom:1em">
-                        <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2em;">空气质量预测采用混沌遗传神经网络模型。</span>
-                    </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge" style="background: red">{{box24Index.firstElement}}</span>
+                        <i></i> 首要污染物
+                    </li>
+                    <li class="list-group-item" ng-click = "openHealthList()">
+                        <span class="badge bg-fail" style="cursor:pointer">{{openorclose}}</span>
+                        <i class="glyphicon glyphicon-user" style="color:#88cb26"></i> 对健康的影响
+                    </li>
+                    <li class="list-group-item" ng-if="ishealthopen">
+                        <i class="text-success"></i>
+                        <span class="fc-list-content">&nbsp;&nbsp;{{healthEffect}}</span>
+                        <!-- <span style="margin-left: 1em">空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响</span> -->
+                    </li>
+                    <li class="list-group-item" ng-click = "openSuggestionList()">
+                        <span class="badge bg-fail" style="cursor:pointer">{{openorclose1}}</span>
+                        <i class="glyphicon glyphicon-edit" style="color:#88cb26"></i> 建议措施
+                    </li>
+                    <li class="list-group-item" ng-if="issuggestionopen">
+                        <i class="text-success"></i>
+                        <span class="fc-list-content">{{proposedMeasure}}</span>
+                        <!-- <span style="margin-left: 1em">极少数异常敏感人群应减少户外运动</span> -->
+                    </li>
+                </ul>
+            </div>
+            <!--highchart-->
+            <highchart  id="aqilinechart"  config="aqilinechart"  style="height:400px"></highchart>
+            <!--空气质量预测-->
+            <div class="pull-left" class="col-md-2">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
+                    <i class="fa fa-bullhorn fa-stack-1x text-white"></i>
+                </span>
+            </div>
+            <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0;margin-bottom:1em">&nbsp;未来空气质量预报</h3>
+            <div class="col-md-12" style="font-size:80%;padding:0">
+                <div class="panel panel-default">
+                    <table class="table table-striped m-b-none">
+                        <thead>
+                        <tr>
+                            <th style="width:30%;">时段</th>
+                            <th style="width:35%;">空气质量</th>
+                            <th style="width:35%;">首要污染物</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="sparkline inline">今日夜间</div>
+                            </td>
+                            <td>&nbsp;&nbsp;&nbsp;{{box2AQI[0].aqi}}</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;{{box2AQI[0].firstElement}}
+                            </td>
+                            <!-- <td>&nbsp;&nbsp;&nbsp;45</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;SO2
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="sparkline inline">明日上午</div>
+                            </td>
+                            <td>&nbsp;&nbsp;&nbsp;{{box2AQI[1].aqi}}</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;{{box2AQI[1].firstElement}}
+                            </td>
+                            <!-- <td>&nbsp;&nbsp;&nbsp;49</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;O3
+                            </td> -->
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="sparkline inline">明日下午</div>
+                            </td>
+                            <td>&nbsp;&nbsp;&nbsp;{{box2AQI[2].aqi}}</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;{{box2AQI[2].firstElement}}
+                            </td>
+                            <!-- <td>&nbsp;&nbsp;&nbsp;60</td>
+                            <td style="color:#f05050">
+                                <i></i>&nbsp;CO
+                            </td> -->
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+            <div class="pull-left" class="col-md-2">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
+                     <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
+                </span>
+            </div>
+            <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
+            <div class="col-md-12" style="margin-bottom:1em">
+                <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2em;">空气质量预测采用混沌遗传神经网络模型。</span>
             </div>
         </div>
     </div>

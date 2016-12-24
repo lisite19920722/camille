@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     'ngInject';
+    $scope.windowHeight=$(window).height();
     //---------------------------airQualityGetPromise-----------------------------
     var airQualityGetParams = {
         // 'id':1,
