@@ -26,24 +26,22 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="badge" style="background: red">{{box24Index.firstElement}}</span>
-                        <i></i> 首要污染物
+                        <i class="fa fa-certificate" style="color:#88cb26"></i> 首要污染物
                     </li>
                     <li class="list-group-item" ng-click = "openHealthList()">
-                        <span class="badge bg-fail" style="cursor:pointer">{{openorclose}}</span>
-                        <i class="glyphicon glyphicon-user" style="color:#88cb26"></i> 对健康的影响
+                        <span class="badge" style="cursor:pointer">{{openorclose}}</span>
+                        <i class="fa fa-user" style="color:#88cb26"></i> 对健康的影响
                     </li>
                     <li class="list-group-item" ng-if="ishealthopen">
-                        <i class="text-success"></i>
-                        <span class="fc-list-content">&nbsp;&nbsp;{{healthEffect}}</span>
+                        <span>&nbsp;&nbsp;{{healthEffect}}</span>
                         <!-- <span style="margin-left: 1em">空气质量可接受，但某些污染物可能对极少数异常敏感人群健康有较弱影响</span> -->
                     </li>
                     <li class="list-group-item" ng-click = "openSuggestionList()">
-                        <span class="badge bg-fail" style="cursor:pointer">{{openorclose1}}</span>
-                        <i class="glyphicon glyphicon-edit" style="color:#88cb26"></i> 建议措施
+                        <span class="badge" style="cursor:pointer">{{openorclose1}}</span>
+                        <i class="fa fa-pencil" style="color:#88cb26"></i> 建议措施
                     </li>
                     <li class="list-group-item" ng-if="issuggestionopen">
-                        <i class="text-success"></i>
-                        <span class="fc-list-content">{{proposedMeasure}}</span>
+                        <span>&nbsp;&nbsp;{{proposedMeasure}}</span>
                         <!-- <span style="margin-left: 1em">极少数异常敏感人群应减少户外运动</span> -->
                     </li>
                 </ul>
@@ -112,15 +110,16 @@
                     </table>
                 </div>
             </div>
-            <div class="pull-left" class="col-md-2">
+            <!--一句话解读-->
+            <div class="pull-left">
                 <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                     <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
+                    <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
                 </span>
             </div>
-            <h3 class="col-md-10" style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
-            <div class="col-md-12" style="margin-bottom:1em">
-                <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2em;">空气质量预测采用混沌遗传神经网络模型。</span>
+            <h3 style="margin-top:0.5em;padding-left:0">&nbsp;一句话解读</h3>
+            <div style="margin-bottom:1em">
+                <span class="fc-font-content" style="font-size:105%;font-weight:500;margin-left:2px;">空气质量预测采用混沌遗传神经网络模型。</span>
             </div>
         </div>
     </div>
