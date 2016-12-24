@@ -30,6 +30,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                 chart: {
                     type: 'column'
                 },
+                exporting:{
+                    enabled: false
+                },
                 title: {
                     text: '太仓市主要污水处理厂废水排放分析'
                 },
@@ -118,6 +121,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                 options:{
                     chart: {
                         type: 'column'
+                    },
+                    exporting:{
+                        enabled: false
                     },
                     title: {
                         text: '太仓市主要污水处理厂废水排放分析'
@@ -209,6 +215,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                     chart: {
                         type: 'column'
                     },
+                    exporting:{
+                        enabled: false
+                    },
                     legend: {
                         itemStyle:{
                             fontWeight:'normal'
@@ -278,6 +287,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                     chart: {
                         type: 'column'
                     },
+                    exporting:{
+                        enabled: false
+                    },
                     legend: {
                         itemStyle:{
                             fontWeight:'normal'
@@ -345,6 +357,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                 options:{
                     chart: {
                         type: 'column'
+                    },
+                    exporting:{
+                        enabled: false
                     },
                     legend: {
                         itemStyle:{
@@ -414,6 +429,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                 options:{
                     chart: {
                         type: 'column'
+                    },
+                    exporting:{
+                        enabled: false
                     },
                     credits: {
                         enabled:false

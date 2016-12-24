@@ -110,6 +110,9 @@ export default ($scope, $rootScope, qService, environmentRes) => {
                     type: 'spline',
 
                 },
+                exporting:{
+                    enabled: false
+                },
                 legend: {
                     itemStyle:{
                         fontWeight:'normal'
@@ -117,7 +120,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
                 }
             },
             title: {
-                text: '过去三天与未来四天最高最低气温',
+                text: '最近一周气温走势',
                 style: {
                     fontWeight:'bold',
                 },
