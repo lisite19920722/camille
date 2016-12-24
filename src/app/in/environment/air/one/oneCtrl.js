@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService, environmentRes) => {
 	'ngInject';
+    // history.go(0);
     //--------------------------airConditionGetPromise---------------------------
     //这只是后台的一个参数，并不是IP地址的参数，IP地址的参数在地址的问号之后
     var airConditionGetParams = {
