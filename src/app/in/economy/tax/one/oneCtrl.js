@@ -3,6 +3,7 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
     var TaxPromise = qService.httpGetWithToken(economyTaxRes.getYearTax,{},{});
   var now = new Date();
   var year = now.getFullYear();
+  $scope.forecastYear = true;
   $scope.colorpicker = {
         options: {
             orientation: 'horizontal',
@@ -11,15 +12,27 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
             range: 'min'
         }
     };
+    $scope.slider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        noSwitching: true
+    }
+};
   TaxPromise.then(function(rc){
     for(var i = 0;i<rc.data.realYearTax.length;i++){
       if (rc.data.realYearTax[i] == 0) {
         rc.data.realYearTax[i] = null;
       }
     }
+    console.log(rc.data);
     $scope.taxrealvalue = rc.data.realYearTax;
-
+    $scope.yearErrorRate = rc.data.yearErrorRate;
     $scope.taxForecastdate = rc.data.forecastYearTax;
+    console.log($scope.taxForecastdate);
     console.log(rc.data.forecastYearTax);
     $scope.ratedate = rc.data.yearGrowUp;
     $scope.yearArray = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'];
@@ -135,6 +148,9 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
             }]   
       };
   $scope.checkdeviationYear = function(){
+    $("#eerror").addClass("navactive");
+        $("#history").removeClass("navactive");
+    $scope.forecastYear = false;
     $scope.deviationYear = !$scope.deviationYear;
     for(i=0;i<rc.data.yearErrorRate.length;i++){
       if (rc.data.yearErrorRate[i]==0) {
@@ -145,6 +161,9 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
   }
 
   $scope.checkforecastYear = function(){
+    $scope.deviationYear = false;
+     $("#eerror").removeClass("navactive");
+        $("#history").addClass("navactive");
     $scope.forecastYear = !$scope.forecastYear;
     for(i=0;i<rc.data.realYearTax.length;i++){
       if (rc.data.realYearTax[i] == 0) {
@@ -275,11 +294,17 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
 
   $scope.changeViewsYear = function(){
     if( $scope.yearTaxChart.options.chart.type == 'column')
-    {
-        $scope.yearTaxChart.options.chart.type = 'spline'
+    { 
+      $("#line").addClass("ebuttonActive");
+      $("#column").removeClass("ebuttonActive");
+        $scope.yearTaxChart.options.chart.type = 'spline';
     }
-    else
-        $scope.yearTaxChart.options.chart.type = 'column'
+    else{
+       $("#column").addClass("ebuttonActive");
+         $("#line").removeClass("ebuttonActive");
+      $scope.yearTaxChart.options.chart.type = 'column';
+    }
+        
   };
     
 };
