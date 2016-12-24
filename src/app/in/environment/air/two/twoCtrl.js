@@ -39,6 +39,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     },
                     x:20
                 },
+                exporting:{
+                    enabled: false
+                },
                 credits: {
                     enabled:false
                 },

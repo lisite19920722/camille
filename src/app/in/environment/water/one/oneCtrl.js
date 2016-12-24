@@ -28,6 +28,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                 chart: {
                     type: 'column'
                 },
+                exporting:{
+                    enabled: false
+                },
                 title: {
                     text: '工厂废水排放'
                 },
