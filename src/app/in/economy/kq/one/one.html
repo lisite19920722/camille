@@ -1,1 +1,42 @@
-kq 第一个界面
+<header>
+  <hgroup>
+    <h4>当前位置:</h4>
+  </hgroup>
+  <nav>
+    <span>经济</span>>>
+    <span>克强指数</span>>>
+    <span>各年度克强指数</span>
+  </nav>
+</header>
+<section>
+  <div id="topheader">
+    克强指数数据可视化
+  </div>
+  <div id="contain">
+    <highchart   id ="chart1" config ="keqiangindex"></highchart>
+  </div>
+  <div id="controlcontain">
+    <div class="showstyle"><span>数据展示年份</span></div>
+    <div class="ebutton ebuttonActive" ng-click="keqiangchangeyear('2016')" id="2016">2016</div>
+    <div class="ebutton" ng-click="keqiangchangeyear('2015')" id="2015">2015</div>
+    <div class="ebutton" ng-click="keqiangchangeyear('2014')" id="2014">2014</div>
+  </div>
+  <details open>
+    <summary>一句话解读</summary>
+    <div id="sentence">
+      <i class="fa fa-circle" style="margin-top: 1%"></i>
+        <div>
+            <span>年度GDP预测模型为:基于时间序列的自回归积分滑动平均模型</span>
+        </div>
+    </div>
+  </details>
+  <details open>
+    <summary>数据模型</summary>
+    <div id="sentence">
+         <i class="fa fa-circle"></i>
+             <div>
+                <span>"克强指数"的由来，源于李克强总理2007年任职辽宁省省委书记时，使用耗电量,铁路货运量和贷款发放量三个指标分析当时辽宁省经济状况,英国《经济学人》自2010年底正式推出这一指数后,受到花旗银行在内的众多国际机构认可。</span>
+             </div>
+    </div>
+  </details>
+</section>

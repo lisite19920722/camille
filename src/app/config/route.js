@@ -83,6 +83,11 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/economy/tax/one/one.html',
       controller: 'taxoneCtrl'
     })
+    .state('app.in.tax.two', {
+      url: '/one',
+      templateUrl: 'app/in/economy/tax/two/two.html',
+      controller: 'taxtwoCtrl'
+    })
     // 环境
     .state('app.in.air', {
       abstract: true,

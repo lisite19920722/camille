@@ -22,6 +22,10 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
         noSwitching: true
     }
 };
+$scope.selectedRange = 0;
+$scope.selectedRange2 = 0;
+$scope.selectedRange3 = 0;
+$scope.selectedRange4 = 0;
   TaxPromise.then(function(rc){
     for(var i = 0;i<rc.data.realYearTax.length;i++){
       if (rc.data.realYearTax[i] == 0) {

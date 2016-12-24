@@ -6,7 +6,7 @@ export default ($q, $state, $sessionStorage) => {
 	'ngInject';
 
 	let TOKEN_KEY = 'x-auth-token';
-	let tempToken = '22ca04ee34df49d6aace8a627a2c30cb';
+	let tempToken = 'cead17690c044c55a9e2e16c2619cad8';
 	return {
 		httpGetWithToken: (resource, parameters, headers) => {
 			return $q((resolve, reject) => {

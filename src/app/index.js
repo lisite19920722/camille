@@ -45,6 +45,8 @@ import powerCtrl from './in/economy/power/powerCtrl';
 import poweroneCtrl from './in/economy/power/one/oneCtrl';
 import taxCtrl from './in/economy/tax/taxCtrl';
 import taxoneCtrl from './in/economy/tax/one/oneCtrl';
+import taxtwoCtrl from './in/economy/tax/two/twoCtrl';
+
 
 //环境模块Controller
 import airCtrl from './in/environment/air/airCtrl';
@@ -113,7 +115,7 @@ angular.module('camille',
   .controller('poweroneCtrl', poweroneCtrl)
   .controller('taxCtrl', taxCtrl)  
   .controller('taxoneCtrl', taxoneCtrl)
-  
+  .controller('taxtwoCtrl', taxtwoCtrl)
   // 环境controllers
   .controller('airCtrl', airCtrl)
   .controller('aironeCtrl', aironeCtrl)
