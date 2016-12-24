@@ -1,21 +1,12 @@
-<div class="container" style="overflow:scroll;height:5000px;">
-     <div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div><div style="height: 300px;">
-     	2016年太仓就业率
-     </div>
+<div class="container" style="overflow:scroll;">
+     
+	 <highchart style="width:400px; " config="firstChart" ></highchart>
 
-	 <div class="chart-panel" style="height:200px;" >
-          <highchart style="width:100%;height:500px;" config="jobf"></highchart>
-     </div>
+     <div class="btn-group dropdown">
+            <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" aria-expanded="false" style="width:112px">年份选择<span class="caret"></span></button>
+            <ul ng-show="isMenu1" class="dropdown-menu">
+                <li ng-repeat="year in yearSelect1"><a ng-model="predictionModal" style="margin-left: 0px;margin-bottom:1px" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
+            </ul>
+      </div>
+
 </div>
