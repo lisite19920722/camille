@@ -41,6 +41,10 @@ import kqCtrl from './in/economy/kq/kqCtrl';
 import kqoneCtrl from './in/economy/kq/one/oneCtrl';
 import powerCtrl from './in/economy/power/powerCtrl';
 import poweroneCtrl from './in/economy/power/one/oneCtrl';
+import powertwoCtrl from './in/economy/power/two/twoCtrl';
+import powerthreeCtrl from './in/economy/power/three/threeCtrl';
+import powerfourCtrl from './in/economy/power/four/fourCtrl';
+import powerfiveCtrl from './in/economy/power/five/fiveCtrl';
 import taxCtrl from './in/economy/tax/taxCtrl';
 import taxoneCtrl from './in/economy/tax/one/oneCtrl';
 
@@ -115,6 +119,10 @@ angular.module('camille',
   .controller('kqoneCtrl', kqoneCtrl)
   .controller('powerCtrl', powerCtrl)
   .controller('poweroneCtrl', poweroneCtrl)
+  .controller('powertwoCtrl', powertwoCtrl)
+  .controller('powerthreeCtrl', powerthreeCtrl)
+  .controller('powerfourCtrl', powerfourCtrl)
+  .controller('powerfiveCtrl', powerfiveCtrl)
   .controller('taxCtrl', taxCtrl)  
   .controller('taxoneCtrl', taxoneCtrl)
   
