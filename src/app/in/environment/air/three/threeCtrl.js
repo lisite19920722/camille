@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     'ngInject';
+    $scope.windowHeight=$(window).height();
     //盒子3中高德地图的初始化
     var map = new AMap.Map('map_canvas',{
         zoom: 12,

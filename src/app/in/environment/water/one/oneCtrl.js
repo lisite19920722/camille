@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService, environmentRes, $http) => {
 	'ngInject';
+    $scope.windowHeight=$(window).height();
     //--------------------------waterPollutionGetPromise----------------------------
     var waterPollutionGetParams = {
         // 'id':1,
