@@ -12,7 +12,14 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     airConditionGetPromise.then(function(data){
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
-        var dependedVal=data.retData.forecast[0].date;
+        //依照今天日期计算明天日期
+        var dependedVal=data.retData.today.date;
+        var d = dependedVal;
+        d = new Date(d);
+        d = + d + 1000*60*60*24;
+        d = new Date(d);
+        dependedVal=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
+        //依照今天日期计算明天日期结束
         var regEx = new RegExp("-","");
         dependedVal=dependedVal.replace(regEx,"年");
         dependedVal=dependedVal.replace(regEx,"月");
@@ -20,25 +27,14 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
         $scope.airConditionTomorrow=dependedVal;
         //盒子1中Highcharts中日期$scope.airConditionDate(也是展开表格中的日期)
         var dependedVal1=new Array();
-        for (var i=0;i<3;i++){
-            dependedVal1[i]=data.retData.history[i+4].date;
-            var regEx1 = new RegExp("-","");
-            dependedVal1[i]=dependedVal1[i].replace(regEx1,"年");
-            dependedVal1[i]=dependedVal1[i].replace(regEx1,"月");
-            dependedVal1[i]+="日";
-            var regEx2 = new RegExp(dependedVal1[i].substring(0,5),"");
-            dependedVal1[i]=dependedVal1[i].replace(regEx2,"");
-        }
-        dependedVal1[3]=data.retData.today.date;
         var regEx1 = new RegExp("-","");
-        dependedVal1[3]=dependedVal1[3].replace(regEx1,"年");
-        dependedVal1[3]=dependedVal1[3].replace(regEx1,"月");
-        dependedVal1[3]+="日";
-        var regEx2 = new RegExp(dependedVal1[3].substring(0,5),"");
-        dependedVal1[3]=dependedVal1[3].replace(regEx2,"");
-        for (var i=4;i<7;i++){
-            dependedVal1[i]=data.retData.forecast[i-4].date;
-            var regEx1 = new RegExp("-","");
+        for (var i=0;i<=6;i++){
+            dependedVal1[i]=data.retData.today.date;
+            var d = dependedVal1[i];
+            d = new Date(d);
+            d = + d + (i-3)*1000*60*60*24;
+            d = new Date(d);
+            dependedVal1[i]=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();
             dependedVal1[i]=dependedVal1[i].replace(regEx1,"年");
             dependedVal1[i]=dependedVal1[i].replace(regEx1,"月");
             dependedVal1[i]+="日";
