@@ -62,6 +62,26 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/economy/power/one/one.html',
       controller: 'poweroneCtrl'
     })
+    .state('app.in.power.two', {
+      url: '/two',
+      templateUrl: 'app/in/economy/power/two/two.html',
+      controller: 'powertwoCtrl'
+    })
+    .state('app.in.power.three', {
+      url: '/three',
+      templateUrl: 'app/in/economy/power/three/three.html',
+      controller: 'powerthreeCtrl'
+    })
+    .state('app.in.power.four', {
+      url: '/four',
+      templateUrl: 'app/in/economy/power/four/four.html',
+      controller: 'powerfourCtrl'
+    })
+    .state('app.in.power.five', {
+      url: '/five',
+      templateUrl: 'app/in/economy/power/five/five.html',
+      controller: 'powerfiveCtrl'
+    })
     .state('app.in.tax', {
       abstract: true,
       url: '/tax',
