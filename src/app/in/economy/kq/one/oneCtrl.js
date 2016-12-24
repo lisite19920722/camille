@@ -4,7 +4,35 @@ export default ($scope, $rootScope, qService,economyKeqiangRes) => {
     var nowyear = now.getFullYear();
     $scope.currentyear = nowyear;
   var yearKeQiangHeader = {};
+  $scope.first = true;
+  $scope.selectedRange = 0;
+  $scope.selectedRange2 = 0;
+  $scope.selectedRange3 = 0;
   var yearKeQiangPromise = qService.httpGetWithToken(economyKeqiangRes.getYearDetail,{year:nowyear},yearKeQiangHeader);
+  $scope.checkfirst = function(){
+            $scope.first = true;
+            $scope.second = false;
+            $scope.third = false;
+            $("#first").addClass("navactive");
+            $("#second").removeClass("navactive");
+            $("#third").removeClass("navactive");
+          }
+          $scope.checksecond = function(){
+            $scope.first = false;
+            $scope.second = true;
+            $scope.third = false;
+            $("#first").removeClass("navactive");
+            $("#second").addClass("navactive");
+            $("#third").removeClass("navactive");
+          }
+          $scope.checkthird = function(){
+            $scope.first = false;
+            $scope.second = false;
+            $scope.third = true;
+            $("#first").removeClass("navactive");
+            $("#second").removeClass("navactive");
+            $("#third").addClass("navactive");
+          }
   yearKeQiangPromise.then(function(rc){
     for(var i = 0;i<rc.data.industryPowerGrowRate.length;i++){
       if (rc.data.industryPowerGrowRate[i] == 0) {

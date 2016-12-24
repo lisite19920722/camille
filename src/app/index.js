@@ -41,6 +41,7 @@ import gdptwoCtrl from './in/economy/gdp/two/twoCtrl';
 import gdpthreeCtrl from './in/economy/gdp/three/threeCtrl';
 import kqCtrl from './in/economy/kq/kqCtrl';
 import kqoneCtrl from './in/economy/kq/one/oneCtrl';
+import kqtwoCtrl from './in/economy/kq/two/twoCtrl';
 import powerCtrl from './in/economy/power/powerCtrl';
 import poweroneCtrl from './in/economy/power/one/oneCtrl';
 import taxCtrl from './in/economy/tax/taxCtrl';
@@ -111,6 +112,7 @@ angular.module('camille',
   .controller('gdpthreeCtrl', gdpthreeCtrl)
   .controller('kqCtrl', kqCtrl)
   .controller('kqoneCtrl', kqoneCtrl)
+  .controller('kqtwoCtrl', kqtwoCtrl)
   .controller('powerCtrl', powerCtrl)
   .controller('poweroneCtrl', poweroneCtrl)
   .controller('taxCtrl', taxCtrl)  
