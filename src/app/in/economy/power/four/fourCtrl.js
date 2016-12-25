@@ -68,21 +68,21 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 				borderWidth: 0
 			},
 			series: [{
-				name: '工业用电量同比增长率',
+				name: '企业用电量同比增长率',
 				data: powerArr,
 				color:'#23B7E5',
 				}, {
-				name: 'GDP同比增长率',
+				name: '企业产值同比增长率',
 				data: gdpArr,
 				color:'#DAA520',
 			}]
 		};
 	};
     $rootScope.loading = true;
-    qService.httpGetWithToken(economyPowerRes.getTotal, {}, {}).then((data) => {
+    qService.httpGetWithToken(economyPowerRes.getEnterpriseAverage, {}, {}).then((data) => {
         if (data.code == "200") {
         	$scope.getData = data.data;
-			$scope.oneword = '用电量增减变动趋势与GDP增减变动趋势基本一致，GDP增长时，用电量也增长，增速相似；GDP回落时，用电量增长也回落;预测阶段用电量增速将大于GDP增速。';
+			$scope.oneword = '企业平均用电量变化趋势与企业平均产值变化趋势基本一致，预测阶段企业平均用电量增速将小于企业平均产值增速。';
 			$scope.yearvalue = $scope.getData.years;
 			$scope.gdprate = $scope.getData.gdps;
 			$scope.powerrate = $scope.getData.powers;
