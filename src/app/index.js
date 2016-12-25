@@ -146,5 +146,5 @@ angular.module('camille',
   .controller('laborthreeCtrl', laborthreeCtrl)
   .controller('popothersCtrl', popothersCtrl)
   .controller('popothersoneCtrl', popothersoneCtrl)
-  .controller('popotherseducationCtrl',popotherseducationCtrl);
+  .controller('popotherseducationCtrl',popotherseducationCtrl)
   ;
