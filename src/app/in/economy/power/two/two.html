@@ -3,94 +3,86 @@
 		<div class="power-two-module">
 			<div class="current-position">
 				<span class="title">当前位置</span>
-				<span class="content">经济 -> 工业用电与经济增长关联分析 -> 工业用电量与GDP增长率关联分析</span>
+				<span class="content">经济 -> 工业用电与经济增长关联分析 -> 行业用电量与产值增长率对比分析</span>
+			</div>
+			<div class="control-area">
+				<span class="title">操作图表</span>
+				<div class="content">
+					<a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">切换年份<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+					<div style="position: relative;">
+						<ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+			              <li><a ng-click="changeYear(totalData.years[4])">{{totalData.years[4]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[5])">{{totalData.years[5]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[6])">{{totalData.years[6]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[7])">{{totalData.years[7]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[8])">{{totalData.years[8]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[9])">{{totalData.years[9]}}</a></li>
+			              <li class="divider"></li>
+			              <li><a ng-click="changeYear(totalData.years[10])" class="forcast">{{totalData.years[10]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[11])" class="forcast">{{totalData.years[11]}}</a></li>
+			              <li><a ng-click="changeYear(totalData.years[12])" class="forcast">{{totalData.years[12]}}</a></li>
+			            </ul>
+					</div>
+				</div>
 			</div>
 			<div class="chart-area">
 				<span class="title">图表</span>
 				<div class="content">
-					<highchart  id="charttotal" config="TotalPowerGDPChart"></highchart>
+					<highchart class="inner-line" config="VocationChartPiePower"></highchart>
+					<highchart config="VocationChartPieGdp"></highchart>
 				</div>
-			</div>
-			<div class="one-word">
-				<span class="title">一句话解读</span>
-				<span class="content">{{oneword}}</span>
 			</div>
 			<div class="calculate-model">
 				<span class="title">预测模型</span>
 				<span class="content">格兰杰因果检验模型和误差修正模型的组合模型</span>
 			</div>
 			<div class="detail-data">
-				<span class="title">数据详情</span>
+				<span class="title">{{currentYear}}年数据详情</span>
 				<table class="table table-bordered table-condensed content table-hover">
 					<tr style="background-color: rgba(99,99,99,.1);">
-						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-						<td>GDP同比增长率</td>
-						<td>工业用电量同比增长率</td>
+						<td>行业</td>
+						<td>产值同比增长率</td>
+						<td>用电量同比增长率</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[0]}}</td>
-						<td>{{gdprate[0]}}%</td>
-						<td>{{powerrate[0]}}%</td>
+						<td>农林牧渔</td>
+						<td>{{totalData.gdps[0]}}%</td>
+						<td>{{totalData.powers[0]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[1]}}</td>
-						<td>{{gdprate[1]}}%</td>
-						<td>{{powerrate[1]}}%</td>
+						<td>工业</td>
+						<td>{{totalData.gdps[1]}}%</td>
+						<td>{{totalData.powers[1]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[2]}}</td>
-						<td>{{gdprate[2]}}%</td>
-						<td>{{powerrate[2]}}%</td>
+						<td>建筑</td>
+						<td>{{totalData.gdps[2]}}%</td>
+						<td>{{totalData.powers[2]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[3]}}</td>
-						<td>{{gdprate[3]}}%</td>
-						<td>{{powerrate[3]}}%</td>
+						<td>交通运输仓储邮政</td>
+						<td>{{totalData.gdps[3]}}%</td>
+						<td>{{totalData.powers[3]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[4]}}</td>
-						<td>{{gdprate[4]}}%</td>
-						<td>{{powerrate[4]}}%</td>
+						<td>信息传输计算机服务和软件</td>
+						<td>{{totalData.gdps[4]}}%</td>
+						<td>{{totalData.powers[4]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[5]}}</td>
-						<td>{{gdprate[5]}}%</td>
-						<td>{{powerrate[5]}}%</td>
+						<td>批发零售住宿和餐饮</td>
+						<td>{{totalData.gdps[5]}}%</td>
+						<td>{{totalData.powers[5]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[6]}}</td>
-						<td>{{gdprate[6]}}%</td>
-						<td>{{powerrate[6]}}%</td>
+						<td>金融房地产商务及居民服务</td>
+						<td>{{totalData.gdps[6]}}%</td>
+						<td>{{totalData.powers[6]}}%</td>
 					</tr>
 					<tr>
-						<td>{{yearvalue[7]}}</td>
-						<td>{{gdprate[7]}}%</td>
-						<td>{{powerrate[7]}}%</td>
-					</tr>
-					<tr>
-						<td>{{yearvalue[8]}}</td>
-						<td>{{gdprate[8]}}%</td>
-						<td>{{powerrate[8]}}%</td>
-					</tr>
-					<tr>
-						<td>{{yearvalue[9]}}</td>
-						<td>{{gdprate[9]}}%</td>
-						<td>{{powerrate[9]}}%</td>
-					</tr>
-					<tr style="background-color: rgba(68, 170, 213, .1);">
-						<td>{{yearvalue[10]}}</td>
-						<td>{{gdprate[10]}}%</td>
-						<td>{{powerrate[10]}}%</td>
-					</tr>
-					<tr style="background-color: rgba(68, 170, 213, .1);">
-						<td>{{yearvalue[11]}}</td>
-						<td>{{gdprate[11]}}%</td>
-						<td>{{powerrate[11]}}%</td>
-					</tr>
-					<tr style="background-color: rgba(68, 170, 213, .1);">
-						<td>{{yearvalue[12]}}</td>
-						<td>{{gdprate[12]}}%</td>
-						<td>{{powerrate[12]}}%</td>
+						<td>公共事业及管理组织</td>
+						<td>{{totalData.gdps[7]}}%</td>
+						<td>{{totalData.powers[7]}}%</td>
 					</tr>
 				</table>
 			</div>

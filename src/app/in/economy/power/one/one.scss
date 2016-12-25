@@ -25,6 +25,29 @@
 			@include content();		
 		}
 	}
+	.control-area {
+		@include box-padding();
+		.title {
+			@include title();
+		}	
+		.content {
+			padding: 10px 15px 15px;
+			position: relative;
+			@include content();
+			a {
+				font-size: 13px;
+			}
+			.dropdown-menu {
+				left: 0;
+				top: 0;
+				min-width: 117px;
+				text-align: center;
+				.forcast {
+					color: rgba(68, 170, 213, 1);
+				}
+			}
+		}
+	}
 	.chart-area {
 		@include box-padding();
 		.title {
