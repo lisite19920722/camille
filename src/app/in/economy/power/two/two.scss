@@ -1,5 +1,5 @@
 .power-two-module {
-	background-color: rgb(248, 248, 248);
+	background-color: rgb(238, 238, 238);
 	@mixin box-padding() {
 		
 	}
@@ -11,8 +11,8 @@
 	}
 	@mixin content() {
 		background-color: #fff;
-		box-shadow: 0 5px 5px -5px rgb(153, 153, 153) inset,
-					0 -5px 5px -5px rgb(153, 153, 153) inset;
+		box-shadow: 0 8px 8px -8px rgb(153, 153, 153) inset,
+					0 -8px 8px -8px rgb(153, 153, 153) inset;
 		display: block;
 	}
 	.current-position {
@@ -33,6 +33,9 @@
 		.content {
 			padding: 5px 0 15px;
 			@include content();
+			.inner-line {
+				border-bottom: 1px dashed #999;
+			}
 		}
 	}
 	.one-word {
@@ -43,6 +46,29 @@
 		.content {
 			padding: 5px 15px 15px;
 			@include content();
+		}
+	}
+	.control-area {
+		@include box-padding();
+		.title {
+			@include title();
+		}	
+		.content {
+			padding: 10px 15px 15px;
+			position: relative;
+			@include content();
+			a {
+				font-size: 13px;
+			}
+			.dropdown-menu {
+				left: 0;
+				top: 0;
+				min-width: 91px;
+				text-align: center;
+				.forcast {
+					color: rgba(68, 170, 213, 1);
+				}
+			}
 		}
 	}
 	.calculate-model {
