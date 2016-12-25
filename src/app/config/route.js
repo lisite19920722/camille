@@ -159,7 +159,7 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
     .state('app.in.popothers.education', {
       url: '/one',
       templateUrl: 'app/in/population/popothers/one/education.html',
-      controller:'popotherseducationCtrl'
+      controller: 'popotherseducationCtrl'
     })
     .state('app.in.popothers.insurance', {
       url: '/one',
