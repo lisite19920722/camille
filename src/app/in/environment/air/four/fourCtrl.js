@@ -72,6 +72,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotShadow: false,
                         width:200
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     title: {
                         text: 'AQI',
                         y:40,
@@ -175,6 +178,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     chart: {
                         height:250
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     title: {
                         text: null,
                     },
@@ -256,6 +262,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: 'PM2.5',
@@ -360,6 +369,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     title: {
                         text: null,
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                         tickmarkPlacement: 'on'
@@ -438,6 +450,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: 'PM10',
@@ -543,6 +558,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     title: {
                         text: null,
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                         tickmarkPlacement: 'on'
@@ -621,6 +639,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: '二氧化硫',
@@ -727,6 +748,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     title: {
                         text: null,
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                         tickmarkPlacement: 'on'
@@ -805,6 +829,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: '二氧化氮',
@@ -912,6 +939,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     title: {
                         text: null,
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                         tickmarkPlacement: 'on'
@@ -990,6 +1020,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: '一氧化碳',
@@ -1095,6 +1128,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                     title: {
                         text: null,
                     },
+                    exporting: {
+                        enabled:false
+                    },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
                         tickmarkPlacement: 'on'
@@ -1174,6 +1210,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                         plotBorderWidth: 0,
                         plotShadow: false,
                         width:200
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     title: {
                         text: '臭氧',
@@ -1277,6 +1316,9 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                 options:{
                     title: {
                         text: null,
+                    },
+                    exporting: {
+                        enabled:false
                     },
                     xAxis: {
                         categories: ['22时','23时','0时','1时','2时','3时','4时','5时','6时','7时','8时','9时'],
