@@ -188,6 +188,52 @@ export default ($scope, $rootScope, qService, environmentRes) => {
                 ]
         };
         //--------------------------盒子1结束----------------------------
+        //------------------------盒子3天气模块地图------------------------
+        //天气预测Button点击事件
+        $scope.airConditionBtn = function() {
+            $scope.istownaircondition = true;
+            $scope.istownairquality=false;
+            $scope.istownwasteair=false;
+            $scope.mapTableStatus = {
+                airQuality: false,
+                airCondition: true,
+                wasteAir: false
+            };
+            map.setZoomAndCenter(15, [121.109247,31.469887]);
+            marker3.setMap(map);
+            var infow=[];
+            infow.push("<div style='background-color:#FFFFFF;border:2px solid #66cc66;border-radius:10px;padding:10px 10px;position:absolute;top:-10px;left:-5px;white-space:nowrap;color:#66cc66;font-size:18px'>太仓市气象局</div>")
+            marker3.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                offset: new AMap.Pixel(23, 5),//修改label相对于marker的位置
+                content: infow.join('')
+            });
+            var info3=[];
+            info3.push("<h4><strong>太仓市气象局(明日天气预报)</strong></h4>");
+            info3.push("<table class='table table-bordered table-striped'>");
+            var weatherString1="<tr><td class='maptable' style='line-height:35px;'>明日气温</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>"+$scope.airConditionLowtemp[4]+"℃~"+$scope.airConditionHightemp[4]+"℃</div></td></tr>";
+            info3.push(weatherString1);
+            var weatherString2="<tr><td class='maptable' style='line-height:35px;'>天气状况</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>"+$scope.airConditionType[4]+"</div></td></tr>";
+            info3.push(weatherString2);
+            var weatherString3="<tr><td class='maptable' style='line-height:35px;'>风向风级</td><td><div class='map-table-right' style='background-Color:#5cb85c;margin-left:2.5px;margin-top:4px;'>"+$scope.airConditionFengxiangFengli[4]+"</div></td></tr>";
+            info3.push(weatherString3);
+            info3.push("</table>");
+            var infowindow3 = new AMap.InfoWindow({
+                content: info3.join(''),
+                offset: new AMap.Pixel(0, -30),
+                size:new AMap.Size(280,0)
+            })
+            var clickHandle3 = AMap.event.addListener(marker3, 'click', function() {
+                infowindow3.open(map, marker3.getPosition())
+            })
+        };
+        var marker3 = new AMap.Marker({
+            position: [121.106157,31.466373],//图标大小
+            icon: new AMap.Icon({
+                size: new AMap.Size(40, 50),
+                image: "/assets/images/environment/marker_sprite.png",
+            })//太仓市气象局
+        });
+        //-----------------------盒子3天气模块地图结束-----------------------
     }, function(error){
         console.log('发送失败');
     });
