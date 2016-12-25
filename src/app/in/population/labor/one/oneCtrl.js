@@ -1,20 +1,33 @@
 export default ($scope, $rootScope, $stateParams, qService, populationRes) => { 
 	'ngInject';
+	   (function() {
+      document.body.scrollIntoView();
+    })();
     //年份选择按钮
 	$scope.isMenu1 = false;
-	$scope.toggleMenu1 =function() {
+	$scope.toggleMenu1 =() => {
 		$scope.isMenu1 = !$scope.isMenu1;
 	};
-	//切换数据
-	var firstTen =function(year) {
-		console.log(year);
-	};
-	var secondTen =function(year) {
-		console.log(year);
-	};
-	var thirdTen =function(year) {
-		console.log(year);
-	};
+
+	//切换表格
+	$scope.datashow1 = false;	
+    $scope.showPopulationDetail1 = () =>{
+       $scope.datashow1= !$scope.datashow1;
+       };
+    $scope.showPopulationDetail2 = function(){
+       $scope.datashow2= !$scope.datashow2;
+       };
+	//关联度值数据
+	var relate1 = [0.825, 0.827, 0.829,0.826, 0.829, 0.831, 0.836, 0.834, 0.836, 0.838];
+	var relate2 = [0.839, 0.837, 0.836,0.838, 0.839, 0.834, 0.835, 0.836, 0.837, 0.838];
+	var relate3 = [0.837, 0.838, 0.839,0.841, 0.838, 0.835, 0.837, 0.839, 0.841, 0.843];
+
+	//年份数据
+	var yearLen1= [2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+	var yearLen2= [2026,2027,2028,2029,2030,2031,2032,2033,2034,2035];
+	var yearLen3= [2036,2037,2038,2039,2040,2041,2042,2043,2044,2045];
+
+
 	$scope.yearSelect1 = ['2016-2025年', '2026-2035年', '2036-2045年'];
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData,{},{})
      .then((resource) => {
@@ -27,6 +40,147 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
       	for(let i=0; i<30; i++ ){
             dataG[i] = resource.data[i].preLaborPopulation;
       	}
+	   //切换数据
+     	var firstTen =(year) =>{
+            $scope.firstChart = comChart(dataP.slice(0,10), relate1, dataG.slice(0,10), yearLen1); 
+     	};
+     	var secondTen =(year) =>{
+            $scope.firstChart = comChart(dataP.slice(10,20), relate2, dataG.slice(10,20), yearLen2); 
+     	};
+     	var thirdTen =(year) =>{
+            $scope.firstChart = comChart(dataP.slice(20,30), relate3, dataG.slice(20,30), yearLen3); 
+     	};
+      	//通用设置图表数据函数
+      	var comChart = (popDa, relDa, gdpDa, yearLen) => {
+          return {
+            options:{ 
+              exporting: {
+                enabled: false, // 取消打印menu
+              },
+              chart: {
+                zoomType: 'xy'
+                },
+                title: {
+                    text: '2016至2025年劳动力人口与GDP关联分析预测',
+                    style:{
+                    	fontSize: '13px',
+                    	fontWeight: 'bold',
+                    }
+                },
+                 credits:{
+                            enabled:false
+                        },
+                xAxis: {
+                    categories: yearLen
+                },
+                yAxis: [{ // Primary yAxis
+                    labels: {
+                        formatter: function() {
+                            return this.value/10000+'万亿元' ;
+                        },
+                        style: {
+                            color: '#89A54E'
+                        }
+                    },
+                    title: {
+                        text: '',
+                        style: {
+                            color: '#89A54E'
+                        }
+                    },
+                    opposite: true,
+
+
+                }, { // Secondary yAxis
+                    gridLineWidth: 0,
+                    title: {
+                        text: '',
+                        style: {
+                            color: '#7CB5EC'
+                        }
+                    },
+                    labels: {
+                        formatter: function() {
+                            return this.value/10000 +'万人';
+                        },
+                        style: {
+                            color: '#7CB5EC'
+                        }
+                    },
+                     tickPositions:[0, 200000, 400000, 600000, 800000]
+
+                }, { // Tertiary yAxis
+                    gridLineWidth: 0,
+                    title: {
+                        text: '',
+                        style: {
+                            color: '#8968CD'
+                        }
+                    },
+                    labels: {
+                        formatter: function() {
+                            return this.value ;
+                        },
+                        style: {
+                            color: '#8968CD'
+                        }
+                    },
+                    opposite: true,
+                    tickPositions:[0.7,0.75,0.8,0.85,0.9,0.95,1.0]
+                }],
+                tooltip: {
+                    shared: true
+                },
+                legend: {
+
+                    align: 'center',
+
+                    verticalAlign: 'bottom',
+                     itemStyle:{
+                            fontWeight:'normal'
+                            }
+                }
+               },
+                 series: [{
+                    name: '人口',
+                    color: '#7CB5EC',
+                    type: 'column',
+                    yAxis: 1,
+                    data:  popDa,
+                    tooltip: {
+                        valueSuffix: '人'
+                    }
+
+                }, {
+                    name: '关联度',
+                    type: 'spline',
+                    color: '#8968CD',
+                    yAxis: 2,
+                    //xie
+                    data: relDa,
+                    marker: {
+                        enabled: true,
+                        symbol:"circle"
+                    },
+                    dashStyle: 'shortdot',
+                    tooltip: {
+                        valueSuffix: ''
+                    }
+
+                }, {
+                    name: 'GDP',
+                    color: '#89A54E',
+                    type: 'spline',
+                    data:  gdpDa,
+                    marker:{
+                        symbol:"square"
+                    },
+                    tooltip: {
+                        valueSuffix: '亿元'
+                    }
+                }]
+        };
+      	}
       	//初始化图表数据
         $scope.firstChart = {
             options:{ 
@@ -37,7 +191,11 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 zoomType: 'xy'
                 },
                 title: {
-                    text: '2016至2025年劳动力人口与GDP关联分析预测'
+                    text: '2016至2025年劳动力人口与GDP关联分析预测',
+                    style:{
+                    	fontSize: '13px',
+                    	fontWeight: 'bold',
+                    }
                 },
                  credits:{
                             enabled:false
@@ -49,14 +207,14 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 yAxis: [{ // Primary yAxis
                     labels: {
                         formatter: function() {
-                            return this.value ;
+                            return this.value/10000+'万亿元' ;
                         },
                         style: {
                             color: '#89A54E'
                         }
                     },
                     title: {
-                        text: 'GDP(亿元)',
+                        text: '',
                         style: {
                             color: '#89A54E'
                         }
@@ -67,23 +225,25 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 }, { // Secondary yAxis
                     gridLineWidth: 0,
                     title: {
-                        text: '人口(人)',
+                        text: '',
                         style: {
                             color: '#7CB5EC'
                         }
                     },
                     labels: {
                         formatter: function() {
-                            return this.value +'人';
+                            return this.value/10000 +'万人';
                         },
                         style: {
                             color: '#7CB5EC'
                         }
                     },
+                     tickPositions:[0, 200000, 400000, 600000, 800000]
+
                 }, { // Tertiary yAxis
                     gridLineWidth: 0,
                     title: {
-                        text: '关联度',
+                        text: '',
                         style: {
                             color: '#8968CD'
                         }
@@ -97,7 +257,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                         }
                     },
                     opposite: true,
-                    tickPositions:[0.7,0.75,0.8,0.85,0.9]
+                    tickPositions:[0.7,0.75,0.8,0.85,0.9,0.95,1.0]
                 }],
                 tooltip: {
                     shared: true
@@ -151,8 +311,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                     }
                 }]
         };
-        //firstTen
-        $scope.toggleData1 = (year) => {
+                $scope.toggleData1 = (year) => {
            switch(year){
               case $scope.yearSelect1[0]:
                 firstTen(year);
