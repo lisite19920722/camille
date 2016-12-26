@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService,economyGdpRes) => {
 	'ngInject';
+    $scope.containerHeight = $(window).height() - 127;
     let tempToken = '827ccb0eea8a706c4c34a16891f84e7b';
     // let yearGdpHeader = {
     //   // 'X-Auth-Token':tempToken,
