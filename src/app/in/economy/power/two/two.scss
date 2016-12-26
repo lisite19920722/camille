@@ -1,5 +1,5 @@
 .power-two-module {
-	background-color: rgb(238, 238, 238);
+	background-color: $barColor;
 	@mixin box-padding() {
 		
 	}
@@ -11,8 +11,8 @@
 	}
 	@mixin content() {
 		background-color: #fff;
-		box-shadow: 0 8px 8px -8px rgb(153, 153, 153) inset,
-					0 -8px 8px -8px rgb(153, 153, 153) inset;
+		box-shadow: 0 10px 10px -10px $shadowColor inset,
+					0 -10px 10px -10px $shadowColor inset;
 		display: block;
 	}
 	.current-position {
@@ -91,8 +91,8 @@
 				text-align: center;
 			}
 			background-color: #fff;
-			box-shadow: 0 5px 5px -5px rgb(153, 153, 153) inset,
-						0 -5px 5px -5px rgb(153, 153, 153) inset;
+			box-shadow: 0 5px 5px -5px $shadowColor inset,
+						0 -5px 5px -5px $shadowColor inset;
 		}	
 	}
 }

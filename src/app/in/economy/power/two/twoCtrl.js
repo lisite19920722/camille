@@ -2,13 +2,13 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 	'ngInject';
 
 	const getIndustryData = function(year) {
+		$rootScope.loading = true;
 		let getIndustryParams = {
 	    	'year': year, 
 	    };
 		let getTotalPromise = qService.httpGetWithToken(economyPowerRes.getIndustry, getIndustryParams, {});
 		getTotalPromise.then(function(data) {
 			$scope.totalData = data.data;
-			console.log($scope.totalData);
 			$scope.VocationChartPiePower = {
 		    	credits:{
 		    	    enabled:false // 禁用版权信息
@@ -158,7 +158,11 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 		    	    color:'#DAA520',
 		    	}]
 		    };
-		},function(error) {});
+		},function(error) {
+
+		}).finally(() => {
+	        $rootScope.loading = false;
+	    });
     };
     $scope.currentYear = "2015";
     getIndustryData(2015);
