@@ -15,6 +15,8 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         //盒子1中右上方日期$scope.airConditionTomorrow
         //依照今天日期计算明天日期
         var today=data.retData["today"];
+        var history=data.retData["history"];
+        var forecast=data.retData["forecast"];
         var dependedVal=today["date"];
         console.log(dependedVal);
         var d = dependedVal;
@@ -49,21 +51,21 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         var dependedType=new Array();
         var dependedFengxiangFengli=new Array();
         for (var i=0;i<3;i++){
-            dependedType[i]=data.retData.history[i+4].type;
-            dependedFengxiangFengli[i]=data.retData.history[i+4].fengxiang+" "+data.retData.history[i+4].fengli;
+            dependedType[i]=history[i+4].type;
+            dependedFengxiangFengli[i]=history[i+4].fengxiang+" "+history[i+4].fengli;
         }
         dependedType[3]=today["type"];
         dependedFengxiangFengli[3]=today["fengxiang"]+today["fengli"];
         for (var i=4;i<7;i++){
-            dependedType[i]=data.retData.forecast[i-4].type;
-            dependedFengxiangFengli[i]=data.retData.forecast[i-4].fengxiang+" "+data.retData.forecast[i-4].fengli;
+            dependedType[i]=forecast[i-4].type;
+            dependedFengxiangFengli[i]=forecast[i-4].fengxiang+" "+forecast[i-4].fengli;
         }
         $scope.airConditionType=dependedType;
         $scope.airConditionFengxiangFengli=dependedFengxiangFengli;
         //盒子1中的最高温
         var dependedHightemp=new Array();
         for (var i=0;i<3;i++){
-            dependedHightemp[i]=data.retData.history[i+4].hightemp;
+            dependedHightemp[i]=history[i+4].hightemp;
             var regEx3 = new RegExp("℃","");
             dependedHightemp[i]=dependedHightemp[i].replace(regEx3,"");
         }
@@ -79,7 +81,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         //盒子1中的最低温
         var dependedLowtemp=new Array();
         for (var i=0;i<3;i++){
-            dependedLowtemp[i]=data.retData.history[i+4].lowtemp;
+            dependedLowtemp[i]=history[i+4].lowtemp;
             var regEx3 = new RegExp("℃","");
             dependedLowtemp[i]=dependedLowtemp[i].replace(regEx3,"");
         }
@@ -87,7 +89,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         var regEx3 = new RegExp("℃","");
         dependedLowtemp[3]=dependedLowtemp[3].replace(regEx3,"");
         for (var i=4;i<7;i++){
-            dependedLowtemp[i]=data.retData.forecast[i-4].lowtemp;
+            dependedLowtemp[i]=forecast[i-4].lowtemp;
             var regEx3 = new RegExp("℃","");
             dependedLowtemp[i]=dependedLowtemp[i].replace(regEx3,"");
         }
