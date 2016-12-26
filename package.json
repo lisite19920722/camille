@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "web end of bi",
   "dependencies": {
+    "angularjs-slider": "^5.9.0",
     "jquery-touchswipe": "^1.6.15"
   },
   "scripts": {

@@ -22,7 +22,9 @@
     "highcharts": "~4.2.5",
     "highcharts-ng": "~0.0.7",
     "blueimp-md5": "1.1.1",
-    "Ionicons": "ionicons#^2.0.1"
+    "ui-slider": "^0.4.1",
+    "angular-ui-slider": "^0.1.1",
+    "Ionicons":"ionicons#^2.0.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.0"

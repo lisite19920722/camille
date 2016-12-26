@@ -1,0 +1,37 @@
+<div>
+<header>
+  <hgroup>
+    <h4>当前位置:</h4>
+  </hgroup>
+  <nav>
+    <span>经济</span>>>
+    <span>GDP</span>>>
+    <span>{{currentsite}}</span>
+  </nav>
+</header>
+<section>
+  <div id="topheader">
+    {{currentyear}}年各季度GDP数据可视化
+  </div>
+  <div id="contain">
+    <highchart   id = "chart1" config ="monthGDPChart"></highchart>
+  </div>
+  <div id="controlcontain">
+    <div class="showstyle"><span>图表展示方式</span></div>
+    <div class="ebutton ebuttonActive">柱状图</div>
+    <div class="ebutton">折线图</div>
+    <div class="ebutton">曲线图</div>
+    <div class="ebutton">区域图</div>
+  </div>
+  
+  <details open>
+    <summary>一句话解读</summary>
+    <div ng-transclude>yijuhua</div>
+  </details>
+  <details open>
+    <summary>数据模型</summary>
+    <div>yijuhua</div>
+  </details>
+  
+</section>
+</div>

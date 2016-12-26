@@ -40,6 +40,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/economy/gdp/one/one.html',
       controller: 'gdponeCtrl'
     })
+    .state('app.in.gdp.two', {
+      url: '/one',
+      templateUrl: 'app/in/economy/gdp/two/two.html',
+      controller: 'gdptwoCtrl'
+    })
+    .state('app.in.gdp.three', {
+      url: '/one',
+      templateUrl: 'app/in/economy/gdp/three/three.html',
+      controller: 'gdpthreeCtrl'
+    })
     .state('app.in.kq', {
       abstract: true,
       url: '/kq',
@@ -49,6 +59,11 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
     .state('app.in.kq.one', {
       url: '/one',
       templateUrl: 'app/in/economy/kq/one/one.html',
+      controller: 'kqoneCtrl'
+    })
+    .state('app.in.kq.two', {
+      url: '/one',
+      templateUrl: 'app/in/economy/kq/two/two.html',
       controller: 'kqoneCtrl'
     })
     .state('app.in.power', {
@@ -92,6 +107,11 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       url: '/one',
       templateUrl: 'app/in/economy/tax/one/one.html',
       controller: 'taxoneCtrl'
+    })
+    .state('app.in.tax.two', {
+      url: '/one',
+      templateUrl: 'app/in/economy/tax/two/two.html',
+      controller: 'taxtwoCtrl'
     })
     // 环境
     .state('app.in.air', {

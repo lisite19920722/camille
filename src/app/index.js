@@ -24,7 +24,7 @@ import populationStructureRes from './resources/population-structureres';
 import privilegeRes from './resources/privilege-res';
 
 // directive
-
+ import gdpdirective from './in/economy/gdp/template/gdpdirective';
 // filter
 
 // controllers
@@ -37,8 +37,11 @@ import homeCtrl from './in/home/homeCtrl';
 // 经济模块Controller
 import gdpCtrl from './in/economy/gdp/gdpCtrl';
 import gdponeCtrl from './in/economy/gdp/one/oneCtrl';
+import gdptwoCtrl from './in/economy/gdp/two/twoCtrl';
+import gdpthreeCtrl from './in/economy/gdp/three/threeCtrl';
 import kqCtrl from './in/economy/kq/kqCtrl';
 import kqoneCtrl from './in/economy/kq/one/oneCtrl';
+import kqtwoCtrl from './in/economy/kq/two/twoCtrl';
 import powerCtrl from './in/economy/power/powerCtrl';
 import poweroneCtrl from './in/economy/power/one/oneCtrl';
 import powertwoCtrl from './in/economy/power/two/twoCtrl';
@@ -47,6 +50,8 @@ import powerfourCtrl from './in/economy/power/four/fourCtrl';
 import powerfiveCtrl from './in/economy/power/five/fiveCtrl';
 import taxCtrl from './in/economy/tax/taxCtrl';
 import taxoneCtrl from './in/economy/tax/one/oneCtrl';
+import taxtwoCtrl from './in/economy/tax/two/twoCtrl';
+
 
 //环境模块Controller
 import airCtrl from './in/environment/air/airCtrl';
@@ -103,7 +108,7 @@ angular.module('camille',
   .factory('privilegeRes', privilegeRes)
 
   // directive 初始化
-  
+  .directive('gdpdirective',gdpdirective)
   // filter 初始化
 
   // controllers 初始化
@@ -115,8 +120,11 @@ angular.module('camille',
   // 经济controllers
   .controller('gdpCtrl', gdpCtrl)
   .controller('gdponeCtrl', gdponeCtrl)
+  .controller('gdptwoCtrl', gdptwoCtrl)
+  .controller('gdpthreeCtrl', gdpthreeCtrl)
   .controller('kqCtrl', kqCtrl)
   .controller('kqoneCtrl', kqoneCtrl)
+  .controller('kqtwoCtrl', kqtwoCtrl)
   .controller('powerCtrl', powerCtrl)
   .controller('poweroneCtrl', poweroneCtrl)
   .controller('powertwoCtrl', powertwoCtrl)
@@ -125,7 +133,7 @@ angular.module('camille',
   .controller('powerfiveCtrl', powerfiveCtrl)
   .controller('taxCtrl', taxCtrl)  
   .controller('taxoneCtrl', taxoneCtrl)
-  
+  .controller('taxtwoCtrl', taxtwoCtrl)
   // 环境controllers
   .controller('airCtrl', airCtrl)
   .controller('aironeCtrl', aironeCtrl)
