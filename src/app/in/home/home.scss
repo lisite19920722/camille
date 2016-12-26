@@ -5,7 +5,83 @@
 	}
 }
 .home-home-body {
+	background-color: $barColor;
+	@mixin box-padding() {
+		
+	}
+	@mixin title() {
+		display: block;
+		padding: 3px 15px;
+		font-size: 13px;
+		color: rgb(153, 153, 153);
+	}
+	@mixin content() {
+		background-color: #fff;
+		box-shadow: 0 10px 10px -10px $shadowColor inset,
+					0 -10px 10px -10px $shadowColor inset;
+		display: block;
+	}
 	padding-bottom: 0 !important;
+	.app-content {
+		.welcome {
+			@include box-padding();
+			.title {
+				@include title();
+			}
+			.content {
+				@include content();
+				padding: 20px 15px;
+				text-align: center;
+				background-color: #eee;
+				text-shadow: #999 3px 3px 10px;
+			}
+		}
+		.function {
+			@include box-padding();
+			.title {
+				@include title();
+			}
+			.content {
+				padding: 5px 15px 15px;
+				@include content();
+				.part1, .part2 {
+					border-bottom: 1px dashed #abced4;
+				}
+				.part {
+					background-color: #fff; 
+					background-image: 
+						linear-gradient(90deg, transparent 8px, #abced4 8px, #abced4 10px, transparent 10px),
+						linear-gradient(#eee .1em, transparent .1em);
+					background-size: 100% 1.2em;
+					text-align: center;
+					padding: 15px 0;
+					img {
+						display: inline-block;
+						height: 100px;
+					}
+					.text {
+						display: inline-block;
+						width: 60%;
+						position: relative;
+						text-align: left;
+						padding-left: 5%;
+						h5 {
+							font-weight: bold;
+							position: relative;
+							font-size: 16px;
+							top: 16px;
+						}
+						span {
+							position: relative;
+							top: 18px;
+							color: rgb(110,224,50);
+							font-size: 13px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 .home-navbar-bottom {
 	min-height: 0;

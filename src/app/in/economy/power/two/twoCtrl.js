@@ -9,7 +9,6 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 		let getTotalPromise = qService.httpGetWithToken(economyPowerRes.getIndustry, getIndustryParams, {});
 		getTotalPromise.then(function(data) {
 			$scope.totalData = data.data;
-			console.log($scope.totalData);
 			$scope.VocationChartPiePower = {
 		    	credits:{
 		    	    enabled:false // 禁用版权信息
