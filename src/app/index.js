@@ -69,7 +69,7 @@ import laborthreeCtrl from './in/population/labor/three/threeCtrl';
 import popothersCtrl from './in/population/popothers/popothersCtrl';
 import popothersoneCtrl from './in/population/popothers/one/oneCtrl';
 import popotherseducationCtrl from './in/population/popothers/one/educationCtrl';
-
+import popothersinsuranceCtrl from './in/population/popothers/one/insuranceCtrl';
 
 angular.module('camille',
   ['ngAnimate', 'ngCookies', 'ngSanitize', 'ui.router', 'ngResource', 'ngStorage', 'mobile-angular-ui','ui.bootstrap', 'highcharts-ng'])
@@ -147,4 +147,5 @@ angular.module('camille',
   .controller('popothersCtrl', popothersCtrl)
   .controller('popothersoneCtrl', popothersoneCtrl)
   .controller('popotherseducationCtrl',popotherseducationCtrl)
+  .controller('popothersinsuranceCtrl', popothersinsuranceCtrl)
   ;
