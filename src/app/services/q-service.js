@@ -30,6 +30,25 @@ export default ($q, $state, $sessionStorage) => {
 				});
 			});
 		},
+        httpGetWithTokenWeather: (resource, parameters, headers) => {
+            return $q((resolve, reject) => {
+                // headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
+                headers['X-Auth-Token'] = tempToken;
+
+                headers['X-Workspace-Id'] = workspaceId;
+
+                headers['apikey'] = '8a2ea9c51525a5332967ae13c1454deb';
+                resource(headers).get(parameters,
+                    (value, responseHeaders) => {
+                        successHandler(value);
+                        value.headers = responseHeaders ? responseHeaders() : "";
+                        resolve(value);
+                    },
+                    (httpResponse) => {
+                        reject(httpResponse);
+                    });
+            });
+        },
 		httpPostWithToken: (resource, parameters, headers, body) => {
 			return $q((resolve, reject) => {
 				// headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
