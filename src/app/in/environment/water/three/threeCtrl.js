@@ -15,41 +15,6 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
         console.log('发送失败');
     });
     //-------------------------waterQualityGetPromise结束--------------------------
-
-    // var promise1 = qService.tokenhttpGetWithWorkspace(rawFactory.query,{tableName:'waterIndustryData'});
-    // promise1.then(function(rc2) {
-    //     $scope.list11=rc2.data[0];
-    //     $scope.list12=rc2.data[1];
-    //     $scope.list13=rc2.data[2];
-    //     $scope.list14=rc2.data[3];
-    //     $scope.list15=rc2.data[4];
-    //     $scope.date_industry=rc2.data[5];
-    // });
-    // var promise2 = qService.tokenhttpGetWithWorkspace(rawFactory.query,{tableName:'waterPollutionData'});
-    // promise2.then(function(rc3) {
-    //   $scope.JiuLONGDischarge=rc3.data[0];
-    //   $scope.TCCityzoneDischarge=rc3.data[1];
-    //   $scope.LiuHeDischarge=rc3.data[2];
-    //   $scope.GangChengDischarge=rc3.data[3];
-    //   $scope.TCRivertownDischarge=rc3.data[4];
-    //   $scope.JiuLONGCod=rc3.data[5];
-    //   $scope.TCCityzoneCod=rc3.data[6];
-    //   $scope.LiuHeCod=rc3.data[7];
-    //   $scope.GangChengCod=rc3.data[8];
-    //   $scope.TCRivertownCod=rc3.data[9];
-    //   $scope.JiuLONGNh4n=rc3.data[10];
-    //   $scope.TCCityzoneNh4n=rc3.data[11];
-    //   $scope.LiuHeNh4n=rc3.data[12];
-    //   $scope.GangChengNh4n=rc3.data[13];
-    //   $scope.TCRivertownNh4n=rc3.data[14];
-    //   $scope.JiuLONGP=rc3.data[15];
-    //   $scope.TCCityzoneP=rc3.data[16];
-    //   $scope.LiuHeP=rc3.data[17];
-    //   $scope.GangChengP=rc3.data[18];
-    //   $scope.TCRivertownP=rc3.data[19];
-    //   $scope.date1=rc3.data[20];
-    // });
-
     //--------------------------盒子3-----------------------------
     $http({method: 'GET', url: '/app/in/environment/water/three/waterQuality.json'}).
     success(function(data, status, headers, config) {
