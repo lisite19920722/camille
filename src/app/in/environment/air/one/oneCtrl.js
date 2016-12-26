@@ -14,7 +14,8 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
         //依照今天日期计算明天日期
-        var dependedVal=data.retData["today"].date;
+        var today=data.retData["today"]
+        var dependedVal=today["date"];
         console.log(dependedVal);
         var d = dependedVal;
         d = new Date(d);
@@ -31,7 +32,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         var dependedVal1=new Array();
         var regEx1 = new RegExp("-","");
         for (var i=0;i<=6;i++){
-            dependedVal1[i]=data.retData["today"].date;
+            dependedVal1[i]=today["date"];
             var d = dependedVal1[i];
             d = new Date(d);
             d = + d + (i-3)*1000*60*60*24;
@@ -51,8 +52,8 @@ export default ($scope, $rootScope, qService, environmentRes) => {
             dependedType[i]=data.retData.history[i+4].type;
             dependedFengxiangFengli[i]=data.retData.history[i+4].fengxiang+" "+data.retData.history[i+4].fengli;
         }
-        dependedType[3]=data.retData["today"].type;
-        dependedFengxiangFengli[3]=data.retData["today"].fengxiang+" "+data.retData["today"].fengli;
+        dependedType[3]=today["type"];
+        dependedFengxiangFengli[3]=today["fengxiang"]+today["fengli"];
         for (var i=4;i<7;i++){
             dependedType[i]=data.retData.forecast[i-4].type;
             dependedFengxiangFengli[i]=data.retData.forecast[i-4].fengxiang+" "+data.retData.forecast[i-4].fengli;
@@ -66,7 +67,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
             var regEx3 = new RegExp("℃","");
             dependedHightemp[i]=dependedHightemp[i].replace(regEx3,"");
         }
-        dependedHightemp[3]=data.retData["today"].hightemp;
+        dependedHightemp[3]=today["hightemp"];
         var regEx3 = new RegExp("℃","");
         dependedHightemp[3]=dependedHightemp[3].replace(regEx3,"");
         for (var i=4;i<7;i++){
@@ -82,7 +83,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
             var regEx3 = new RegExp("℃","");
             dependedLowtemp[i]=dependedLowtemp[i].replace(regEx3,"");
         }
-        dependedLowtemp[3]=data.retData["today"].lowtemp;
+        dependedLowtemp[3]=today["lowtemp"];
         var regEx3 = new RegExp("℃","");
         dependedLowtemp[3]=dependedLowtemp[3].replace(regEx3,"");
         for (var i=4;i<7;i++){
