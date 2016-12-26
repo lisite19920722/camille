@@ -62,57 +62,6 @@
         <div style="padding:0">
             <highchart  id="temperature"  config="temperature"  style="height:500px"></highchart>
         </div>
-        <!--天气状况预测-->
-        <div style="font-size:16px;">
-            <div class="pull-left">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                        <i class="fa fa-cloud fa-stack-1x text-white"></i>
-                    </span>
-            </div>
-            <h4 style="margin-top:0.5em;padding-left:0;">天气预测</h4>
-            <button class="btn btn-primary" ng-click="airConditionBtn()"
-                    style="margin-top:0.5em;margin-bottom:0.3em">
-                <span class="fa fa-hand-o-right">
-                    <span class="fc-button-font">城区天气状况预测</span>
-                </span>
-            </button>
-            <br/>
-            <span class="fa fa-cloud" ng-if="istownaircondition">
-                <span class="fc-button-font">太仓市明日天气状况</span>
-            </span>
-        </div>
-        <div ng-show="mapTableStatus.airCondition">
-            <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-                <tr>
-                    <th style="width:20%">气象局</th>
-                    <th style="width:20%">天气状况</th>
-                    <th style="width:20%">最高气温(℃)</th>
-                    <th style="width:20%">最低气温(℃)</th>
-                    <th style="width:20%">风向风级</th>
-                </tr>
-            </table>
-        </div>
-        <div style="overflow: auto; overflow-x:hidden;height:80px;border-bottom:solid 1px lightgrey;"
-             ng-show="mapTableStatus.airCondition">
-            <table class="table table-hover table-responsive" style="font-size:14px">
-                <tr>
-                    <td style="width:20%">太仓市气象局</td>
-                    <td style="width:20%">
-                        <span>{{airConditionType[4]}}</span>
-                    </td>
-                    <td style="width:20%">
-                        <span>{{airConditionHightemp[4]}}</span>
-                    </td>
-                    <td style="width:20%">
-                        <span>{{airConditionLowtemp[4]}}</span>
-                    </td>
-                    <td style="width:20%">
-                        <span>{{airConditionFengxiangFengli[4]}}</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
         <!--一句话解读-->
         <div class="pull-left">
             <span class="fa-stack fa-lg">
