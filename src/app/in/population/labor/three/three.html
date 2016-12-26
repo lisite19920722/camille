@@ -1,0 +1,157 @@
+<div class="zzh-container" style="width:1200px;">
+    <div class="panel panel-primary" style="margin-top: 50px;">
+        <div class="topbar">
+            <h4 class="cgq_title">产业人口与产业GDP比重分析预测</h4>
+        </div>
+        <!-- 添加空的div，填充竖线 -->
+        <div class="row" style="height:22px;">
+            <div class="col-md-8 chart-panel" style="height:100%"></div>
+        </div>
+        <!--84大模块开始-->
+        <div class="row">
+            <!--84中8模块开始-->
+
+
+            <div class="col-md-8 chart-panel">
+                <highchart id="populationPie" config="populationPie" style="width:95%;height:363px"></highchart>
+                <hr />
+                <highchart id="industryPie" config="industryPie" style="width:95%;height:363px"></highchart>
+            </div>
+            <!--84中8模块结束-->
+            <!--84中4模块开始--> 
+            <div class="col-md-4">
+                <div style="margin-left:7px">
+
+                    <!--绿色方块开始-->
+                    <div class="col-md-12" style="padding-top:0.5em;margin-left:-15px;">
+                       <div   style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" style="margin-left:-5px;">5年产业人口变化</div>
+                       <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth" style="margin-left:-2px;padding-bottom:40px">
+
+
+
+                           <div class="pull-left" style="margin-left:110px">  <span style="font-size:10px" class=" font-thin h1 "><span id="oldManProportion">第一产业：</span></span>
+                            <span class="text-xs">{{fp1}}<span>%</span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fp1>0"></span>
+                        </div> <br>
+
+
+
+                        <div class="pull-left" style="margin-left:110px"> <span style="font-size:10px" class=" font-thin h1 "><span id="oldManProportion">第二产业：</span></span>
+                            <span class="text-xs">{{fp2}}<span>%</span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fp2>0"></span></div><br>
+
+
+                            <div class="pull-left" style="margin-left:110px"> <span style="font-size:10px" class=" font-thin h1 "><span id="oldManProportion">第三产业：</span></span>
+                                <span class="text-xs">{{fp3}}<span>%</span></span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fp3>0"></span></div></div>
+
+                            </div>
+                            <!--绿色方块结束=-->
+                            <br>
+                            <!--黄色方块开始-->
+                            <div class="col-md-12 " style="padding-top:0.5em;margin-left:-15px">
+                             <div   style="background:#929dce;width:115px;height:30px;text-align:center;line-height:30px;font-size:15px;color:#FFFFFF;font-weight:bold" style="margin-left:-5px;">5年产业产值变化率</div>
+
+
+                             <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth"  style="margin-left:-2px;padding-bottom:40px">
+                                <div class="pull-left" style="margin-left:110px">  <span style="font-size:10px" class=" font-thin h1 "><span id="oldManProportion">第一产业：</span></span>
+                                    <span class="text-xs">{{fv1}}<span>%</span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fv1>0"></span></div><br>
+
+
+
+                                    <div class="pull-left" style="margin-left:110px"> <span style="font-size:10px" class=" font-thin h1 "><span id="oldManProportion">第二产业：</span></span>
+                                        <span class="text-xs">{{fv2}}<span>%</span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fv2>0"></span></div><br>
+
+
+                                        <div class="pull-left" style="margin-left:110px"> <span style="font-size:10px" class="font-thin h1 "><span id="oldManProportion">第三产业：</span></span>
+                                            <span class="text-xs">{{fv3}}<span>%</span></span><span class="glyphicon glyphicon-arrow-up" ng-if="fv3>0"></span></div></div>
+
+                                        </div>
+                                        <!--黄色方块结束-->
+                                    </div>
+
+                                    <p class="fill-margin"></p>
+                                    <div class="ioc-panel-desc">
+                                    </div>
+
+                                    <div class="pull-left" style="margin:0px">
+                                     <br>
+                                     <span style="margin-left:7px" class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x text-info"></i>
+                                        <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
+                                    </span>
+
+                                    <span class="h4">一句话解读</span>
+                                    <br />
+                                    <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
+                                        <small class="block m-t-xs">
+                                            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析： <span id="b">第一、二、三产业就业人口比重分别为3.6%、56.7%和39.7%。产值比重分别是4.9%、49.8%和45.3%</span></span></div>
+                                        </small>
+                                        <small class="block m-t-xs">
+                                            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">结论：随着经济发展和人均国民收入提高，第二、三产业人口将提高，第三产业人口将占绝对优势。</span></div>
+                                        </small>
+                                        <small class="block m-t-xs">
+                                            <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">劳动产业人口与产业GDP比重分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span></div>
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
+
+
+                                <div class="btn-group dropdown">
+                                    <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" style="margin-left:10px;width:120px">年份选择<span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li ng-repeat="bttn in buttonMap4"><a ng-model="predictionModal" style="margin-left: 0px;margin-bottom:1px" btn-radio="bttn.radio" ng-click="btn_click3(bttn)">{{bttn.label}}</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-12 cgq_marginaround1em" style="margin-left:-5px;">
+                                    <div style="height:15px"></div>
+                                    <button ng-click="showPopulationDetail2()" style="width:120px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
+                                </div>
+
+
+                            </div>
+                            <!--84中4模块结束-->                                    
+                        </div>
+                        <!--84大模块结束-->
+
+                        <!--表格前的横线 开始-->
+                        <div style="width:1198px;height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+                        <!--表格前的横线 结束-->
+
+
+                        <!--表格开始-->
+                        <div class="bg-white fc-datatable"  ng-if="datashow2" style="border:0px">
+                            <div class="panel-heading"><center><strong>{{myyear}}年产业人口与产业GDP比重分析预测表</strong></center></div>
+                            <div class="panel panel-default paddingmargin0em" >
+
+
+                                <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+                                    <tr class="ng-scope ng-isolate-scope">
+                                        <td>产业</td>
+                                        <td ng-repeat="year in header">{{year}}</td>
+                                    </tr>
+                                    <tr class="ng-scope ng-isolate-scope">
+                                        <td>人口比例</td>
+                                        <td ng-repeat="num in populationrate track by $index"> {{num}}%</td>
+                                    </tr>
+                                    <tr class="ng-scope ng-isolate-scope">
+                                        <td>人口数量（人）</td>
+                                        <td ng-repeat="num in population track by $index">{{num}}</td>
+                                    </tr>
+                                    <tr class="ng-scope ng-isolate-scope">
+                                        <td>产值所占比</td>
+                                        <td ng-repeat="num in valuerate track by $index">{{num}}%</td>
+                                    </tr>
+                                    <tr class="ng-scope ng-isolate-scope">
+                                        <td>产值（亿元）</td>
+                                        <td ng-repeat="num in value track by $index">{{num}}</td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                        <!--表格结束-->
+
+
+                    </div>
+                </div>

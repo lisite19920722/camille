@@ -6,15 +6,22 @@ export default ($q, $state, $sessionStorage) => {
 	'ngInject';
 
 	let TOKEN_KEY = 'x-auth-token';
-	let tempToken = 'cead17690c044c55a9e2e16c2619cad8';
+	let tempToken = '08b5d1545eae48f783e5a9683b3073fd';
+	let workspaceId = 1;
+	const successHandler = (value) => {
+		if (value.code == "502") {
+			$state.go("portal");
+		}
+	}
 	return {
 		httpGetWithToken: (resource, parameters, headers) => {
 			return $q((resolve, reject) => {
 				// headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
 				headers['X-Auth-Token'] = tempToken;
-				headers['X-Workspace-Id'] = 1;
+				headers['X-Workspace-Id'] = workspaceId;
 				resource(headers).get(parameters,
 				(value, responseHeaders) => {
+					successHandler(value);
 					value.headers = responseHeaders ? responseHeaders() : "";
 					resolve(value);
 				}, 
@@ -27,9 +34,10 @@ export default ($q, $state, $sessionStorage) => {
 			return $q((resolve, reject) => {
 				// headers['X-Auth-Token'] = $sessionStorage[TOKEN_KEY];
 				headers['X-Auth-Token'] = tempToken;
-				headers['X-Workspace-Id'] = 1;
+				headers['X-Workspace-Id'] = workspaceId;
 				resource(headers).post(parameters,body,
 				(value, responseHeaders) => {
+					successHandler(value);
 					value.headers = responseHeaders ? responseHeaders() : "";
 					resolve(value);
 				}, 

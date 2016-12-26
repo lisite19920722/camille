@@ -44,6 +44,10 @@ import kqoneCtrl from './in/economy/kq/one/oneCtrl';
 import kqtwoCtrl from './in/economy/kq/two/twoCtrl';
 import powerCtrl from './in/economy/power/powerCtrl';
 import poweroneCtrl from './in/economy/power/one/oneCtrl';
+import powertwoCtrl from './in/economy/power/two/twoCtrl';
+import powerthreeCtrl from './in/economy/power/three/threeCtrl';
+import powerfourCtrl from './in/economy/power/four/fourCtrl';
+import powerfiveCtrl from './in/economy/power/five/fiveCtrl';
 import taxCtrl from './in/economy/tax/taxCtrl';
 import taxoneCtrl from './in/economy/tax/one/oneCtrl';
 import taxtwoCtrl from './in/economy/tax/two/twoCtrl';
@@ -52,17 +56,25 @@ import taxtwoCtrl from './in/economy/tax/two/twoCtrl';
 //环境模块Controller
 import airCtrl from './in/environment/air/airCtrl';
 import aironeCtrl from './in/environment/air/one/oneCtrl';
+import airtwoCtrl from './in/environment/air/two/twoCtrl';
+import airthreeCtrl from './in/environment/air/three/threeCtrl';
+import airfourCtrl from './in/environment/air/four/fourCtrl';
 import waterCtrl from './in/environment/water/waterCtrl';
 import wateroneCtrl from './in/environment/water/one/oneCtrl';
+import watertwoCtrl from './in/environment/water/two/twoCtrl';
+import waterthreeCtrl from './in/environment/water/three/threeCtrl';
 
 // 人口模块Controller
 import structureCtrl from './in/population/structure/structureCtrl';
 import structureoneCtrl from './in/population/structure/one/oneCtrl';
 import laborCtrl from './in/population/labor/laborCtrl';
 import laboroneCtrl from './in/population/labor/one/oneCtrl';
+import labortwoCtrl from './in/population/labor/two/twoCtrl';
+import laborthreeCtrl from './in/population/labor/three/threeCtrl';
 import popothersCtrl from './in/population/popothers/popothersCtrl';
 import popothersoneCtrl from './in/population/popothers/one/oneCtrl';
-
+import popotherseducationCtrl from './in/population/popothers/one/educationCtrl';
+import popothersinsuranceCtrl from './in/population/popothers/one/insuranceCtrl';
 
 angular.module('camille',
   ['ngAnimate', 'ngCookies', 'ngSanitize', 'ui.router', 'ngResource', 'ngStorage', 'mobile-angular-ui','ui.bootstrap', 'highcharts-ng'])
@@ -115,21 +127,33 @@ angular.module('camille',
   .controller('kqtwoCtrl', kqtwoCtrl)
   .controller('powerCtrl', powerCtrl)
   .controller('poweroneCtrl', poweroneCtrl)
+  .controller('powertwoCtrl', powertwoCtrl)
+  .controller('powerthreeCtrl', powerthreeCtrl)
+  .controller('powerfourCtrl', powerfourCtrl)
+  .controller('powerfiveCtrl', powerfiveCtrl)
   .controller('taxCtrl', taxCtrl)  
   .controller('taxoneCtrl', taxoneCtrl)
   .controller('taxtwoCtrl', taxtwoCtrl)
   // 环境controllers
   .controller('airCtrl', airCtrl)
   .controller('aironeCtrl', aironeCtrl)
+  .controller('airtwoCtrl', airtwoCtrl)
+  .controller('airthreeCtrl', airthreeCtrl)
+  .controller('airfourCtrl', airfourCtrl)
   .controller('waterCtrl', waterCtrl)
   .controller('wateroneCtrl', wateroneCtrl)
+  .controller('watertwoCtrl', watertwoCtrl)
+  .controller('waterthreeCtrl', waterthreeCtrl)
 
   // 人口controllers
   .controller('structureCtrl', structureCtrl)
   .controller('structureoneCtrl', structureoneCtrl)
   .controller('laborCtrl', laborCtrl)
   .controller('laboroneCtrl', laboroneCtrl)
+  .controller('labortwoCtrl', labortwoCtrl)
+  .controller('laborthreeCtrl', laborthreeCtrl)
   .controller('popothersCtrl', popothersCtrl)
   .controller('popothersoneCtrl', popothersoneCtrl)
-
+  .controller('popotherseducationCtrl',popotherseducationCtrl)
+  .controller('popothersinsuranceCtrl', popothersinsuranceCtrl)
   ;

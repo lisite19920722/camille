@@ -1,0 +1,162 @@
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="power-three-module">
+			<div class="current-position">
+				<span class="title">当前位置</span>
+				<span class="content">经济 -> 工业用电与经济增长关联分析 -> 工业用电量与GDP增长率关联分析</span>
+			</div>
+			<div class="control-area">
+				<span class="title">操作图表</span>
+				<div class="content">
+					<div style="display: inline-block;">
+						<a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">切换行业<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+						<div style="position: relative;">
+							<ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+				              <li><a ng-click="changeIndustry(3001)">农、林、牧、渔</a></li>
+				              <li><a ng-click="changeIndustry(3002)">工业</a></li>
+				              <li><a ng-click="changeIndustry(3003)">建筑业</a></li>
+				              <li><a ng-click="changeIndustry(3004)">交通运输、仓储和邮政业</a></li>
+				              <li class="divider"></li>
+				              <li><a ng-click="changeIndustry(3005)">信息传输计、算机服务和软件业</a></li>
+				              <li><a ng-click="changeIndustry(3006)">批发和零售、住宿和餐饮业</a></li>
+				              <li><a ng-click="changeIndustry(3007)">金融、房地产、商务及居民服务业</a></li>
+				              <li><a ng-click="changeIndustry(3008)">公共事业及管理组织</a></li>
+				            </ul>
+						</div>
+					</div>
+					<div style="display: inline-block;">
+						<a type="button" name="" ui-turn-on="myDropdown3" class="btn btn-default" href="javascript:void(0)">切换图表类型<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+						<div style="position: relative;">
+							<ul ui-shared-state="myDropdown3" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown3')" ui-outer-click-if="Ui.active('myDropdown3')" role="menu" ui-show="myDropdown3" ui-turn-off="myDropdown3">
+				              <li><a ng-click="changeStyle('spline')">曲线图</a></li>
+				              <li><a ng-click="changeStyle('column')">直方图</a></li>
+				              <li class="divider"></li>
+				              <li><a ng-click="changeStyle('area')">区域图</a></li>
+				            </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="chart-area">
+				<span class="title">图表</span>
+				<div class="content">
+					<highchart config="SingleVocationChartByYear"></highchart>
+					<highchart config="SingleVocationChart"></highchart>
+				</div>
+			</div>
+			<div class="one-word">
+				<span class="title">一句话解读</span>
+				<span class="content">用电量增减变动趋势与产值增减变动趋势基本一致，预测该行业用电量近年内有下降趋势，行业产值则缓慢回升。</span>
+			</div>
+			<div class="calculate-model">
+				<span class="title">预测模型</span>
+				<span class="content">格兰杰因果检验模型和误差修正模型的组合模型</span>
+			</div>
+			<div class="detail-data">
+				<span class="title">{{industryType}}数据详情</span>
+				<table class="table table-bordered table-condensed content table-hover">
+					<tr style="background-color: rgba(99,99,99,.1);">
+						<td>年份</td>
+						<td>行业产值同比增长率</td>
+						<td>行业用电量同比增长率</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[0]}}</td>
+						<td>{{yearData.gdps[0]}}%</td>
+						<td>{{yearData.powers[0]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[1]}}</td>
+						<td>{{yearData.gdps[1]}}%</td>
+						<td>{{yearData.powers[1]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[2]}}</td>
+						<td>{{yearData.gdps[2]}}%</td>
+						<td>{{yearData.powers[2]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[3]}}</td>
+						<td>{{yearData.gdps[3]}}%</td>
+						<td>{{yearData.powers[3]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[4]}}</td>
+						<td>{{yearData.gdps[4]}}%</td>
+						<td>{{yearData.powers[4]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[5]}}</td>
+						<td>{{yearData.gdps[5]}}%</td>
+						<td>{{yearData.powers[5]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[6]}}</td>
+						<td>{{yearData.gdps[6]}}%</td>
+						<td>{{yearData.powers[6]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[7]}}</td>
+						<td>{{yearData.gdps[7]}}%</td>
+						<td>{{yearData.powers[7]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[8]}}</td>
+						<td>{{yearData.gdps[8]}}%</td>
+						<td>{{yearData.powers[8]}}%</td>
+					</tr>
+					<tr>
+						<td>{{yearData.years[9]}}</td>
+						<td>{{yearData.gdps[9]}}%</td>
+						<td>{{yearData.powers[9]}}%</td>
+					</tr>
+					<tr style="background-color: rgba(68, 170, 213, .1);">
+						<td>{{yearData.years[10]}}</td>
+						<td>{{yearData.gdps[10]}}%</td>
+						<td>{{yearData.powers[10]}}%</td>
+					</tr>
+					<tr style="background-color: rgba(68, 170, 213, .1);">
+						<td>{{yearData.years[11]}}</td>
+						<td>{{yearData.gdps[11]}}%</td>
+						<td>{{yearData.powers[11]}}%</td>
+					</tr>
+					<tr style="background-color: rgba(68, 170, 213, .1);">
+						<td>{{yearData.years[12]}}</td>
+						<td>{{yearData.gdps[12]}}%</td>
+						<td>{{yearData.powers[12]}}%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="detail-data">
+				<span class="title">{{yearmark}}年{{industryType}}数据详情</span>
+				<table class="table table-bordered table-condensed content table-hover">
+					<tr style="background-color: rgba(99,99,99,.1);">
+						<td>年份</td>
+						<td>行业产值同比增长率</td>
+						<td>行业用电量同比增长率</td>
+					</tr>
+					<tr>
+						<td>第一季度</td>
+						<td>{{seasonData.gdps[0]}}%</td>
+						<td>{{seasonData.powers[0]}}%</td>
+					</tr>
+					<tr>
+						<td>第二季度</td>
+						<td>{{seasonData.gdps[1]}}%</td>
+						<td>{{seasonData.powers[1]}}%</td>
+					</tr>
+					<tr>
+						<td>第三季度</td>
+						<td>{{seasonData.gdps[2]}}%</td>
+						<td>{{seasonData.powers[2]}}%</td>
+					</tr>
+					<tr>
+						<td>第四季度</td>
+						<td>{{seasonData.gdps[3]}}%</td>
+						<td>{{seasonData.powers[3]}}%</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

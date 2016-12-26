@@ -77,6 +77,26 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/economy/power/one/one.html',
       controller: 'poweroneCtrl'
     })
+    .state('app.in.power.two', {
+      url: '/two',
+      templateUrl: 'app/in/economy/power/two/two.html',
+      controller: 'powertwoCtrl'
+    })
+    .state('app.in.power.three', {
+      url: '/three',
+      templateUrl: 'app/in/economy/power/three/three.html',
+      controller: 'powerthreeCtrl'
+    })
+    .state('app.in.power.four', {
+      url: '/four',
+      templateUrl: 'app/in/economy/power/four/four.html',
+      controller: 'powerfourCtrl'
+    })
+    .state('app.in.power.five', {
+      url: '/five',
+      templateUrl: 'app/in/economy/power/five/five.html',
+      controller: 'powerfiveCtrl'
+    })
     .state('app.in.tax', {
       abstract: true,
       url: '/tax',
@@ -105,6 +125,21 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/environment/air/one/one.html',
       controller: 'aironeCtrl'
     })
+    .state('app.in.air.two', {
+      url: '/two',
+      templateUrl: 'app/in/environment/air/two/two.html',
+      controller: 'airtwoCtrl'
+    })
+    .state('app.in.air.three', {
+      url: '/three',
+      templateUrl: 'app/in/environment/air/three/three.html',
+      controller: 'airthreeCtrl'
+    })
+    .state('app.in.air.four', {
+      url: '/four',
+      templateUrl: 'app/in/environment/air/four/four.html',
+      controller: 'airfourCtrl'
+    })
     .state('app.in.water', {
       abstract: true,
       url: '/water',
@@ -115,6 +150,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       url: '/one',
       templateUrl: 'app/in/environment/water/one/one.html',
       controller: 'wateroneCtrl'
+    })
+    .state('app.in.water.two', {
+      url: '/two',
+      templateUrl: 'app/in/environment/water/two/two.html',
+      controller: 'watertwoCtrl'
+    })
+    .state('app.in.water.three', {
+        url: '/three',
+        templateUrl: 'app/in/environment/water/three/three.html',
+        controller: 'waterthreeCtrl'
     })
     
     // 人口
@@ -140,6 +185,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/population/labor/one/one.html',
       controller: 'laboroneCtrl'
     })
+    .state('app.in.labor.two', {
+      url: '/two',
+      templateUrl: 'app/in/population/labor/two/two.html',
+      controller: 'labortwoCtrl'
+    })
+    .state('app.in.labor.three', {
+      url: '/three',
+      templateUrl: 'app/in/population/labor/three/three.html',
+      controller: 'laborthreeCtrl'
+    })
     .state('app.in.popothers', {
       abstract: true,
       url: '/popothers',
@@ -151,7 +206,17 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/population/popothers/one/one.html',
       controller: 'popothersoneCtrl'
     })
-    
+    .state('app.in.popothers.education', {
+      url: '/one',
+      templateUrl: 'app/in/population/popothers/one/education.html',
+      controller: 'popotherseducationCtrl'
+    })
+    .state('app.in.popothers.insurance', {
+      url: '/one',
+      templateUrl: 'app/in/population/popothers/one/insurance.html',
+      controller: 'popothersinsuranceCtrl'
+    })
+
     ;
     
 
