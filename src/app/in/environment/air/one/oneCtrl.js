@@ -7,9 +7,9 @@ export default ($scope, $rootScope, qService, environmentRes) => {
 
     };
     var airConditionGetHeaders = {
-        'apikey':'8a2ea9c51525a5332967ae13c1454deb',
+
     };
-    var airConditionGetPromise = qService.httpGetWithToken(environmentRes.getAirCondition, airConditionGetParams, airConditionGetHeaders);
+    var airConditionGetPromise = qService.httpGetWithTokenWeather(environmentRes.getAirCondition, airConditionGetParams, airConditionGetHeaders);
     airConditionGetPromise.then(function(data){
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
