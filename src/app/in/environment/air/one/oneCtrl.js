@@ -14,7 +14,7 @@ export default ($scope, $rootScope, qService, environmentRes) => {
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
         //依照今天日期计算明天日期
-        var today=data.retData["today"]
+        var today=data.retData["today"];
         var dependedVal=today["date"];
         console.log(dependedVal);
         var d = dependedVal;
