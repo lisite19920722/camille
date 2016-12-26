@@ -2,6 +2,7 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 	'ngInject';
 
 	var getYearData = function(industryId) {
+		$rootScope.loading = true;
 		$scope.getIndustryYearParams = {
 	    	'industryId': industryId,
 	    };
@@ -86,10 +87,13 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 			};
 		},function(error) {
 
-		});
+		}).finally(() => {
+	        $rootScope.loading = false;
+	    });
 	};
 
 	var getSeasonData = function(industryId, year) {
+		$rootScope.loading = true;
 		$scope.getIndustrySeasonParams = {
 	    	'industryId': industryId,
 	    	'year': year,
@@ -164,7 +168,9 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 			};
 		}, function(error) {
 
-		});
+		}).finally(() => {
+	        $rootScope.loading = false;
+	    });
 	};
 
 	$scope.changeStyle = function(param){

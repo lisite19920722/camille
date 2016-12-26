@@ -2,6 +2,7 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 	'ngInject';
 
 	const getIndustryData = function(year) {
+		$rootScope.loading = true;
 		let getIndustryParams = {
 	    	'year': year, 
 	    };
@@ -158,7 +159,11 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 		    	    color:'#DAA520',
 		    	}]
 		    };
-		},function(error) {});
+		},function(error) {
+
+		}).finally(() => {
+	        $rootScope.loading = false;
+	    });
     };
     $scope.currentYear = "2015";
     getIndustryData(2015);
