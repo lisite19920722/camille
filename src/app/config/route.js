@@ -194,7 +194,7 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
     .state('app.in.popothers.insurance', {
       url: '/one',
       templateUrl: 'app/in/population/popothers/one/insurance.html',
-      
+      controller: 'popothersinsuranceCtrl'
     })
 
     ;

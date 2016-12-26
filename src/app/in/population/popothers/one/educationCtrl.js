@@ -17,6 +17,30 @@ export default ($scope, $rootScope, qService, populationRes) => {
     $scope.preMiddleSchool = rc.data[9];
     $scope.preHighschool = rc.data[10];
 
+
+    $scope.buttonMap8 = [{
+        name: 2025,
+        label: 2025 + "年",
+        radio: "Middle"
+      },
+      {
+        name: 2035,
+        label: 2035 + "年",
+        radio: "Middle"
+      },
+      {
+        name: 2045,
+        label: 2045 + "年",
+        radio: "Right"
+      }];
+ $scope.btn_click8=function(bttn){
+     $scope.change8(bttn);
+  };
+
+
+
+
+
         $scope.townName = ['娄东街道','城厢镇','双凤镇','沙溪镇','浏河镇','浮桥镇','璜泾镇','新区','港区','科教新城'];
 
        $scope.school1="太仓市小学数量46所，初中17所，高中5所。";
@@ -83,21 +107,6 @@ if(bttn.name===2045){
 
 };
 
-$scope.buttonMap5 = [{
-    name: 2025,
-    label: 2025 + "年",
-    radio: "Middle"
-},
-{
-    name: 2035,
-    label: 2035 + "年",
-    radio: "Middle"
-},
-{
-    name: 2045,
-    label: 2045 + "年",
-    radio: "Right"
-}];
 
 
 
