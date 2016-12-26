@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService,economyKeqiangRes) => {
 	'ngInject';
+  $scope.containerHeight = $(window).height() - 127;
   var now = new Date();
     var nowyear = now.getFullYear();
     $scope.currentyear = nowyear;

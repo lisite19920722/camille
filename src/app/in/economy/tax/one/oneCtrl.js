@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService,economyTaxRes) => {
 	'ngInject';
+  $scope.containerHeight = $(window).height() - 127;
     var TaxPromise = qService.httpGetWithToken(economyTaxRes.getYearTax,{},{});
   var now = new Date();
   var year = now.getFullYear();

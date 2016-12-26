@@ -1,5 +1,6 @@
 export default ($scope, $rootScope, qService,economyGdpRes) => {
   'ngInject';
+  $scope.containerHeight = $(window).height() - 127;
   var IndustryPromise = qService.httpGetWithToken(economyGdpRes.getIndustryDetail,{},{});
      $scope.industryexchange=function(param){
        $scope.industryyearGDPChart.series[0].type=param;
