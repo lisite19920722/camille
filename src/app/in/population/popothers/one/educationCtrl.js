@@ -4,7 +4,12 @@ export default ($scope, $rootScope, qService, populationRes) => {
     (function() {
         document.body.scrollIntoView();
     })();
+    $scope.toggleMenu1=function(){
+        $scope.isMenu=!$scope.isMenu;
+    };
+    $scope.isMenu=false;
 
+    $scope.windowHeight=$(window).height();
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 

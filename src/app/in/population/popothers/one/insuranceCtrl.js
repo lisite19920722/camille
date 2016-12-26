@@ -21,7 +21,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     $scope.secondTenYear = ['2026', '2027', '2028', '2029', '2030', '2031','2032', '2033', '2034', '2035'];
     $scope.thirdTenYear  = ['2036', '2037', '2038', '2039', '2040', '2041','2042', '2043', '2044', '2045'];
 
-    $scope.buttonMap5 = [{
+    $scope.buttonMap1 = [{
         name: 2025,
         label: 2025 + "年",
         radio: "Middle"
