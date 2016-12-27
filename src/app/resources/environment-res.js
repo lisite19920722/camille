@@ -41,6 +41,6 @@ export default ($resource, BASE_URL) => {
                     headers: headers
                 },
             });
-        },   
+        }   
     };
 }

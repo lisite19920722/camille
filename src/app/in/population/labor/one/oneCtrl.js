@@ -1,22 +1,22 @@
 export default ($scope, $rootScope, $stateParams, qService, populationRes) => { 
 	'ngInject';
-	   (function() {
+    (function() {
       document.body.scrollIntoView();
-    })();
+  })();
     //年份选择按钮
-	$scope.isMenu1 = false;
-	$scope.toggleMenu1 =() => {
-		$scope.isMenu1 = !$scope.isMenu1;
-	};
+    $scope.isMenu1 = false;
+    $scope.toggleMenu1 =() => {
+      $scope.isMenu1 = !$scope.isMenu1;
+  };
 
 	//切换表格
 	$scope.datashow1 = false;	
     $scope.showPopulationDetail1 = () =>{
-       $scope.datashow1= !$scope.datashow1;
-       };
-    $scope.showPopulationDetail2 = function(){
-       $scope.datashow2= !$scope.datashow2;
-       };
+     $scope.datashow1= !$scope.datashow1;
+ };
+ $scope.showPopulationDetail2 = function(){
+     $scope.datashow2= !$scope.datashow2;
+ };
 	//关联度值数据
 	var relate1 = [0.825, 0.827, 0.829,0.826, 0.829, 0.831, 0.836, 0.834, 0.836, 0.838];
 	var relate2 = [0.839, 0.837, 0.836,0.838, 0.839, 0.834, 0.835, 0.836, 0.837, 0.838];
@@ -29,50 +29,42 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
 
 
 	$scope.yearSelect1 = ['2016-2025年', '2026-2035年', '2036-2045年'];
+    
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData,{},{})
-     .then((resource) => {
-      	var dataP = new Array(30);
-      	for(let i=0; i<30; i++ ){
+    .then((resource) => {
+
+        //获取人口和gdp数据
+        var dataP = new Array(30);
+        var dataG = new Array(30);
+        for(let i=0; i<30; i++ ){
             dataP[i] = resource.data[i].preLaborPopulation;
-      	}
-      	//gdp数据
-      	var dataG = new Array(30);
-      	for(let i=0; i<30; i++ ){
             dataG[i] = resource.data[i].preLaborPopulation;
-      	}
-	   //切换数据
-     	var firstTen =(year) =>{
-            $scope.firstChart = comChart(dataP.slice(0,10), relate1, dataG.slice(0,10), yearLen1); 
-     	};
-     	var secondTen =(year) =>{
-            $scope.firstChart = comChart(dataP.slice(10,20), relate2, dataG.slice(10,20), yearLen2); 
-     	};
-     	var thirdTen =(year) =>{
-            $scope.firstChart = comChart(dataP.slice(20,30), relate3, dataG.slice(20,30), yearLen3); 
-     	};
+        }
+
+        
       	//通用设置图表数据函数
       	var comChart = (popDa, relDa, gdpDa, yearLen) => {
-          return {
-            options:{ 
-              exporting: {
+              return {
+                options:{ 
+                  exporting: {
                 enabled: false, // 取消打印menu
-              },
-              chart: {
+            },
+            chart: {
                 zoomType: 'xy'
-                },
-                title: {
-                    text: '2016至2025年劳动力人口与GDP关联分析预测',
-                    style:{
-                    	fontSize: '13px',
-                    	fontWeight: 'bold',
-                    }
-                },
-                 credits:{
-                            enabled:false
-                        },
-                xAxis: {
-                    categories: yearLen
-                },
+            },
+            title: {
+                text: '2016至2025年劳动力人口与GDP关联分析预测',
+                style:{
+                   fontSize: '13px',
+                   fontWeight: 'bold',
+               }
+           },
+           credits:{
+            enabled:false
+        },
+        xAxis: {
+            categories: yearLen
+        },
                 yAxis: [{ // Primary yAxis
                     labels: {
                         formatter: function() {
@@ -107,7 +99,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                             color: '#7CB5EC'
                         }
                     },
-                     tickPositions:[0, 200000, 400000, 600000, 800000]
+                    tickPositions:[0, 200000, 400000, 600000, 800000]
 
                 }, { // Tertiary yAxis
                     gridLineWidth: 0,
@@ -136,26 +128,26 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                     align: 'center',
 
                     verticalAlign: 'bottom',
-                     itemStyle:{
-                            fontWeight:'normal'
-                            }
-                }
-               },
-                 series: [{
-                    name: '人口',
-                    color: '#7CB5EC',
-                    type: 'column',
-                    yAxis: 1,
-                    data:  popDa,
-                    tooltip: {
-                        valueSuffix: '人'
+                    itemStyle:{
+                        fontWeight:'normal'
                     }
+                }
+            },
+            series: [{
+                name: '人口',
+                color: '#7CB5EC',
+                type: 'column',
+                yAxis: 1,
+                data:  popDa,
+                tooltip: {
+                    valueSuffix: '人'
+                }
 
-                }, {
-                    name: '关联度',
-                    type: 'spline',
-                    color: '#8968CD',
-                    yAxis: 2,
+            }, {
+                name: '关联度',
+                type: 'spline',
+                color: '#8968CD',
+                yAxis: 2,
                     //xie
                     data: relDa,
                     marker: {
@@ -179,31 +171,31 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                         valueSuffix: '亿元'
                     }
                 }]
-        };
-      	}
+            };
+        }
       	//初始化图表数据
         $scope.firstChart = {
             options:{ 
               exporting: {
                 enabled: false, // 取消打印menu
-              },
-              chart: {
+            },
+            chart: {
                 zoomType: 'xy'
-                },
-                title: {
-                    text: '2016至2025年劳动力人口与GDP关联分析预测',
-                    style:{
-                    	fontSize: '13px',
-                    	fontWeight: 'bold',
-                    }
-                },
-                 credits:{
-                            enabled:false
-                        },
-                xAxis: {
-                    categories: ['2016', '2017', '2018', '2019', '2020', '2021',
-                        '2022', '2023', '2024', '2025']
-                },
+            },
+            title: {
+                text: '2016至2025年劳动力人口与GDP关联分析预测',
+                style:{
+                   fontSize: '13px',
+                   fontWeight: 'bold',
+               }
+           },
+           credits:{
+            enabled:false
+        },
+        xAxis: {
+            categories: ['2016', '2017', '2018', '2019', '2020', '2021',
+            '2022', '2023', '2024', '2025']
+        },
                 yAxis: [{ // Primary yAxis
                     labels: {
                         formatter: function() {
@@ -238,7 +230,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                             color: '#7CB5EC'
                         }
                     },
-                     tickPositions:[0, 200000, 400000, 600000, 800000]
+                    tickPositions:[0, 200000, 400000, 600000, 800000]
 
                 }, { // Tertiary yAxis
                     gridLineWidth: 0,
@@ -267,26 +259,26 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                     align: 'center',
 
                     verticalAlign: 'bottom',
-                     itemStyle:{
-                            fontWeight:'normal'
-                            }
-                }
-               },
-                 series: [{
-                    name: '人口',
-                    color: '#7CB5EC',
-                    type: 'column',
-                    yAxis: 1,
-                    data:  dataP.slice(0,10),
-                    tooltip: {
-                        valueSuffix: '人'
+                    itemStyle:{
+                        fontWeight:'normal'
                     }
+                }
+            },
+            series: [{
+                name: '人口',
+                color: '#7CB5EC',
+                type: 'column',
+                yAxis: 1,
+                data:  dataP.slice(0,10),
+                tooltip: {
+                    valueSuffix: '人'
+                }
 
-                }, {
-                    name: '关联度',
-                    type: 'spline',
-                    color: '#8968CD',
-                    yAxis: 2,
+            }, {
+                name: '关联度',
+                type: 'spline',
+                color: '#8968CD',
+                yAxis: 2,
                     //xie
                     data: [0.825, 0.827, 0.829,0.826, 0.829, 0.831, 0.836, 0.834, 0.836, 0.838],
                     marker: {
@@ -310,29 +302,31 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                         valueSuffix: '亿元'
                     }
                 }]
-        };
-                $scope.toggleData1 = (year) => {
-           switch(year){
-              case $scope.yearSelect1[0]:
-                firstTen(year);
-                break;
-              case $scope.yearSelect1[1]:
-                secondTen(year);
-                break;
-              case $scope.yearSelect1[2]:
-                thirdTen(year);
-                break;
-           };           
+            };
 
-        };
-         console.log($scope.firstChart.options.xAxis.categories[0]+"-"+$scope.firstChart.options.xAxis.categories[9]);
-         },(err) => {
-           console.log('劳动力第一个图的数据获取不成功');
-         }    
-   	    )
-     .finally(() => {
-        $rootScope.loading = false;
-     }
-   	);
+            
+
+            $scope.toggleData1 = (year) => {
+             switch(year){
+              case $scope.yearSelect1[0]:
+              $scope.firstChart = comChart(dataP.slice(0,10), relate1, dataG.slice(0,10), yearLen1);
+              break;
+              case $scope.yearSelect1[1]:
+              $scope.firstChart = comChart(dataP.slice(10,20), relate2, dataG.slice(10,20), yearLen2);
+              break;
+              case $scope.yearSelect1[2]:
+              $scope.firstChart = comChart(dataP.slice(20,30), relate3, dataG.slice(20,30), yearLen3);
+              break;
+          };           
+
+      };
+  },(err) => {
+     console.log('劳动力第一个图的数据获取不成功');
+ }    
+ )
+.finally(() => {
+    $rootScope.loading = false;
+}
+);
 
 };

@@ -9,7 +9,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     };
     $scope.isMenu=false;
 
-    $scope.windowHeight=$(window).height();
+    $scope.containerHeight = $(window).height() - 127;
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 
@@ -41,9 +41,6 @@ export default ($scope, $rootScope, qService, populationRes) => {
  $scope.btn_click8=function(bttn){
      $scope.change8(bttn);
   };
-
-
-
 
 
         $scope.townName = ['娄东街道','城厢镇','双凤镇','沙溪镇','浏河镇','浮桥镇','璜泾镇','新区','港区','科教新城'];
