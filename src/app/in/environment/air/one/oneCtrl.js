@@ -11,12 +11,14 @@ export default ($scope, $rootScope, qService, environmentRes) => {
     };
     var airConditionGetPromise = qService.httpGetWithTokenWeather(environmentRes.getAirCondition, airConditionGetParams, airConditionGetHeaders);
     airConditionGetPromise.then(function(data){
+        console.log(data.results[0].last_update);
+        $scope.today=data.results[0].last_update;
         //--------------------------盒子1----------------------------
         //盒子1中右上方日期$scope.airConditionTomorrow
         //依照今天日期计算明天日期
-        var today=data.retData["today"];
-        console.log(today["date"]);
-        $scope.today=today["date"];
+        // var today=data.retData["today"];
+        // console.log(today["date"]);
+        // $scope.today=today["date"];
         // var history=data.retData["history"];
         // var forecast=data.retData["forecast"];
         // var dependedVal=today["date"];
