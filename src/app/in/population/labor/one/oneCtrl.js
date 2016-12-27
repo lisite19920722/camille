@@ -31,13 +31,12 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
 	$scope.yearSelect1 = ['2016-2025年', '2026-2035年', '2036-2045年'];
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData,{},{})
      .then((resource) => {
+
+        //获取人口和gdp数据
       	var dataP = new Array(30);
-      	for(let i=0; i<30; i++ ){
-            dataP[i] = resource.data[i].preLaborPopulation;
-      	}
-      	//gdp数据
       	var dataG = new Array(30);
       	for(let i=0; i<30; i++ ){
+            dataP[i] = resource.data[i].preLaborPopulation;
             dataG[i] = resource.data[i].preLaborPopulation;
       	}
 	   //切换数据
