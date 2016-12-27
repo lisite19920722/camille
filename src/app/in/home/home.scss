@@ -32,8 +32,15 @@
 				@include content();
 				padding: 20px 15px;
 				text-align: center;
-				background-color: #eee;
 				text-shadow: #999 3px 3px 10px;
+				background:
+					radial-gradient(circle farthest-side at 0% 50%,#eee 23.5%,rgba(240,166,17,0) 0)21px 30px,
+					radial-gradient(circle farthest-side at 0% 50%,#ddd 24%,rgba(240,166,17,0) 0)19px 30px,
+					linear-gradient(#eee 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#eee 0)0 0,
+					linear-gradient(150deg,#eee 24%,#ddd 0,#ddd 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#ddd 0,#ddd 76%,#eee 0)0 0,
+					linear-gradient(30deg,#eee 24%,#ddd 0,#ddd 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#ddd 0,#ddd 76%,#eee 0)0 0,
+					linear-gradient(90deg,#ddd 2%,#eee 0,#eee 98%,#ddd 0%)0 0 #eee;
+				background-size:40px 60px;
 			}
 		}
 		.function {
@@ -74,7 +81,6 @@
 						span {
 							position: relative;
 							top: 18px;
-							color: rgb(110,224,50);
 							font-size: 13px;
 						}
 					}
