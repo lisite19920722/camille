@@ -1,14 +1,14 @@
    <!--第二个大的莫块开始-->
-    <div class="container" style="overflow: scroll">
+    <div  style="overflow-y:scroll;height: 450px;width: 100%;">
 
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h4>人口与城镇养老保险基金预测</h4>
-        </div>
+            <div style="border:1px solid grey;background:grey">
+          <h4 style="margin-top:10px;margin-left:10px">人口与城镇养老保险基金预测</h4>
+        </div>     
+        
+          
+      
         <!-- 添加空的div，填充竖线 -->
-        <div class="row" style="height:22px;">
-          <div class="col-md-8 chart-panel"></div>
-        </div>
+        
         <div class="row" >
           <!--84图的8模块开始-->
           <div class="col-md-8 chart-panel" >
@@ -41,9 +41,9 @@
             </div>
             <!--年份选择按钮开始-->
             <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
-            <div class="btn-group dropdown" style="margin-left:7px">
-              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false">年份选择<span class="caret"></span></button>
-              <ul class="dropdown-menu">
+            <div class="btn-group dropdown" style="float:left">
+              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" ng-click="toggleMenu1()">年份选择<span class="caret"></span></button>
+              <ul class="dropdown-menu" ng-show="isMenu">
                 <li><a ng-repeat="bttn in buttonMap1" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click5(bttn)">{{bttn.label}}</a></li>
               </ul>
             </div>
@@ -51,7 +51,7 @@
 
             <!--详细数据按钮开始-->
 
-            <div class="col-md-12 cgq_marginaround1em" style="margin-left:-8px;">
+            <div class="col-md-12 cgq_marginaround1em" style="float:left;width:50%" >
               <div style="height:15px"></div>
               <button ng-click="showPopulationDetail2()" style="width:90px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
             </div>
@@ -75,9 +75,12 @@
         <!--养老保险表格开始-->
 
         <div class="bg-white fc-datatable"  ng-if="totalshow2" style="border:0px">
-          <div class="panel-heading"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center></div>
+          
           <div class="panel panel-default paddingmargin0em" >
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+              <tr>
+              <td colspan="6"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center></td>
+              </tr>
               <tr class="ng-scope ng-isolate-scope">
                 <td>年份</td>
                 <td ng-repeat="num in money.options.xAxis[0].categories track by $index"> {{num}}</td>
@@ -102,5 +105,5 @@
 
 
       <!--表格结束-->
-      </div>
+      
     </div>

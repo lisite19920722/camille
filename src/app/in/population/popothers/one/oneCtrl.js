@@ -1,15 +1,24 @@
 'use strict';
 export default ($scope, $rootScope, qService, populationRes) => {
 	'ngInject';
+  $scope.windowHeight=$(window).height();
     (function() {
         document.body.scrollIntoView();
     })();
-
+    $scope.show1=false;
+    $scope.ShowClick1=function(){
+      $scope.show1=!$scope.show1;
+    }
+    $scope.show2=false;
+    $scope.ShowClick2=function(){
+      $scope.show2=!$scope.show2;
+    }
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 
        console.log('劳动力第一个图的数据获取不成功');
-
+    
+    $scope.rate=[81.07,83.43,81.00,82.53,85.63,82.25,83.20,81.95,81.83,77.70];
     $scope.preLaborPopulation = rc.data[0];
     $scope.preEmployedPopulation = rc.data[1];
  
@@ -22,6 +31,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     $scope.showPopulationDetail = function(){
       $scope.totalshow= !$scope.totalshow;
     };
+    $scope.totalshow1=false;
     $scope.showPopulationDetail1 = function(){
       $scope.totalshow1= !$scope.totalshow1;
     };
