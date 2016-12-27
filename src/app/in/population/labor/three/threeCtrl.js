@@ -91,6 +91,7 @@ export default ($scope, $stateParams, qService, populationRes) => {
        			plotBackgroundColor: null,
        			plotBorderWidth: null,
        			plotShadow: false,
+       			margin: [30, 30, 30, 30],
        		},
        		credits:{
        			enabled:false
