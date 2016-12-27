@@ -3,8 +3,7 @@ export default ($resource, BASE_URL) => {
 
     return {
         getAirCondition: (headers) => {
-            return $resource('http://apis.baidu.com/apistore/weatherservice/recentweathers?cityid=101190408', {}, {
-            // return $resource('https://api.thinkpage.cn/v3/weather/daily.json?key=inb6r9evd3mvcuwf&location=suzhou&language=zh-Hans&unit=c&start=0&days=5', {}, {
+            return $resource('https://api.thinkpage.cn/v3/weather/daily.json?key=inb6r9evd3mvcuwf&location=suzhou&language=zh-Hans&unit=c&start=0&days=5', {}, {
                 get: {
                     method: 'GET',
                     headers: headers
