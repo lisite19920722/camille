@@ -1,0 +1,96 @@
+<div class="scrollable"> 
+	<div class="scrollable-content">
+		<div class="structure-two-module">
+			<div class="current-position">
+				<span class="title">当前位置</span>
+				<span class="content">人口 -> 人口结构分析预测BI -> 常住人口总量分析预测</span>
+			</div>
+			<div class="control-area">
+				<span class="title">操作图表</span>
+				<div class="content">
+					<a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+					<div style="position:relative;">
+						<ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+							 <li ng-repeat="bttn in buttonMap1"><a ng-model="predictionModal" style="margin-bottom:1px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="chart-area">
+				<span class="title">图表</span>
+				<div class="content">
+					<highchart id="sumpopulation" config="sumpopulation"></highchart>
+				</div>
+			</div>
+			<div class="one-word">
+				<span class="title">一句话解读</span>
+				<span>数据分析：</span><span class="content" id="a">2025年的人口增长率0.25%相比2016年的0.25%有了小幅度的降低。</span>
+				<span>结论：</span><span class="content" id="sumconclusion">总体来看，太仓市的人口总量处于平稳状态，呈增长趋势。二胎政策的全面开放，促进了人口数量的增加。</span>
+			</div>
+			<div class="calculate-model">
+				<span class="title">预测模型</span>
+				<span class="content">灰色预测模型</span>
+			</div>
+			<div class="detail-data">
+				<span class="title">数据详情</span>
+				<table class="table table-bordered table-condensed content table-hover">
+					<tr style="background-color: rgba(99,99,99,.1);">
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td>人口总数（人）</td>
+						<td>人口增长率</td>
+					</tr>
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[0]}}</td>
+						<td>{{sumpeople[0]}}</td>
+						<td>{{growth[0]}}%</td>
+					</tr>
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[1]}}</td>
+						<td>{{sumpeople[1]}}</td>
+						<td>{{growth[1]}}%</td>
+					</tr>		
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[2]}}</td>
+						<td>{{sumpeople[2]}}</td>
+						<td>{{growth[2]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[3]}}</td>
+						<td>{{sumpeople[3]}}</td>
+						<td>{{growth[3]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[4]}}</td>
+						<td>{{sumpeople[4]}}</td>
+						<td>{{growth[4]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[5]}}</td>
+						<td>{{sumpeople[5]}}</td>
+						<td>{{growth[5]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[6]}}</td>
+						<td>{{sumpeople[6]}}</td>
+						<td>{{growth[6]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[7]}}</td>
+						<td>{{sumpeople[7]}}</td>
+						<td>{{growth[7]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[8]}}</td>
+						<td>{{sumpeople[8]}}</td>
+						<td>{{growth[8]}}%</td>
+					</tr>	
+					<tr>
+						<td>{{sumpopulation.options.xAxis[0].categories[9]}}</td>
+						<td>{{sumpeople[9]}}</td>
+						<td>{{growth[9]}}%</td>
+					</tr>	
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

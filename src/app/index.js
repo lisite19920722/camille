@@ -67,6 +67,8 @@ import waterthreeCtrl from './in/environment/water/three/threeCtrl';
 // 人口模块Controller
 import structureCtrl from './in/population/structure/structureCtrl';
 import structureoneCtrl from './in/population/structure/one/oneCtrl';
+import structuretwoCtrl from './in/population/structure/two/twoCtrl';
+import structurethreeCtrl from './in/population/structure/three/threeCtrl';
 import laborCtrl from './in/population/labor/laborCtrl';
 import laboroneCtrl from './in/population/labor/one/oneCtrl';
 import labortwoCtrl from './in/population/labor/two/twoCtrl';
@@ -148,6 +150,8 @@ angular.module('camille',
   // 人口controllers
   .controller('structureCtrl', structureCtrl)
   .controller('structureoneCtrl', structureoneCtrl)
+  .controller('structuretwoCtrl', structuretwoCtrl)
+  .controller('structurethreeCtrl', structurethreeCtrl)
   .controller('laborCtrl', laborCtrl)
   .controller('laboroneCtrl', laboroneCtrl)
   .controller('labortwoCtrl', labortwoCtrl)

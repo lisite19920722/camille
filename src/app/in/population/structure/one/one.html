@@ -1,1 +1,28 @@
-structure 第一个界面
+<div class="srcollable">
+	<div class="scrollable-content">
+		<div class="structure-one-module">
+			<div class="current-position">
+				<span class="title">当前位置</span>
+				<span class="title">人口 -> 人口结构分析预测BI -> 户籍人口结构分析预测</span>
+			</div>
+			<div class="control-area">
+				<span class="title">操作图表</span>
+				<div class="content">
+					<a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择
+					<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+					<div style="position:relative;">
+						<ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+							<li ng-repeat="bttn in buttonMap" ng-model="myYear"><a ng-model="predictionModal" style="margin-bottom: 1px;" btn-radio="bttn.radio" ng-click="btn_click(bttn)">{{bttn.label}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="chart-area">
+				<span class="title">图表</span>
+				<div class="contents">
+					<highchart id="age_ration" config="age_ration"></highchart>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
