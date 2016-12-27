@@ -2,9 +2,17 @@
      
 <highchart  config="populationPie" ></highchart>
 
+<div class="btn-group dropdown" style="width: 100%;">
+	<button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" style="width:50%" aria-expanded="false" >年份选择<span class="caret"></span></button>
+	<ul ng-show="isMenu1" class="dropdown-menu">
+		<li ng-repeat="year in yearSelect1"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
+	</ul>
+	<button class="btn btn-primary" ng-click="showPopulationDetail1()"  style="width:50%">详情数据<span class="caret"></span></button>
+</div>
 <hr/>
 
 <highchart config="industryPie" style="width:95%;height:363px"></highchart>
 
 </div>
 
+ 

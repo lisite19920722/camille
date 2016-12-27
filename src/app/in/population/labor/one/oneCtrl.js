@@ -325,7 +325,6 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
            };           
 
         };
-         console.log($scope.firstChart.options.xAxis.categories[0]+"-"+$scope.firstChart.options.xAxis.categories[9]);
          },(err) => {
            console.log('劳动力第一个图的数据获取不成功');
          }    
