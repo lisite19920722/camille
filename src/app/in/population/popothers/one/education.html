@@ -1,5 +1,4 @@
-  <div  style="margin-bottom:0;border-bottom: 0;border-left:0; border-right: 0;
-    height:{{windowHeight}}px;overflow: scroll">
+  <div  style="overflow-y:scroll;height: 450px;width: 100%;">
         <div style="border:1px solid grey;background:grey">
           <h4 style="margin-top:10px;margin-left:10px">人口与教育</h4>
         </div>              
@@ -21,24 +20,15 @@
                   <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;"><span>人口与教育分析预测采用的是灰色预测模型。</span></div>
                 </small>
               </div>
-            <div class="btn-group dropdown" style="float:left">
+            <div class="btn-group dropdown" style="width:50%;float:left">
               <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" aria-expanded="false">年份选择<span class="caret"></span></button>
               <ul ng-show="isMenu" class="dropdown-menu">
                 <li><a ng-repeat="bttn in buttonMap8" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click8(bttn)">{{bttn.label}}</a></li>
               </ul>            
             </div>
 
-            
-
-
-
-
-
-
-
-
-
-            <div class="btn-group dropdown" style="float:left">
+  
+            <div class="btn-group dropdown" style="width:50%;float:left">
             <button ng-click="showPopulationDetail3()"  class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
             </div>            
               
@@ -47,11 +37,14 @@
         
           
         <div  ng-if="totalshow3">
-          <div>
-               <center><strong>{{employyear3}}年年度各城镇中小学数量分析预测表</strong></center>
-          </div>
+         
           <div class="paddingmargin0em" >
-            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+          
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped" style="width:100%"> 
+              <tr>
+              <td colspan="11"><center><strong>{{school.options.title.text}}</strong></center></td>
+              </tr>
+
               <tr class="ng-scope ng-isolate-scope">
                 <td>地区</td>
                 <td ng-repeat="num in townName track by $index"> {{num}}</td>
