@@ -1,23 +1,21 @@
-<div class="container" style="overflow-y:scroll;height: 450px;width: 100%;">
-     
-	 <highchart style="" config="firstChart" ></highchart>
-
-     <div class="btn-group dropdown" style="width: 100%;">
-            <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" style="width:50%" aria-expanded="false" >年份选择<span class="caret"></span></button>
-            <ul ng-show="isMenu1" class="dropdown-menu">
-                <li ng-repeat="year in yearSelect1"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
-            </ul>
-            <button class="btn btn-primary" ng-click="showPopulationDetail1()"  style="width:50%">详情数据<span class="caret"></span></button>
-      </div>
-      <div>
+<div class="container" style="overflow-y:scroll;height: 550px;width: 100%;">
+    <highchart style="margin-top: 50px;" config="firstChart"></highchart>
+    <div class="btn-group dropdown" style="width: 100%;">
+        <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" style="width:50%" aria-expanded="false">年份选择<span class="caret"></span></button>
+        <ul ng-show="isMenu1" class="dropdown-menu">
+            <li ng-repeat="year in yearSelect1"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
+        </ul>
+        <button class="btn btn-primary" ng-click="showPopulationDetail1()" style="width:50%">详情数据<span class="caret"></span></button>
+    </div>
+    <div>
         <table class="table la-table-text" ng-show="datashow1">
             <thead>
-               <tr>
+                <tr>
                     <th>年份</th>
                     <th>人口(人)</th>
                     <th>GDP(万亿元)</th>
                     <th>关联度</th>
-                </tr>	
+                </tr>
             </thead>
             <tbody>
                 <tr style="text-align: left;">
@@ -81,7 +79,6 @@
                     <td>{{firstChart.series[1].data[9]}}</td>
                 </tr>
             </tbody>
-          </table>
-       </div>
-
+        </table>
+    </div>
 </div>
