@@ -3,7 +3,7 @@
         <div class="labor-one-module">
             <div class="current-position">
                 <span class="title">当前位置</span>
-                <span class="content">人口 ->劳动力人口与经济关联分析预测 -> 劳动力总人口与GDP关联分析预测</span>
+                <span class="content">人口 -> 劳动力人口与经济关联分析预测 -> 劳动力总人口与GDP关联分析预测</span>
             </div>
             <div class="control-area">
                 <span class="title">操作图表</span>
@@ -11,7 +11,7 @@
                     <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
                     <div style="position: relative;">
                         <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
-                            <li  ng-repeat="year in yearSelect1"><a ng-click="toggleData1(year)">{{year}}</a></li>
+                            <li ng-repeat="year in yearSelect1"><a ng-click="toggleData1(year)">{{year}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <div class="chart-area">
                 <span class="title">图表</span>
                 <div class="content">
-                      <highchart config="firstChart"></highchart>
+                    <highchart config="firstChart"></highchart>
                 </div>
             </div>
             <div class="one-word">
@@ -32,8 +32,6 @@
             </div>
             <div>
                 <span class="title">数据详情</span>
-
-
                 <table style="background-color: white" class="table table-bordered table-condensed content table-hover">
                     <tr style="text-align: center;">
                         <td>年份</td>
@@ -42,70 +40,66 @@
                         <td>关联度</td>
                     </tr>
                     <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[0]}}</td>
-                    <td>{{firstChart.series[0].data[0]}}</td>
-                    <td>{{firstChart.series[2].data[0]}}</td>
-                    <td>{{firstChart.series[1].data[0]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[1]}}</td>
-                    <td>{{firstChart.series[0].data[1]}}</td>
-                    <td>{{firstChart.series[2].data[1]}}</td>
-                    <td>{{firstChart.series[1].data[1]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[2]}}</td>
-                    <td>{{firstChart.series[0].data[2]}}</td>
-                    <td>{{firstChart.series[2].data[2]}}</td>
-                    <td>{{firstChart.series[1].data[2]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[3]}}</td>
-                    <td>{{firstChart.series[0].data[3]}}</td>
-                    <td>{{firstChart.series[2].data[3]}}</td>
-                    <td>{{firstChart.series[1].data[3]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[4]}}</td>
-                    <td>{{firstChart.series[0].data[4]}}</td>
-                    <td>{{firstChart.series[2].data[4]}}</td>
-                    <td>{{firstChart.series[1].data[4]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[5]}}</td>
-                    <td>{{firstChart.series[0].data[5]}}</td>
-                    <td>{{firstChart.series[2].data[5]}}</td>
-                    <td>{{firstChart.series[1].data[5]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[6]}}</td>
-                    <td>{{firstChart.series[0].data[6]}}</td>
-                    <td>{{firstChart.series[2].data[6]}}</td>
-                    <td>{{firstChart.series[1].data[6]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[7]}}</td>
-                    <td>{{firstChart.series[0].data[7]}}</td>
-                    <td>{{firstChart.series[2].data[7]}}</td>
-                    <td>{{firstChart.series[1].data[7]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[8]}}</td>
-                    <td>{{firstChart.series[0].data[8]}}</td>
-                    <td>{{firstChart.series[2].data[8]}}</td>
-                    <td>{{firstChart.series[1].data[8]}}</td>
-                </tr>
-                <tr style="text-align: center;">
-                    <td>{{firstChart.options.xAxis.categories[9]}}</td>
-                    <td>{{firstChart.series[0].data[9]}}</td>
-                    <td>{{firstChart.series[2].data[9]}}</td>
-                    <td>{{firstChart.series[1].data[9]}}</td>
-                </tr>
+                        <td>{{firstChart.options.xAxis.categories[0]}}</td>
+                        <td>{{firstChart.series[0].data[0]}}</td>
+                        <td>{{firstChart.series[2].data[0]}}</td>
+                        <td>{{firstChart.series[1].data[0]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[1]}}</td>
+                        <td>{{firstChart.series[0].data[1]}}</td>
+                        <td>{{firstChart.series[2].data[1]}}</td>
+                        <td>{{firstChart.series[1].data[1]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[2]}}</td>
+                        <td>{{firstChart.series[0].data[2]}}</td>
+                        <td>{{firstChart.series[2].data[2]}}</td>
+                        <td>{{firstChart.series[1].data[2]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[3]}}</td>
+                        <td>{{firstChart.series[0].data[3]}}</td>
+                        <td>{{firstChart.series[2].data[3]}}</td>
+                        <td>{{firstChart.series[1].data[3]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[4]}}</td>
+                        <td>{{firstChart.series[0].data[4]}}</td>
+                        <td>{{firstChart.series[2].data[4]}}</td>
+                        <td>{{firstChart.series[1].data[4]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[5]}}</td>
+                        <td>{{firstChart.series[0].data[5]}}</td>
+                        <td>{{firstChart.series[2].data[5]}}</td>
+                        <td>{{firstChart.series[1].data[5]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[6]}}</td>
+                        <td>{{firstChart.series[0].data[6]}}</td>
+                        <td>{{firstChart.series[2].data[6]}}</td>
+                        <td>{{firstChart.series[1].data[6]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[7]}}</td>
+                        <td>{{firstChart.series[0].data[7]}}</td>
+                        <td>{{firstChart.series[2].data[7]}}</td>
+                        <td>{{firstChart.series[1].data[7]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[8]}}</td>
+                        <td>{{firstChart.series[0].data[8]}}</td>
+                        <td>{{firstChart.series[2].data[8]}}</td>
+                        <td>{{firstChart.series[1].data[8]}}</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[9]}}</td>
+                        <td>{{firstChart.series[0].data[9]}}</td>
+                        <td>{{firstChart.series[2].data[9]}}</td>
+                        <td>{{firstChart.series[1].data[9]}}</td>
+                    </tr>
                 </table>
-
-
-
-
             </div>
         </div>
     </div>
