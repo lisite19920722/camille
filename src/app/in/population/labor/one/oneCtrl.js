@@ -29,6 +29,10 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
 
 
 	$scope.yearSelect1 = ['2016-2025年', '2026-2035年', '2036-2045年'];
+
+    //一句话解读数据,及初始化
+    $scope.oneWord = ['GDP增长趋势陡峭,劳动力人口增长较平稳，两者关联度逐年增加。', 'GDP平稳增长,劳动力人口增长较平稳，两者关联度基本不增加。', 'GDP增长量有所波动,劳动力人口基本不增长，两者关联度逐年增加。'];
+    $scope.one = $scope.yearSelect1[0].concat($scope.oneWord[0]);
     
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData,{},{})
     .then((resource) => {
@@ -43,7 +47,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
 
         
       	//通用设置图表数据函数
-      	var comChart = (popDa, relDa, gdpDa, yearLen) => {
+      	var comChart = (popDa, relDa, gdpDa, yearLen, titleYear) => {
               return {
                 options:{ 
                   exporting: {
@@ -53,7 +57,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 zoomType: 'xy'
             },
             title: {
-                text: '2016至2025年劳动力人口与GDP关联分析预测',
+                text: titleYear+'劳动力人口与GDP关联分析预测',
                 style:{
                    fontSize: '13px',
                    fontWeight: 'bold',
@@ -309,13 +313,16 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
             $scope.toggleData1 = (year) => {
              switch(year){
               case $scope.yearSelect1[0]:
-              $scope.firstChart = comChart(dataP.slice(0,10), relate1, dataG.slice(0,10), yearLen1);
+              $scope.firstChart = comChart(dataP.slice(0,10), relate1, dataG.slice(0,10), yearLen1, $scope.yearSelect1[0]);
+              $scope.one = $scope.yearSelect1[0].concat($scope.oneWord[0]);
               break;
               case $scope.yearSelect1[1]:
-              $scope.firstChart = comChart(dataP.slice(10,20), relate2, dataG.slice(10,20), yearLen2);
+              $scope.firstChart = comChart(dataP.slice(10,20), relate2, dataG.slice(10,20), yearLen2, $scope.yearSelect1[1]);
+              $scope.one = $scope.yearSelect1[1].concat($scope.oneWord[1]);
               break;
               case $scope.yearSelect1[2]:
-              $scope.firstChart = comChart(dataP.slice(20,30), relate3, dataG.slice(20,30), yearLen3);
+              $scope.firstChart = comChart(dataP.slice(20,30), relate3, dataG.slice(20,30), yearLen3,  $scope.yearSelect1[2]);
+              $scope.one =  $scope.yearSelect1[2].concat($scope.oneWord[2]);
               break;
           };           
 
