@@ -102,9 +102,6 @@ export default ($scope, $rootScope, qService, populationRes) => {
         rate1.push(rate24);
         rate1.push(rate25);
 
-        console.log(sum1);//2016到2025年人口总数
-        console.log(rate1);//2016到2025年人口增长率
-
 
 
         var sum26 = 0;
@@ -194,9 +191,6 @@ export default ($scope, $rootScope, qService, populationRes) => {
         rate2.push(rate34);
         rate2.push(rate35);
 
-        console.log(sum2);//2026到2035年人口总数
-        console.log(rate2);//2026到2035年人口增长率
-
 
         var sum36 = 0;
         var sum37 = 0;
@@ -284,9 +278,6 @@ export default ($scope, $rootScope, qService, populationRes) => {
         rate3.push(rate43);
         rate3.push(rate44);
         rate3.push(rate45);
-
-        console.log(sum3);//2036到2045年人口总数
-        console.log(rate3);//2036到2045年人口增长率
 
         $scope.sumpopulation = {
             options: {
@@ -390,99 +381,6 @@ export default ($scope, $rootScope, qService, populationRes) => {
                 }
             }]
         };
-        // $scope.sumpopulation = {
-        //     options: {
-        //         //  colors:lineColors,
-        //         chart: {
-        //             zoomType: 'xy'
-        //         },
-        //         title: {
-        //             text: '太仓市2016年到2025年人口总量预测趋势图'
-        //         },
-        //         legend: {
-
-        //             itemStyle: {
-        //                 fontWeight: 'normal'
-        //             }
-        //         },
-        //         xAxis: [{
-        //             categories: ['2016', '2017', '2018', '2019', '2020',
-        //                 '2021', '2022', '2023', '2024', '2025'
-        //             ],
-        //             crosshair: true,
-        //             labels: {
-        //                 rotation: -45,
-        //                 align: 'right',
-        //                 style: {
-        //                     fontSize: '13px',
-        //                     fontFamily: 'Verdana, sans-serif'
-        //                 }
-        //             }
-        //         }],
-        //         yAxis: [{ // Primary yAxis
-        //             labels: {
-        //                 format: '{value}%',
-        //                 style: {
-        //                     color: Highcharts.getOptions().colors[1]
-        //                 }
-        //             },
-        //             title: {
-        //                 text: '人口增长率',
-        //                 style: {
-        //                     color: Highcharts.getOptions().colors[1]
-        //                 }
-        //             },
-        //             opposite: true
-        //         }, { // Secondary yAxis
-        //             title: {
-        //                 text: '人口总量（人）',
-        //                 style: {
-        //                     color: Highcharts.getOptions().colors[1]
-        //                 },
-
-        //                 tickPositions: [0, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000]
-        //             },
-        //             labels: {
-
-        //                 format: '{value}',
-        //                 style: {
-        //                     color: Highcharts.getOptions().colors[1]
-        //                 },
-
-        //             },
-        //             // opposite: true
-        //         }],
-        //         tooltip: {
-        //             shared: true
-        //         },
-        //         credits: {
-        //             enabled: false
-        //         }
-
-        //     },
-        //     series: [{
-        //         name: '人口总量',
-        //         type: 'column',
-        //         yAxis: 1,
-        //         color: "#7CB5EC",
-        //         data: sum1,
-        //         tooltip: {
-        //             valueSuffix: '人'
-        //         }
-
-        //     }, {
-        //         name: '人口增长率',
-        //         type: 'spline',
-        //         color: "#858585",
-        //         data: rate1,
-        //         marker: {
-        //             symbol: "circle"
-        //         },
-        //         tooltip: {
-        //             valueSuffix: '%'
-        //         }
-        //     }]
-        // };
         $scope.btn_click1 = function(btn) {
             $scope.change1(btn);
         };
@@ -492,15 +390,14 @@ export default ($scope, $rootScope, qService, populationRes) => {
         $scope.growth = rate1;
         $scope.sumyear = "2016-2025";
         $scope.change1 = function(btn) {
-        	console.log(btn.name);
             if (btn.name === 2025) {
                 $scope.sumyear = "2016-2025";
                 //人口总量
                 $scope.sumpeople = sum1;
                 //人口增长率
                 $scope.growth = rate1;
-                document.getElementById('a').innerHTML = "2025年的人口增长率0.25%相比2016年的0.25%有了小幅度的降低。";
-                document.getElementById('sumconclusion').innerHTML = "总体来看，太仓市的人口总量处于平稳状态，呈增长趋势。二胎政策的全面开放，促进了人口数量的增加。";
+                document.getElementById('a').innerHTML = "数据分析：2025年的人口增长率0.25%相比2016年的0.25%有了小幅度的降低。";
+                document.getElementById('sumconclusion').innerHTML = "结论：总体来看，太仓市的人口总量处于平稳状态，呈增长趋势。二胎政策的全面开放，促进了人口数量的增加。";
                 $scope.sumpopulation.options.xAxis[0].categories = ['2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025'];
                 $scope.sumpopulation.options.title.text = "太仓市2016-2025年人口总量预测趋势图";
                 $scope.sumpopulation.series = [{
@@ -532,8 +429,8 @@ export default ($scope, $rootScope, qService, populationRes) => {
                 //人口总量
                 $scope.sumpeople = sum2;
                 $scope.sumyear = "2026-2035";
-                document.getElementById('a').innerHTML = "2035年的人口增长率0.11%相比2026年的0.19%有了小幅度的下降。";
-                document.getElementById('sumconclusion').innerHTML = "总体来看，太仓市的人口总量处于平稳状态，呈增长趋势。";
+                document.getElementById('a').innerHTML = "数据分析：2035年的人口增长率0.11%相比2026年的0.19%有了小幅度的下降。";
+                document.getElementById('sumconclusion').innerHTML = "结论：总体来看，太仓市的人口总量处于平稳状态，呈增长趋势。";
                 $scope.sumpopulation.options.xAxis[0].categories = ['2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035'];
                 $scope.sumpopulation.options.title.text = "太仓市2026-2035年人口总量预测趋势图";
                 $scope.sumpopulation.series = [{
@@ -565,8 +462,8 @@ export default ($scope, $rootScope, qService, populationRes) => {
                 //人口总量
                 $scope.sumpeople = sum3;
                 $scope.sumyear = "2036-2045";
-                document.getElementById('a').innerHTML = "2045年的人口增长率0.13%相比2036年的0.13%保持稳定不变。";
-                document.getElementById('sumconclusion').innerHTML = "总体来看，太仓市的人口总量处于平稳状态，无增长趋势。";
+                document.getElementById('a').innerHTML = "数据分析：2045年的人口增长率0.13%相比2036年的0.13%保持稳定不变。";
+                document.getElementById('sumconclusion').innerHTML = "结论：总体来看，太仓市的人口总量处于平稳状态，无增长趋势。";
                 $scope.sumpopulation.options.xAxis[0].categories = ['2036', '2037', '2038', '2039', '2040', '2041', '2042', '2043', '2044', '2045'];
                 $scope.sumpopulation.options.title.text = "太仓市2036-2045年人口总量预测趋势图";
                 $scope.sumpopulation.series = [{
