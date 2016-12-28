@@ -1,5 +1,19 @@
-export default ($scope, $rootScope, qService, environmentRes) => {
+export default ($http, $scope, $rootScope, qService, environmentRes) => {
     'ngInject';
+
+    // $http .jsonp("https://api.github.com?callback=JSON_CALLBACK").success(function(data) {
+    //     console.log("lalala");
+    //     console.log(data);
+    //     // 数据
+    // });
+
+    // $http .jsonp("http://apis.baidu.com/apistore/weatherservice/recentweathers?cityid=101190408&callback=JSON_CALLBACK",{"headers":{"apikey":"8a2ea9c51525a5332967ae13c1454deb"}}).success(function(data) {
+    //     console.log("lalala");
+    //     console.log(data);
+    //     // 数据
+    // });
+    // [headers:{'apikey':'8a2ea9c51525a5332967ae13c1454deb'}]
+
     $scope.windowHeight=$(window).height();
     //--------------------------airConditionGetPromise---------------------------
     // //这只是后台的一个参数，并不是IP地址的参数，IP地址的参数在地址的问号之后
