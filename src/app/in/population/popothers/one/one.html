@@ -5,14 +5,14 @@
          <div>
               <highchart style="width:100%" config="jobf"></highchart>
          </div>  
-     <div class="col-md-12" style="padding-top:0.5em;padding-left:0px">
-        <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
+     <div  style="padding-left:0px">
+        <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
          <span class="text-white font-thin h1 block"><span style="background:green">81.07%</span></span>
          <span class="text-xs"><span>2016</span>年太仓市就业率</span>
       </div>
      </div>   
-     <div class="col-md-12 " style="padding-top:0.5em;padding-left:0px">
-      <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
+     <div  style="margin-top:10px;padding-left:0px">
+      <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
         <span class="text-white font-thin h1 block"  style="background:green">45.7万</span>
         <span class="text-xs">2016年太仓市就业人数</span>
         </div> 
@@ -50,29 +50,79 @@
   
   
 
-<div class="bg-white fc-datatable"  ng-if="totalshow" style="border:0px">
-  
-  <div class="panel panel-default paddingmargin0em" >
-    <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+
+      <div class="bg-white fc-datatable"  ng-if="totalshow" style="border:0px">
+        <div class="panel panel-default paddingmargin0em" >
+          <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
       <tr>
-        <td colspan="10"><center><strong>{{employyear}}年就业情况分析预测表</strong></center> </td>
+        <td colspan="4"><center><strong>{{employyear}}年就业情况分析预测表</strong></center> </td>
       </tr>
-      <tr class="ng-scope ng-isolate-scope">
-        <td>年份</td>
-        <td ng-repeat="num in jobf.options.xAxis.categories track by $index"> {{num}}</td>
-      </tr>
-      <tr class="ng-scope ng-isolate-scope">
-        <td >劳动力人口（万）</td>
-        <td ng-repeat="num in jobf.series[0].data track by $index">{{num}}</td>
-      </tr>
-      <tr class="ng-scope ng-isolate-scope">
-        <td>就业人口（万）</td>
-        <td ng-repeat="num in jobf.series[1].data track by $index"> {{num}}</td>
-      </tr>
-      <tr class="ng-scope ng-isolate-scope">
-        <td >就业率</td>
-        <td ng-repeat="num in rate track by $index">{{num}}%</td>
-      </tr>
+      <tr>
+                 <td>年份</td>
+                 <td>劳动力人口（万）</td>
+                 <td>就业人口（万）</td>
+                 <td>就业率</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[0]}}</td>
+                 <td>{{jobf.series[0].data[0]}}</td>
+                 <td>{{jobf.series[1].data[0]}}</td>
+                 <td>{{rate[0]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[1]}}</td>
+                 <td>{{jobf.series[0].data[1]}}</td>
+                 <td>{{jobf.series[1].data[1]}}</td>
+                 <td>{{rate[1]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[2]}}</td>
+                 <td>{{jobf.series[0].data[2]}}</td>
+                 <td>{{jobf.series[1].data[2]}}</td>
+                 <td>{{rate[2]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[3]}}</td>
+                 <td>{{jobf.series[0].data[3]}}</td>
+                 <td>{{jobf.series[1].data[3]}}</td>
+                 <td>{{rate[3]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[4]}}</td>
+                 <td>{{jobf.series[0].data[4]}}</td>
+                 <td>{{jobf.series[1].data[4]}}</td>
+                 <td>{{rate[4]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[5]}}</td>
+                 <td>{{jobf.series[0].data[5]}}</td>
+                 <td>{{jobf.series[1].data[5]}}</td>
+                 <td>{{rate[5]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[6]}}</td>
+                 <td>{{jobf.series[0].data[6]}}</td>
+                 <td>{{jobf.series[1].data[6]}}</td>
+                 <td>{{rate[6]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[7]}}</td>
+                 <td>{{jobf.series[0].data[7]}}</td>
+                 <td>{{jobf.series[1].data[7]}}</td>
+                 <td>{{rate[7]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[8]}}</td>
+                 <td>{{jobf.series[0].data[8]}}</td>
+                 <td>{{jobf.series[1].data[8]}}</td>
+                 <td>{{rate[8]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[9]}}</td>
+                 <td>{{jobf.series[0].data[9]}}</td>
+                 <td>{{jobf.series[1].data[9]}}</td>
+                 <td>{{rate[9]}}%</td>
+              </tr>        
     </table>
   </div>
 </div>
@@ -116,43 +166,101 @@
     </div>
 
     
-    <div class="bg-white fc-datatable"  ng-if="totalshow1" style="border:0px">
-          
-          <div class="panel panel-default paddingmargin0em" >
-            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+  
+<div class="bg-white fc-datatable"  ng-if="totalshow1" style="border:0px">
+        <div class="panel panel-default paddingmargin0em" >
+          <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+
             <tr class="ng-scope ng-isolate-scope">
-              <td colspan="11">
+              <td colspan="5">
               <center><strong>
                    {{employyear1}}年就业结构变化分析预测表
               </strong></center> 
               </td>
             </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td>年份</td>
-                <td ng-repeat="num in jobt.options.xAxis.categories track by $index"> {{num}}</td>
+            <tr>
+                 <td>年份</td>
+                 <td>就业人数（万）</td>
+                 <td>第一产业人口比</td>
+                 <td>第二产业人口比</td>
+                 <td>第三产业人口比</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >就业人数（万）</td>
-                <td ng-repeat="num in jobt.series[0].data track by $index">{{num}}</td>
+              <tr>
+                 <td>{{jobt.options.xAxis.categories[0]}}</td>
+                 <td>{{jobt.series[0].data[0]}}</td>
+                 <td>{{jobt.series[1].data[0]}}%</td>
+                 <td>{{jobt.series[2].data[0]}}%</td>
+                 <td>{{jobt.series[3].data[0]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td>第一产业人口比</td>
-                <td ng-repeat="num in jobt.series[1].data track by $index"> {{num}}%</td>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[1]}}</td>
+                <td>{{jobt.series[0].data[1]}}</td>
+                 <td>{{jobt.series[1].data[1]}}%</td>
+                 <td>{{jobt.series[2].data[1]}}%</td>
+                 <td>{{jobt.series[3].data[1]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >第二产业人口比</td>
-                <td ng-repeat="num in jobt.series[2].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[2]}}</td>
+                 <td>{{jobt.series[0].data[2]}}</td>
+                 <td>{{jobt.series[1].data[2]}}%</td>
+                 <td>{{jobt.series[2].data[2]}}%</td>
+                 <td>{{jobt.series[3].data[2]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >第三产业人口比</td>
-                <td ng-repeat="num in jobt.series[3].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[3]}}</td>
+                 <td>{{jobt.series[0].data[3]}}</td>
+                 <td>{{jobt.series[1].data[3]}}%</td>
+                 <td>{{jobt.series[2].data[3]}}%</td>
+                 <td>{{jobt.series[3].data[3]}}%</td>
               </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[4]}}</td>
+                <td>{{jobt.series[0].data[4]}}</td>
+                 <td>{{jobt.series[1].data[4]}}%</td>
+                 <td>{{jobt.series[2].data[4]}}%</td>
+                 <td>{{jobt.series[3].data[4]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[5]}}</td>
+                <td>{{jobt.series[0].data[5]}}</td>
+                 <td>{{jobt.series[1].data[5]}}%</td>
+                 <td>{{jobt.series[2].data[5]}}%</td>
+                 <td>{{jobt.series[3].data[5]}}%</td>
+              </tr>
+              <tr>
+                <td>{{jobf.options.xAxis.categories[6]}}</td>
+                <td>{{jobt.series[0].data[6]}}</td>
+                 <td>{{jobt.series[1].data[6]}}%</td>
+                 <td>{{jobt.series[2].data[6]}}%</td>
+                 <td>{{jobt.series[3].data[6]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[7]}}</td>
+                 <td>{{jobt.series[0].data[7]}}</td>
+                 <td>{{jobt.series[1].data[7]}}%</td>
+                 <td>{{jobt.series[2].data[7]}}%</td>
+                 <td>{{jobt.series[3].data[7]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[8]}}</td>
+                 <td>{{jobt.series[0].data[8]}}</td>
+                 <td>{{jobt.series[1].data[8]}}%</td>
+                 <td>{{jobt.series[2].data[8]}}%</td>
+                 <td>{{jobt.series[3].data[8]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{jobf.options.xAxis.categories[9]}}</td>
+                 <td>{{jobt.series[0].data[9]}}</td>
+                 <td>{{jobt.series[1].data[9]}}%</td>
+                 <td>{{jobt.series[2].data[9]}}%</td>
+                 <td>{{jobt.series[3].data[9]}}%</td>
+              </tr>                
             </table>
           </div>
         </div>
   
   
-<div style="width:198px;height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+
 
 </div>
 
