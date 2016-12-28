@@ -1,9 +1,9 @@
-<div class="srcollable">
+<div class="scrollable">
 	<div class="scrollable-content">
 		<div class="structure-one-module">
 			<div class="current-position">
 				<span class="title">当前位置</span>
-				<span class="title">人口 -> 人口结构分析预测BI -> 户籍人口结构分析预测</span>
+				<span class="content">人口 -> 人口结构分析预测BI -> 户籍人口结构分析预测</span>
 			</div>
 			<div class="control-area">
 				<span class="title">操作图表</span>
@@ -19,9 +19,87 @@
 			</div>
 			<div class="chart-area">
 				<span class="title">图表</span>
-				<div class="contents">
-					<highchart id="age_ration" config="age_ration"></highchart>
+				<div class="content">
+					<highchart class="inner-line" id="age_ration" config="age_ration"></highchart>
+					<highchart class="inner-line" id="population_year" config="population_year"></highchart>
+					<highchart id="population_prediction_year" config="population_prediction_year"></highchart>
 				</div>
+			</div>
+			<div class="one-word">
+				<span class="title">一句话解读</span>
+				<span class="content" id="abc">数据分析:60岁及以上人口比例从2015的31.02%增加到2020的 32.08%。</span>
+				<span class="content" id="conclusion">结论:太仓市人口结构呈现不断老龄化趋势。</span>
+			</div>
+			<div class="calculate-model">
+				<span class="title">预测模型</span>
+				<span class="content">灰色预测模型</span>
+			</div>
+			<div class="detail-data">
+				<span class="title">数据详情</span>
+				<div class="content" style="padding:5px;"><center>{{pyear}}户籍人口结构预测表</center></div> 
+				<table class="table table-bordered table-condensed content table-hover">
+					<!-- <div><center>{{pyear}}户籍人口结构预测表</center></div> -->
+					<tr style="background-color: rgba(99,99,99,.1);">
+						<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年龄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+						<td>男性</td>
+						<td>女性</td>
+					</tr>
+					<tr>
+						<td>{{years[0]}}</td>
+						<td>{{manpre[0]}}%</td>
+						<td>{{womanpre[0]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[1]}}</td>
+						<td>{{manpre[1]}}%</td>
+						<td>{{womanpre[1]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[2]}}</td>
+						<td>{{manpre[2]}}%</td>
+						<td>{{womanpre[3]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[3]}}</td>
+						<td>{{manpre[3]}}%</td>
+						<td>{{womanpre[3]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[4]}}</td>
+						<td>{{manpre[4]}}%</td>
+						<td>{{womanpre[4]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[5]}}</td>
+						<td>{{manpre[5]}}%</td>
+						<td>{{womanpre[5]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[6]}}</td>
+						<td>{{manpre[6]}}%</td>
+						<td>{{womanpre[6]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[7]}}</td>
+						<td>{{manpre[7]}}%</td>
+						<td>{{womanpre[7]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[8]}}</td>
+						<td>{{manpre[8]}}%</td>
+						<td>{{womanpre[8]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[9]}}</td>
+						<td>{{manpre[9]}}%</td>
+						<td>{{womanpre[9]}}%</td>
+					</tr>
+					<tr>
+						<td>{{years[10]}}</td>
+						<td>{{manpre[10]}}%</td>
+						<td>{{womanpre[10]}}%</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div>

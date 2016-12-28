@@ -1,21 +1,21 @@
-.structure-one-module {
+.structure-three-module{
 	background-color: $barColor;
 	@mixin box-padding(){
 
 	}
 	@mixin title(){
-		display:block;
+		display: block;
 		padding:3px 15px;
-		font-size: 13px;
+		font-size:13px;
 		color:rgb(153,153,153);
 	}
 	@mixin content(){
 		background-color: #fff;
-		box-shadow:0 10px 10px -10px $shadowColor inset,
+		box-shadow: 0 10px 10px -10px $shadowColor inset,
 					0 -10px 10px -10px $shadowColor inset;
-		display:block;
+		display: block;
 	}
-	.current-position {
+	.current-position{
 		@include box-padding();
 		.title{
 			@include title();
@@ -25,71 +25,50 @@
 			@include content();
 		}
 	}
-	.chart-area{
+	.map{
+		@include box-padding();
+		
+		.title{
+			@include title();
+		}
+		.content{
+			padding:50px 15px 15px;
+			background-color: #fff;
+			@include content();
+		}
+	}
+	.description{
+		@include box-padding();
+		.title{
+			@include title();
+		}
+		.content{
+			padding:5px 15px 15px;
+			@include content();
+		}
+	}
+	.operation{
+		@include box-padding();
+		.title{
+			@include title();
+		}
+		.content{
+			padding:5px 15px 15px;
+			@include content();
+		}
+	}
+	.detail-data {
 		@include box-padding();
 		.title {
 			@include title();
 		}
 		.content {
-			padding: 5px 0 15px;
-			@include content();
-			.inner-line {
-				border-bottom: 1px dashed #999;
-			}
-		}
-	}
-	.one-word{
-		@include box-padding();
-		.title{
-			@include title();
-		}
-		.content{
-			padding:5px 15px 15px;
-			@include content();
-		}
-	}
-	.control-area{
-		@include box-padding();
-		.title{
-			@include title();
-		}
-		.content{
-			padding:10px 15px 15px;
-			position: relative;
-			@include content();
-			a{
-				font-size:13px;
-			}
-			.dropdown-menu{
-				left:0;
-				top:0;
-				min-width:91px;
-				text-align: center;
-			}
-		}
-	}
-	.calculate-model{
-		@include box-padding();
-		.title{
-			@include title();
-		}
-		.content{
-			padding:5px 15px 15px;
-			@include content();
-		}
-	}
-	.detail-data{
-		@include box-padding();
-		.title{
-			@include title();
-		}
-		.content{
-			td{
+			td {
 				text-align: center;
 			}
 			background-color: #fff;
-			box-shadow:0 5px 5px -5px $shadowColor inset,
+			box-shadow: 0 5px 5px -5px $shadowColor inset,
 						0 -5px 5px -5px $shadowColor inset;
-		}
+		}	
 	}
 }

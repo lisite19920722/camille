@@ -1,1 +1,100 @@
-structure 第san个界面
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div class="structure-three-module">
+			<div class="current-position">
+				<span class="title">当前位置</span>
+				<span class="content">人口 -> 人口结构分析预测BI -> 当前各乡镇常住人口自然增长率分析</span>
+			</div>
+			<div class="map">
+				<!-- <div class="title">地图信息</div> -->
+				<div class="content" id="conMap" style="height:450px;margin:0.8em;border-color:lightgrey;border-style: solid;border-width: 1px;background-color: #fff">sd</div>
+				<!-- <div id="conMap" class="content" style="border-color:lightgrey;border-style: solid;border-width: 1px;margin:0.8em;height:450px"></div> -->
+			</div>
+			<div class="description">
+				<span class="title">说明信息</span>
+				<div class="content">
+					<span style="color:#CC0033">红色框------该乡镇人口自然增长率为负</span> <br>
+					<span style="color:#66cc66">绿色框------该乡镇人口自然增长率为正</span>
+				</div>
+			</div>
+			<div class="operation">
+				<span class="title">操作提示</span>
+				<div class="content">
+					<span>通过点击图中位置图标可以看出太仓各乡镇的人口自然增长率情况。</span>
+				</div>
+			</div>
+			<div class="detail-data">
+				<span class="title">数据详情</span>
+				<div class="content" style="padding:5px;"><center>2015年各城镇数据详情</center></div> 
+				<table class="table table-bordered table-condensed content table-hover">
+					<tr style="background-color: rgba(99,99,99,.1);">
+						<td>城镇名称</td>
+						<td>出生率</td>
+						<td>死亡率</td>
+						<td>人口自然增长率</td>	
+					</tr>
+					<tr>
+						<td>{{townsname[0]}}</td>
+						<td>{{birthrate[0]}}</td>
+						<td>{{deathrate[0]}}</td>	
+						<td>{{populationrate[0]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[1]}}</td>
+						<td>{{birthrate[1]}}</td>
+						<td>{{deathrate[1]}}</td>	
+						<td>{{populationrate[1]}}</td>
+					</tr>	
+					<tr>
+						<td>{{townsname[2]}}</td>
+						<td>{{birthrate[2]}}</td>
+						<td>{{deathrate[2]}}</td>	
+						<td>{{populationrate[2]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[3]}}</td>
+						<td>{{birthrate[3]}}</td>
+						<td>{{deathrate[3]}}</td>	
+						<td>{{populationrate[3]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[4]}}</td>
+						<td>{{birthrate[4]}}</td>
+						<td>{{deathrate[4]}}</td>	
+						<td>{{populationrate[4]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[5]}}</td>
+						<td>{{birthrate[5]}}</td>
+						<td>{{deathrate[5]}}</td>	
+						<td>{{populationrate[5]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[6]}}</td>
+						<td>{{birthrate[6]}}</td>
+						<td>{{deathrate[6]}}</td>	
+						<td>{{populationrate[6]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[7]}}</td>
+						<td>{{birthrate[7]}}</td>
+						<td>{{deathrate[7]}}</td>	
+						<td>{{populationrate[7]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[8]}}</td>
+						<td>{{birthrate[8]}}</td>
+						<td>{{deathrate[8]}}</td>	
+						<td>{{populationrate[8]}}</td>
+					</tr>
+					<tr>
+						<td>{{townsname[9]}}</td>
+						<td>{{birthrate[9]}}</td>
+						<td>{{deathrate[9]}}</td>	
+						<td>{{populationrate[9]}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
