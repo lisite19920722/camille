@@ -1,29 +1,26 @@
 <div style="overflow-y:scroll;height: 450px;width: 100%;">    
-
- <div style="border:1px solid grey;background:grey">
-  <h4 style="margin-top:10px;margin-left:10px">就业情况分析预测</h4>
-</div> 
-<div>
-  <highchart style="width:100%" config="jobf"></highchart>
-</div>
-<div class="col-md-4">     
-  <div class="ioc-panel-desc">
-    
-    <div class="col-md-12" style="padding-top:0.5em;padding-left:0px">
-      <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
-        <span class="text-white font-thin h1 block"><span style="background:green">81.07%</span></span>
-        <span class="text-xs"><span>2016</span>年太仓市就业率</span>
+        <div style="border:1px solid lightblue;background:lightblue">
+          <h4 style="margin-top:10px;margin-left:10px">就业情况分析预测</h4>
+        </div> 
+         <div>
+              <highchart style="width:100%" config="jobf"></highchart>
+         </div>  
+     <div class="col-md-12" style="padding-top:0.5em;padding-left:0px">
+        <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth">
+         <span class="text-white font-thin h1 block"><span style="background:green">81.07%</span></span>
+         <span class="text-xs"><span>2016</span>年太仓市就业率</span>
       </div>
-    </div>   
-    <div class="col-md-12 " style="padding-top:0.5em;padding-left:0px">
+     </div>   
+     <div class="col-md-12 " style="padding-top:0.5em;padding-left:0px">
       <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth">
         <span class="text-white font-thin h1 block"  style="background:green">45.7万</span>
         <span class="text-xs">2016年太仓市就业人数</span>
-      </div> 
-    </div>    
+        </div> 
+      </div>    
     <div class="pull-left">             
       <span class="fa-stack fa-lg" style="margin-left:5px">
         <i class="fa fa-circle fa-stack-2x text-info"></i>
+        <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
         <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
       </span>
       <span class="h4">一句话解读</span>             
@@ -42,21 +39,17 @@
         </small> 
       </div>
     </div>                                       
-    <div class="btn-group dropdown">
-      <div style="height:30px"></div>
-      <button class="btn btn-success" data-toggle="dropdown" style="margin-left:7px" aria-expanded="false" ng-click="ShowClick1()"">年份选择<span class="caret"></span></button>
+    <div class="btn-group dropdown" style="width:100%">
+     
+      <button class="btn btn-success" data-toggle="dropdown" style="width:50%" aria-expanded="false" ng-click="ShowClick1()"">年份选择<span class="caret"></span></button>
       <ul class="dropdown-menu" ng-show="show1">
         <li><a ng-repeat="bttn in buttonMap3" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click3(bttn)">{{bttn.label}}</a></li>
       </ul>
+      <button ng-click="showPopulationDetail()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
     </div>                                  
   
-    <div class="col-md-12 cgq_marginaround1em" style="margin-left:-8px;">
-      <div style="height:15px"></div>
-      <button ng-click="showPopulationDetail()" style="width:90px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-    </div>
-  </div> 
-</div>
-<div style="width:198px;height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
+  
+
 <div class="bg-white fc-datatable"  ng-if="totalshow" style="border:0px">
   
   <div class="panel panel-default paddingmargin0em" >
@@ -85,21 +78,18 @@
 </div>
 <br>
 
-
+<hr>
   <div>
     <highchart style="height:500px;" config="jobt"></highchart>
   </div>
-  <!--就业结构变化表左边的图结束-->
-  <!--就业结构变化表右边的文字模块开始了-->
-  <div class="col-md-4">
     <div class="pull-left">
       <div style="height:15px;"></div>
       <span class="fa-stack fa-lg" style="margin-left:5px">
         <i class="fa fa-circle fa-stack-2x text-info"></i>
+        <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
         <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
       </span>
-      <span class="h4">一句话解读</span>
-      <br />
+      <span class="h4">一句话解读</span>     
       <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
         <small class="block m-t-xs">
           <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span></div>
@@ -115,27 +105,28 @@
         </small> 
       </div>
     </div>
-    <div style="width:69px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
-    <!--年份选择开始-->
-    <div class="btn-group dropdown" style="margin-left:7px">
-      <button class="btn btn-success" data-toggle="dropdown"  aria-expanded="false" ng-click="ShowClick2()">年份选择<span class="caret"></span></button>
+    
+ 
+    <div class="btn-group dropdown" style="width:100%">
+      <button class="btn btn-success" data-toggle="dropdown"  aria-expanded="false" ng-click="ShowClick2()" style="width:50%">年份选择<span class="caret"></span></button>
       <ul class="dropdown-menu" ng-show="show2">
         <li><a ng-repeat="bttn in buttonMap1" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</a></li>
       </ul>
+      <button ng-click="showPopulationDetail1()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
     </div>
-    <!--年份选择结束-->
-    <!--详细数据按钮开始-->
-    <div class="col-md-12 cgq_marginaround1em" style="margin-left:-8px;">
-      <div style="height:15px"></div>
-      <button ng-click="showPopulationDetail1()" style="width:90px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-    </div>
+
+    
     <div class="bg-white fc-datatable"  ng-if="totalshow1" style="border:0px">
           
           <div class="panel panel-default paddingmargin0em" >
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-            <tr>
-        <td colspan="10"><center><strong>{{employyear1}}年就业结构变化分析预测表</strong></center> </td>
-      </tr>
+            <tr class="ng-scope ng-isolate-scope">
+              <td colspan="11">
+              <center><strong>
+                   {{employyear1}}年就业结构变化分析预测表
+              </strong></center> 
+              </td>
+            </tr>
               <tr class="ng-scope ng-isolate-scope">
                 <td>年份</td>
                 <td ng-repeat="num in jobt.options.xAxis.categories track by $index"> {{num}}</td>
@@ -159,14 +150,9 @@
             </table>
           </div>
         </div>
-    <!--详细数据按钮结束-->
-  </div>
-  <!--就业结构文字模块结束-->
-
-<!--就业结构图结束=-->
-
-<!--表格前的横线 开始-->
+  
+  
 <div style="width:198px;height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
-<!--表格前的横线 结束-->
+
 </div>
 
