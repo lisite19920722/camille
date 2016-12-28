@@ -46,22 +46,72 @@
               <td colspan="6"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center>
               </td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td>年份</td>
-                <td ng-repeat="num in money.options.xAxis[0].categories track by $index"> {{num}}</td>
+              <tr>
+                 <td>年份</td>
+                 <td>养老保险基金（亿）</td>
+                 <td>老年人口比例</td>
+                 <td>就业人口比例</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >养老保险基金（亿）</td>
-                <td ng-repeat="num in money.series[0].data track by $index">{{num}}</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[0]}}</td>
+                 <td>{{money.series[0].data[0]}}</td>
+                 <td>{{money.series[1].data[0]}}%</td>
+                 <td>{{money.series[2].data[0]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >老年人口比例</td>
-                <td ng-repeat="num in money.series[1].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[1]}}</td>
+                 <td>{{money.series[0].data[1]}}</td>
+                 <td>{{money.series[1].data[1]}}%</td>
+                 <td>{{money.series[2].data[1]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >就业人口比例</td>
-                <td ng-repeat="num in money.series[2].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[2]}}</td>
+                 <td>{{money.series[0].data[2]}}</td>
+                 <td>{{money.series[1].data[2]}}%</td>
+                 <td>{{money.series[2].data[2]}}%</td>
               </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[3]}}</td>
+                 <td>{{money.series[0].data[3]}}</td>
+                 <td>{{money.series[1].data[3]}}%</td>
+                 <td>{{money.series[2].data[3]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[4]}}</td>
+                 <td>{{money.series[0].data[4]}}</td>
+                 <td>{{money.series[1].data[4]}}%</td>
+                 <td>{{money.series[2].data[4]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[5]}}</td>
+                 <td>{{money.series[0].data[5]}}</td>
+                 <td>{{money.series[1].data[5]}}%</td>
+                 <td>{{money.series[2].data[5]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[6]}}</td>
+                 <td>{{money.series[0].data[6]}}</td>
+                 <td>{{money.series[1].data[6]}}%</td>
+                 <td>{{money.series[2].data[6]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[7]}}</td>
+                 <td>{{money.series[0].data[7]}}</td>
+                 <td>{{money.series[1].data[7]}}%</td>
+                 <td>{{money.series[2].data[7]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[8]}}</td>
+                 <td>{{money.series[0].data[8]}}</td>
+                 <td>{{money.series[1].data[8]}}%</td>
+                 <td>{{money.series[2].data[8]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[9]}}</td>
+                 <td>{{money.series[0].data[9]}}</td>
+                 <td>{{money.series[1].data[9]}}%</td>
+                 <td>{{money.series[2].data[9]}}%</td>
+              </tr>              
             </table>
           </div>
         </div>  
