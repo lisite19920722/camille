@@ -1,70 +1,110 @@
-  <div  style="overflow-y:scroll;height: 450px;width: 100%;">
-        <div style="border:1px solid grey;background:grey">
-          <h4 style="margin-top:10px;margin-left:10px">人口与教育</h4>
-        </div>              
-        <div>
-            <highchart id="school" config="school" style="width:95%"></highchart>
-        </div>
-        <span class="fa-stack fa-lg" style="margin-left:5px">
-                <i class="fa fa-circle fa-stack-2x text-info"></i>
-        </span>
-              <span class="h4">一句话解读</span>             
-           <div style="padding-right:26px">
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">数据分析：<span id="school1">{{school1}}</span></div>
-                </small>
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">结论：<span id="school2">{{school2}}</span></div>
-                </small>
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;"><span>人口与教育分析预测采用的是灰色预测模型。</span></div>
-                </small>
-              </div>
-            <div class="btn-group dropdown" style="width:50%;float:left">
-              <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" aria-expanded="false">年份选择<span class="caret"></span></button>
-              <ul ng-show="isMenu" class="dropdown-menu">
-                <li><a ng-repeat="bttn in buttonMap8" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click8(bttn)">{{bttn.label}}</a></li>
-              </ul>            
-            </div>
+<div style="overflow-y:scroll;height: 450px;width: 100%;">
 
+  <div style="border:1px solid lightblue;background:lightblue">
+    <h4 style="margin-top:10px;margin-left:10px">人口与教育</h4>
+  </div>               
+  <div class="col-md-8 chart-panel" >
+    <highchart config="school" style="width:100%"></highchart>
+  </div>
+  <span class="fa-stack fa-lg" style="margin-left:5px">
+    <i class="fa fa-circle fa-stack-2x text-info"></i>
+    <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
+  </span>
+  <span class="h4">一句话解读</span>             
+  <div style="padding-right:26px">
+    <small class="block m-t-xs">
+      <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">数据分析：<span id="school1">{{school1}}</span></div>
+    </small>
+    <small class="block m-t-xs">
+      <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">结论：<span id="school2">{{school2}}</span></div>
+    </small>
+    <small class="block m-t-xs">
+      <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;"><span>人口与教育分析预测采用的是灰色预测模型。</span></div>
+    </small>
+  </div>
+  <div class="btn-group dropdown" style="width:100%;margin-top:20px">
+    <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" aria-expanded="false" style="width:50%">年份选择<span class="caret"></span></button>
+    <ul ng-show="isMenu" class="dropdown-menu">
+      <li><a ng-repeat="bttn in buttonMap8" ng-model="predictionModal" style="margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click8(bttn)">{{bttn.label}}</a></li>
+    </ul> 
+    <button ng-click="showPopulationDetail3()"  class="btn m-b-xs btn-primary cgq-fixed-buttonwidth" style="width:50%">详细数据</button>           
+  </div>  
   
-            <div class="btn-group dropdown" style="width:50%;float:left">
-            <button ng-click="showPopulationDetail3()"  class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-            </div>            
-              
-           
-            <!--详细数据按钮结束-->
-        
-          
-        <div  ng-if="totalshow3">
-         
-          <div class="paddingmargin0em" >
-          
-            <table st-table="rowCollectionBasic" class="table table-bordered table-striped" style="width:100%"> 
-              <tr>
-              <td colspan="11"><center><strong>{{school.options.title.text}}</strong></center></td>
-              </tr>
 
-              <tr class="ng-scope ng-isolate-scope">
-                <td>地区</td>
-                <td ng-repeat="num in townName track by $index"> {{num}}</td>
-              </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >小学数量（所）</td>
-                <td ng-repeat="num in school.series[0].data  track by $index">{{num}}</td>
-              </tr>     
-              <tr class="ng-scope ng-isolate-scope">
-                <td >初中数量（所）</td>
-                <td ng-repeat="num in school.series[1].data  track by $index">{{num}}</td>
-              </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >高中数量（所）</td>
-                <td ng-repeat="num in school.series[2].data  track by $index">{{num}}</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <!--表格结束-->
-        
-      </div>
-    
+    <div class="bg-white fc-datatable"  ng-if="totalshow3" style="border:0px">
+          <div class="panel panel-default paddingmargin0em" >
+            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
+
+        <tr>
+          <td colspan="4"><center><strong>{{school.options.title.text}}</strong></center></td>
+        </tr>
+        <tr>
+             <td>地区</td>
+             <td>小学数量（所）</td>
+             <td>初中数量（所）</td>
+             <td>高中数量（所）</td>
+        </tr>
+        <tr>
+           <td>{{townName[0]}}</td>
+           <td>{{school.series[0].data[0]}}</td>
+           <td>{{school.series[1].data[0]}}</td>
+           <td>{{school.series[2].data[0]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[1]}}</td>
+           <td>{{school.series[0].data[1]}}</td>
+           <td>{{school.series[1].data[1]}}</td>
+           <td>{{school.series[2].data[1]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[2]}}</td>
+           <td>{{school.series[0].data[2]}}</td>
+           <td>{{school.series[1].data[2]}}</td>
+           <td>{{school.series[2].data[2]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[3]}}</td>
+           <td>{{school.series[0].data[3]}}</td>
+           <td>{{school.series[1].data[3]}}</td>
+           <td>{{school.series[2].data[3]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[4]}}</td>
+           <td>{{school.series[0].data[4]}}</td>
+           <td>{{school.series[1].data[4]}}</td>
+           <td>{{school.series[2].data[4]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[5]}}</td>
+           <td>{{school.series[0].data[5]}}</td>
+           <td>{{school.series[1].data[5]}}</td>
+           <td>{{school.series[2].data[5]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[6]}}</td>
+           <td>{{school.series[0].data[6]}}</td>
+           <td>{{school.series[1].data[6]}}</td>
+           <td>{{school.series[2].data[6]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[7]}}</td>
+           <td>{{school.series[0].data[7]}}</td>
+           <td>{{school.series[1].data[7]}}</td>
+           <td>{{school.series[2].data[7]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[8]}}</td>
+           <td>{{school.series[0].data[8]}}</td>
+           <td>{{school.series[1].data[8]}}</td>
+           <td>{{school.series[2].data[8]}}</td>           
+        </tr>
+        <tr>
+           <td>{{townName[9]}}</td>
+           <td>{{school.series[0].data[9]}}</td>
+           <td>{{school.series[1].data[9]}}</td>
+           <td>{{school.series[2].data[9]}}</td>           
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

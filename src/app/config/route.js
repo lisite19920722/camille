@@ -174,6 +174,16 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       templateUrl: 'app/in/population/structure/one/one.html',
       controller: 'structureoneCtrl'
     })
+    .state('app.in.structure.two', {
+      url: '/two',
+      templateUrl: 'app/in/population/structure/two/two.html',
+      controller: 'structuretwoCtrl'
+    })
+    .state('app.in.structure.three', {
+      url: '/three',
+      templateUrl: 'app/in/population/structure/three/three.html',
+      controller: 'structurethreeCtrl'
+    })
     .state('app.in.labor', {
       abstract: true,
       url: '/labor',

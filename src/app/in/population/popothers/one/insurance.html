@@ -1,27 +1,17 @@
-   <!--第二个大的莫块开始-->
-    <div  style="overflow-y:scroll;height: 450px;width: 100%;">
-
-            <div style="border:1px solid grey;background:grey">
+<div  style="overflow-y:scroll;height: 450px;width: 100%;">
+        <div style="border:1px solid lightblue;background:lightblue">
           <h4 style="margin-top:10px;margin-left:10px">人口与城镇养老保险基金预测</h4>
-        </div>     
-        
-          
-      
-        <!-- 添加空的div，填充竖线 -->
-        
-        <div class="row" >
-          <!--84图的8模块开始-->
+        </div>          
+            
           <div class="col-md-8 chart-panel" >
             <highchart config="money"  style="width:100%"></highchart>
           </div>
-          <!--84图的8模块结束-->
-          <!--84图的4模块开始-->
-          <div class="col-md-4">
-
-            <div class="pull-left">
+         
+          
               <div style="height:15px;"></div>
               <span class="fa-stack fa-lg" style="margin-left:5px">
                 <i class="fa fa-circle fa-stack-2x text-info"></i>
+                <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
                 <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
               </span>
               <span class="h4">一句话解读</span>
@@ -38,72 +28,91 @@
                 </small>
               </div>
               <div style="height:10px"></div>
-            </div>
-            <!--年份选择按钮开始-->
-            <div style="width:369px;height:1px;margin:15px auto;padding:0px;background-color:#FFFFFF;overflow:hidden;"></div>
-            <div class="btn-group dropdown" style="float:left">
-              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" ng-click="toggleMenu1()">年份选择<span class="caret"></span></button>
+          
+            <div class="btn-group dropdown" style="width:100%">
+              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" ng-click="toggleMenu1()" style="width:50%">年份选择<span class="caret"></span></button>
               <ul class="dropdown-menu" ng-show="isMenu">
                 <li><a ng-repeat="bttn in buttonMap1" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click5(bttn)">{{bttn.label}}</a></li>
               </ul>
-            </div>
-            <!--年份选择按钮结束-->
-
-            <!--详细数据按钮开始-->
-
-            <div class="col-md-12 cgq_marginaround1em" style="float:left;width:50%" >
-              <div style="height:15px"></div>
-              <button ng-click="showPopulationDetail2()" style="width:90px" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-            </div>
-            <!--详细数据按钮结束-->
-
-
-          </div>
-          <!--84图的4模块结束-->
-
-
-
-
-        </div>
-        <!--12模块结束，下面开始表格模块我-->
-
-        <!--表格前的横线 开始-->
-        <div style="width:198px;height:1px;margin:auto;padding:0px;background-color:#D5D5D5;overflow:hidden;"></div>
-        <!--表格前的横线 结束-->
-
-
-        <!--养老保险表格开始-->
-
-        <div class="bg-white fc-datatable"  ng-if="totalshow2" style="border:0px">
+              <button ng-click="showPopulationDetail2()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
+            </div>    
           
+         
+        
+        <div class="bg-white fc-datatable"  ng-if="totalshow2" style="border:0px">
           <div class="panel panel-default paddingmargin0em" >
             <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
               <tr>
-              <td colspan="6"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center></td>
+              <td colspan="6"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center>
+              </td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td>年份</td>
-                <td ng-repeat="num in money.options.xAxis[0].categories track by $index"> {{num}}</td>
+              <tr>
+                 <td>年份</td>
+                 <td>养老保险基金（亿）</td>
+                 <td>老年人口比例</td>
+                 <td>就业人口比例</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >养老保险基金（亿）</td>
-                <td ng-repeat="num in money.series[0].data track by $index">{{num}}</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[0]}}</td>
+                 <td>{{money.series[0].data[0]}}</td>
+                 <td>{{money.series[1].data[0]}}%</td>
+                 <td>{{money.series[2].data[0]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >老年人口比例</td>
-                <td ng-repeat="num in money.series[1].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[1]}}</td>
+                 <td>{{money.series[0].data[1]}}</td>
+                 <td>{{money.series[1].data[1]}}%</td>
+                 <td>{{money.series[2].data[1]}}%</td>
               </tr>
-              <tr class="ng-scope ng-isolate-scope">
-                <td >就业人口比例</td>
-                <td ng-repeat="num in money.series[2].data track by $index">{{num}}%</td>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[2]}}</td>
+                 <td>{{money.series[0].data[2]}}</td>
+                 <td>{{money.series[1].data[2]}}%</td>
+                 <td>{{money.series[2].data[2]}}%</td>
               </tr>
-
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[3]}}</td>
+                 <td>{{money.series[0].data[3]}}</td>
+                 <td>{{money.series[1].data[3]}}%</td>
+                 <td>{{money.series[2].data[3]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[4]}}</td>
+                 <td>{{money.series[0].data[4]}}</td>
+                 <td>{{money.series[1].data[4]}}%</td>
+                 <td>{{money.series[2].data[4]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[5]}}</td>
+                 <td>{{money.series[0].data[5]}}</td>
+                 <td>{{money.series[1].data[5]}}%</td>
+                 <td>{{money.series[2].data[5]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[6]}}</td>
+                 <td>{{money.series[0].data[6]}}</td>
+                 <td>{{money.series[1].data[6]}}%</td>
+                 <td>{{money.series[2].data[6]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[7]}}</td>
+                 <td>{{money.series[0].data[7]}}</td>
+                 <td>{{money.series[1].data[7]}}%</td>
+                 <td>{{money.series[2].data[7]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[8]}}</td>
+                 <td>{{money.series[0].data[8]}}</td>
+                 <td>{{money.series[1].data[8]}}%</td>
+                 <td>{{money.series[2].data[8]}}%</td>
+              </tr>
+              <tr>
+                 <td>{{money.options.xAxis[0].categories[9]}}</td>
+                 <td>{{money.series[0].data[9]}}</td>
+                 <td>{{money.series[1].data[9]}}%</td>
+                 <td>{{money.series[2].data[9]}}%</td>
+              </tr>              
             </table>
           </div>
-        </div>
-        <!--表格结束-->
-
-
-      <!--表格结束-->
-      
-    </div>
+        </div>  
+</div>
