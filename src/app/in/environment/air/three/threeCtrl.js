@@ -3,8 +3,8 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     $scope.windowHeight=$(window).height();
     //盒子3中高德地图的初始化
     var map = new AMap.Map('map_canvas',{
-        zoom: 12,
-        center: [121.130619,31.461029]
+        zoom: 14,
+        center: [121.116757,31.4483]
     });
     //盒子3中高德地图添加工具条和比例尺
     AMap.plugin(['AMap.ToolBar','AMap.Scale'],function(){
@@ -54,7 +54,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
             $scope.istownairquality = true;
             $scope.istownaircondition=false;
             $scope.istownwasteair=false;
-            map.setZoomAndCenter(15, [121.116757,31.448875]);
+            map.setZoomAndCenter(14, [121.116757,31.4483]);
             $scope.mapTableStatus = {
                 airQuality: true,
                 airCondition: false,
@@ -165,7 +165,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
                 airCondition: false,
                 wasteAir: true
             };
-            map.setZoomAndCenter(12, [121.201515,31.620498]);
+            map.setZoomAndCenter(11, [121.201515,31.620498]);
             //华能国际电力电厂
             marker4.setMap(map);
             var infow=[];
