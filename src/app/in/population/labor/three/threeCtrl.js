@@ -1,9 +1,9 @@
-export default ($scope, $stateParams, qService, populationRes) => {
+export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
     'ngInject';
 
     //年份选择数据
     $scope.yearSelect = ['2020', '2025', '2030', '2035', '2040', '2045'];
-
+    $rootScope.loading = true;
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData, {}, {})
         .then((resource) => {
             console.log(resource.data);
@@ -328,5 +328,7 @@ export default ($scope, $stateParams, qService, populationRes) => {
             console.log(resource);
         }, function(error) {
             console.log('发送失败');
+        }).finally(function() {
+            $rootScope.loading = false;
         });
 };

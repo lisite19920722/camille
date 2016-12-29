@@ -2,7 +2,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
 
     //年份选择数据
     $scope.yearSelect = ['2020', '2025', '2030', '2035', '2040', '2045'];
-
+    
     $scope.totaldata = {
 
         tabledata: [
@@ -16,7 +16,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
 
         ]
     };
-
+     
 
     require.config({
         paths: {

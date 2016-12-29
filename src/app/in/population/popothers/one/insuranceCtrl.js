@@ -8,7 +8,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
         $scope.isMenu=!$scope.isMenu;
     };
     $scope.isMenu=false;
-
+    $rootScope.loading = true;
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 
@@ -178,5 +178,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
 
 
 
+}).finally(function() {
+  $rootScope.loading = false;
 });
 };

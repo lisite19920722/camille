@@ -10,17 +10,17 @@ export default ($scope, $rootScope, qService, populationRes) => {
     $scope.isMenu=false;
 
     $scope.containerHeight = $(window).height() - 127;
+
+    $rootScope.loading = true;
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 
-       console.log('劳动力第一个图的数据获取不成功');
-
-       $scope.showPopulationDetail3 = function(){
-      $scope.totalshow3= !$scope.totalshow3;
-    };
-     $scope.prePrimarySchool = rc.data[8];
-    $scope.preMiddleSchool = rc.data[9];
-    $scope.preHighschool = rc.data[10];
+      $scope.showPopulationDetail3 = function(){
+        $scope.totalshow3= !$scope.totalshow3;
+      };
+      $scope.prePrimarySchool = rc.data[8];
+      $scope.preMiddleSchool = rc.data[9];
+      $scope.preHighschool = rc.data[10];
 
 
     $scope.buttonMap8 = [{
@@ -174,5 +174,7 @@ $scope.school={
 
        }]
    };
+}).finally(function() {
+  $rootScope.loading = false;
 });
 };

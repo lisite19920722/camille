@@ -13,6 +13,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     $scope.ShowClick2=function(){
       $scope.show2=!$scope.show2;
     }
+    $rootScope.loading = true;
     var promise = qService.httpGetWithToken(populationRes.getEmployInsuranceSchoolList,{},{});
     promise.then(function(rc) {
 
@@ -440,5 +441,7 @@ $scope.jobt ={
 
 
 
+}).finally(function() {
+  $rootScope.loading = false;
 });
 };

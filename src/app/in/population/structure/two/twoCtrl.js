@@ -10,6 +10,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
         $scope.totalshow1 = !$scope.totalshow1;
     };
     var sumData;
+    $rootScope.loading = true;
     var promise2 = qService.httpGetWithToken(populationRes.getSumPopulationData, {}, {});
     promise2.then(function(rc2) {
     	
@@ -503,5 +504,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
             label: 2045 + "",
             radio: "Right"
         }];
+    }).finally(function() {
+        $rootScope.loading = false;
     });
 };
