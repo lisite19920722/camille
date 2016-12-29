@@ -35,6 +35,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
             var myChart = ec.init(document.getElementById('main'));
             // console.log("加载完成");
             var option = {
+                legend: {
+                    x: 'center',
+                    y: 'bottom',
+                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                },
                 title: {
                     text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
                     textStyle: {
@@ -44,7 +49,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                         color: "#000000"
                     },
                     x: 'center',
-                    y: 'top'
+                    y: '12'
                 },
                 tooltip: {
                     trigger: 'item',
@@ -64,7 +69,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                         saveAsImage: { show: true }
                     },
                     x: "right",
-                    y: "30",
+                    y: "50",
                 },
                 series: [{
                     type: 'chord',
@@ -74,10 +79,10 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                     itemStyle: {
                         normal: {
                             label: {
-                                show:false,
+                                show: false,
                                 rotate: false,
-                                textStyle:{
-                                    fontSize:8,
+                                textStyle: {
+                                    fontSize: 8,
                                     fontStyle: 'bolder',
                                 }
                             }
@@ -94,7 +99,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                         { name: '人口出生率' },
                         { name: '人口自然增长率' },
                         { name: '人口死亡率' },
-                        { name: '第一产业人口' }, 
+                        { name: '第一产业人口' },
                         { name: '第二产业人口' },
                         { name: '第三产业人口' },
                         { name: '城镇人口' },
@@ -183,6 +188,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2020年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -192,7 +202,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -212,7 +222,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
                                 series: [{
                                     type: 'chord',
@@ -222,7 +232,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
@@ -323,6 +338,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2025年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -332,7 +352,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -352,7 +372,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
 
                                 series: [{
@@ -363,7 +383,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
@@ -463,6 +488,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2030年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -472,7 +502,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -492,7 +522,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
 
                                 series: [{
@@ -503,7 +533,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
@@ -603,6 +638,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2035年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -612,7 +652,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -632,7 +672,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
 
                                 series: [{
@@ -643,7 +683,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
@@ -744,6 +789,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2040年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -753,7 +803,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -773,7 +823,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
 
                                 series: [{
@@ -784,7 +834,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
@@ -886,6 +941,11 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             var myChart = ec.init(document.getElementById('main'));
 
                             var option = {
+                                legend: {
+                                    x: 'center',
+                                    y: 'bottom',
+                                    data: ['第一产业人口', '第二产业人口', '第三产业人口', '地方生产总值', '第一产业产值', '第二产业产值', '第三产业产值', '消费品零售总额', '人均GDP', '地方生产总值'],
+                                },
                                 title: {
                                     text: '太仓市2045年劳动力人口与各项经济指标关联度分析预测',
                                     textStyle: {
@@ -895,7 +955,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         color: "#000000"
                                     },
                                     x: 'center',
-                                    y: 'top'
+                                    y: '12'
                                 },
                                 tooltip: {
                                     trigger: 'item',
@@ -915,7 +975,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                         saveAsImage: { show: true }
                                     },
                                     x: "right",
-                                    y: "30",
+                                    y: "50",
                                 },
 
                                 series: [{
@@ -926,7 +986,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                                     itemStyle: {
                                         normal: {
                                             label: {
-                                                rotate: false
+                                                show: false,
+                                                rotate: false,
+                                                textStyle: {
+                                                    fontSize: 8,
+                                                    fontStyle: 'bolder',
+                                                }
                                             }
                                         }
                                     },
