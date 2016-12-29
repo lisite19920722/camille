@@ -7,14 +7,13 @@
             </div>
             <div class="control-area">
                 <span class="title">水质监测站</span>
-                <div class="content">
+                <div class="content" style="padding-bottom: 1px;padding-top: 5px">
                     <div style="font-size:16px">
                         <ul class="list-group" style="overflow: auto;overflow-x:hidden;height:120px">
                             <li class="list-group-item" style="height:40px;"
                                 ng-repeat="waterQualityOne in waterQualityMarkerList2">
-                                <span class="badge glyphicon glyphicon-exclamation-sign"></span>
                                 {{waterQualityOne.monitor}}
-                                <span class="glyphicon glyphicon-hand-right"></span>
+                                <i class="fa fa-hand-o-right" aria-hidden="true"></i>
                                 <a style="cursor: pointer"
                                    ng-click="btn_waterEnvironmentAnalysisElementsList(waterQualityOne)">查看</a>
                             </li>
@@ -30,7 +29,7 @@
             </div>
             <div class="control-area">
                 <span class="title">数据详情</span>
-                <span class="content">
+                <div class="content" style="padding: 0">
                     <div ng-show="tableStatus.allWaterQualityFailArr">
                     <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
                         <tr>
@@ -76,10 +75,9 @@
                         </table>
                     </div>
                     <div ng-show="tableStatus.allWaterQualityElementsArr" style="font-size:16px">
-                        <div class="panel panel-primary">
-                            <div class="panel-body" id="source_analysis">
-                                <h4>附近排污点</h4>
-                                <hr>
+                        <div>
+                            <div class="panel-body" id="source_analysis" style="padding-left: 0;padding-right: 0">
+                                <h5>附近排污点</h5>
                                 <div>
                                     <table class="table table-hover table-responsive"
                                            style="font-size:14px;margin-bottom:0px">
@@ -92,7 +90,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="overflow: auto; overflow-x:hidden;height:180px">
+                                <div style="overflow: auto; overflow-x:hidden;height:80px">
                                     <table class="table table-hover table-responsive" style="font-size:14px">
                                         <tr ng-repeat="wasteWaterOne in wasteWaterAnalysisMarker">
                                             <td style="width:25%">{{wasteWaterOne.monitor}}</td>
@@ -112,7 +110,7 @@
                                 ng-show="tableStatus.allWaterQualityFailArrNav">列出所有监测点
                         </button>
                     </div>
-                </span>
+                </div>
             </div>
         </div>
     </div>
