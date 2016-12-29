@@ -74,7 +74,12 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                     itemStyle: {
                         normal: {
                             label: {
-                                rotate: false
+                                show:false,
+                                rotate: false,
+                                textStyle:{
+                                    fontSize:8,
+                                    fontStyle: 'bolder',
+                                }
                             }
                         }
                     },
