@@ -16,7 +16,7 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
 
         ]
     };
-
+     
 
     require.config({
         paths: {
