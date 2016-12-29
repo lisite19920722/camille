@@ -1,4 +1,4 @@
-angular.module('camille').controller('labortwoCtrl',['$scope','$stateParams','qService',function($scope,$stateParams,qService){
+angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 'qService', function($scope, $stateParams, qService) {
     require.config({
         paths: {
             echarts: 'http://echarts.baidu.com/build/dist'

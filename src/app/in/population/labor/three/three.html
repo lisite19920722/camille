@@ -1,85 +1,122 @@
-<div class="container" style="overflow-y:scroll;height: 610px;width: 100%;">
-    <highchart style="margin-top: 50px;" config="populationPie"></highchart>
-    <div class="btn-group dropdown" style="width: 100%;">
-        <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" style="width:50%" aria-expanded="false">年份选择<span class="caret"></span></button>
-        <ul ng-show="isMenu1" class="dropdown-menu">
-            <li ng-repeat="year in yearSelect"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
-        </ul>
-        <button class="btn btn-primary" ng-click="showPopulationDetail1()" style="width:50%">详情数据<span class="caret"></span></button>
-    </div>
-    <div>
-        <table class="table la-table-text" ng-show="datashow1">
-            <thead>
-                <tr>
-                    <th class="la-thtd-center" colspan="3">太仓市2020年产业就业人口比重分析预测详情表</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">产业</td>
-                    <td class="la-thtd-center">人口数量(人)</td>
-                    <td class="la-thtd-center">人口比例</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第一产业</td>
-                    <td class="la-thtd-center">{{populationPie.series[0].data[0][1]}}</td>
-                    <td class="la-thtd-center">{{(populationPie.series[0].data[0][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第二产业</td>
-                    <td class="la-thtd-center">{{populationPie.series[0].data[1][1]}}</td>
-                    <td class="la-thtd-center">{{(populationPie.series[0].data[1][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                    <td>{{}}</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第二产业</td>
-                    <td class="la-thtd-center">{{populationPie.series[0].data[2][1]}}</td>
-                    <td class="la-thtd-center">{{(populationPie.series[0].data[2][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                    <td class="la-thtd-center">{{}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <hr/>
-    <highchart config="industryPie" style="width:100%;"></highchart>
-    <div class="btn-group dropdown" style="width: 100%;">
-        <button class="btn btn-success" ng-click="toggleMenu2()" data-toggle="dropdown" style="width:50%" aria-expanded="false">年份选择<span class="caret"></span></button>
-        <ul ng-show="isMenu2" class="dropdown-menu">
-            <li ng-repeat="year in yearSelect"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData2(year)">{{year}}</a></li>
-        </ul>
-        <button class="btn btn-primary" ng-click="showPopulationDetail2()" style="width:50%">详情数据<span class="caret"></span></button>
-    </div>
-    <div>
-        <table class="table la-table-text" ng-show="datashow2">
-            <thead>
-                <tr>
-                    <th class="la-thtd-center" colspan="3">太仓市2020年产业产值比重分析预测详情表</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">产业</td>
-                    <td class="la-thtd-center">产值(人)</td>
-                    <td class="la-thtd-center">产值比例</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第一产业</td>
-                    <td class="la-thtd-center">{{industryPie.series[0].data[0][1]}}</td>
-                    <td class="la-thtd-center">{{(industryPie.series[0].data[0][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第二产业</td>
-                    <td class="la-thtd-center">{{industryPie.series[0].data[1][1]}}</td>
-                    <td class="la-thtd-center">{{(industryPie.series[0].data[1][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                    <td>{{}}</td>
-                </tr>
-                <tr style="text-align: left;">
-                    <td class="la-thtd-center">第二产业</td>
-                    <td class="la-thtd-center">{{industryPie.series[0].data[2][1]}}</td>
-                    <td class="la-thtd-center">{{(industryPie.series[0].data[2][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
-                    <td class="la-thtd-center">{{}}</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="labor-three-module">
+            <div class="current-position">
+                <span class="title">当前位置</span>
+                <span class="content">人口 -> 产业人口与产业GDP比重分析预测 -> 产业就业人口比重分析预测</span>
+            </div>
+            <div class="control-area">
+                <span class="title">操作图表</span>
+                <div class="content">
+                    <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+                    <div style="position: relative;">
+                        <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+                            <li ng-repeat="year in yearSelect"><a ng-click="toggleData1(year)">{{year}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chart-area">
+                <span class="title">图表</span>
+                <div class="content">
+                    <highchart config="populationPie"></highchart>
+                </div>
+            </div>
+            <div class="one-word">
+                <span class="title">一句话解读</span>
+                <span class="content">
+<marquee>数据分析： 第一、二、三产业就业人口比重分别为{{(populationPie.series[0].data[0][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%、{{(populationPie.series[0].data[1][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%和{{(populationPie.series[0].data[2][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%,人口数量分别为{{populationPie.series[0].data[0][1]}}人、{{populationPie.series[0].data[1][1]}}人、{{populationPie.series[0].data[2][1]}}人。</marquee>
+                </span>
+            </div>
+            <div class="calculate-model">
+                <span class="title">预测模型</span>
+                <span class="content">劳动产业人口分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
+            </div>
+            <div>
+                <span class="title">数据详情</span>
+                <table style="background-color: white" class="table table-bordered table-condensed content table-hover">
+                    <tr style="text-align: center;">
+                        <td>产业</td>
+                        <td>产业人口(人)</td>
+                        <td>人口比例</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第一产业</td>
+                        <td>{{populationPie.series[0].data[0][1]}}</td>
+                        <td>{{(populationPie.series[0].data[0][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第二产业</td>
+                        <td>{{populationPie.series[0].data[1][1]}}</td>
+                        <td>{{(populationPie.series[0].data[1][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第三产业</td>
+                        <td>{{populationPie.series[0].data[2][1]}}</td>
+                        <td>{{(populationPie.series[0].data[2][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="labor-three-module">
+            <div class="current-position">
+                <span class="title">当前位置</span>
+                <span class="content">人口 -> 产业人口与产业GDP比重分析预测 -> 产业就业产值比重分析预测</span>
+            </div>
+            <div class="control-area">
+                <span class="title">操作图表</span>
+                <div class="content">
+                    <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+                    <div style="position: relative;">
+                        <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+                            <li ng-repeat="year in yearSelect"><a ng-click="toggleData2(year)">{{year}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chart-area">
+                <span class="title">图表</span>
+                <div class="content">
+                    <highchart config="industryPie"></highchart>
+                </div>
+            </div>
+            <div class="one-word">
+                <span class="title">一句话解读</span>
+                <span class="content"><marquee>数据分析： 第一、二、三产业产值比重分别为{{(industryPie.series[0].data[0][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%、{{(industryPie.series[0].data[1][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%和{{(industryPie.series[0].data[2][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%,产业产值分别为{{industryPie.series[0].data[0][1]}}亿元、{{industryPie.series[0].data[1][1]}}亿元、{{industryPie.series[0].data[2][1]}}亿元。</marquee></span>
+            </div>
+            <div class="calculate-model">
+                <span class="title">预测模型</span>
+                <span class="content">劳动产业人口分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
+            </div>
+            <div>
+                <span class="title">数据详情</span>
+                <table style="background-color: white" class="table table-bordered table-condensed content table-hover">
+                    <tr style="text-align: center;">
+                        <td>产业</td>
+                        <td>产业产值(亿元)</td>
+                        <td>产值比例</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第一产业</td>
+                        <td>{{industryPie.series[0].data[0][1]}}</td>
+                        <td>{{(industryPie.series[0].data[0][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第二产业</td>
+                        <td>{{industryPie.series[0].data[1][1]}}</td>
+                        <td>{{(industryPie.series[0].data[1][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>第三产业</td>
+                        <td>{{industryPie.series[0].data[2][1]}}</td>
+                        <td>{{(industryPie.series[0].data[2][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

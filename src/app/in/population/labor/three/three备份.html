@@ -1,0 +1,85 @@
+<div class="container" style="overflow-y:scroll;height: 590px;width: 100%;">
+    <highchart style="margin-top: 50px;" config="populationPie"></highchart>
+    <div class="btn-group dropdown" style="width: 100%;">
+        <button class="btn btn-success" ng-click="toggleMenu1()" data-toggle="dropdown" style="width:50%" aria-expanded="false">年份选择<span class="caret"></span></button>
+        <ul ng-show="isMenu1" class="dropdown-menu">
+            <li ng-repeat="year in yearSelect"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData1(year)">{{year}}</a></li>
+        </ul>
+        <button class="btn btn-primary" ng-click="showPopulationDetail1()" style="width:50%">详情数据<span class="caret"></span></button>
+    </div>
+    <div>
+        <table class="table la-table-text" ng-show="datashow1">
+            <thead>
+                <tr>
+                    <th class="la-thtd-center" colspan="3">太仓市2020年产业就业人口比重分析预测详情表</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">产业</td>
+                    <td class="la-thtd-center">人口数量(人)</td>
+                    <td class="la-thtd-center">人口比例</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第一产业</td>
+                    <td class="la-thtd-center">{{populationPie.series[0].data[0][1]}}</td>
+                    <td class="la-thtd-center">{{(populationPie.series[0].data[0][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第二产业</td>
+                    <td class="la-thtd-center">{{populationPie.series[0].data[1][1]}}</td>
+                    <td class="la-thtd-center">{{(populationPie.series[0].data[1][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    <td>{{}}</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第二产业</td>
+                    <td class="la-thtd-center">{{populationPie.series[0].data[2][1]}}</td>
+                    <td class="la-thtd-center">{{(populationPie.series[0].data[2][1]*100/(populationPie.series[0].data[0][1]+populationPie.series[0].data[1][1]+populationPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    <td class="la-thtd-center">{{}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr/>
+    <highchart config="industryPie" style="width:100%;"></highchart>
+    <div class="btn-group dropdown" style="width: 100%;">
+        <button class="btn btn-success" ng-click="toggleMenu2()" data-toggle="dropdown" style="width:50%" aria-expanded="false">年份选择<span class="caret"></span></button>
+        <ul ng-show="isMenu2" class="dropdown-menu">
+            <li ng-repeat="year in yearSelect"><a ng-model="predictionModal" style="" btn-radio="bttn.radio" ng-click="toggleData2(year)">{{year}}</a></li>
+        </ul>
+        <button class="btn btn-primary" ng-click="showPopulationDetail2()" style="width:50%">详情数据<span class="caret"></span></button>
+    </div>
+    <div>
+        <table class="table la-table-text" ng-show="datashow2">
+            <thead>
+                <tr>
+                    <th class="la-thtd-center" colspan="3">太仓市2020年产业产值比重分析预测详情表</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">产业</td>
+                    <td class="la-thtd-center">产值(人)</td>
+                    <td class="la-thtd-center">产值比例</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第一产业</td>
+                    <td class="la-thtd-center">{{industryPie.series[0].data[0][1]}}</td>
+                    <td class="la-thtd-center">{{(industryPie.series[0].data[0][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第二产业</td>
+                    <td class="la-thtd-center">{{industryPie.series[0].data[1][1]}}</td>
+                    <td class="la-thtd-center">{{(industryPie.series[0].data[1][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    <td>{{}}</td>
+                </tr>
+                <tr style="text-align: left;">
+                    <td class="la-thtd-center">第二产业</td>
+                    <td class="la-thtd-center">{{industryPie.series[0].data[2][1]}}</td>
+                    <td class="la-thtd-center">{{(industryPie.series[0].data[2][1]*100/(industryPie.series[0].data[0][1]+industryPie.series[0].data[1][1]+industryPie.series[0].data[2][1])).toFixed(2)}}%</td>
+                    <td class="la-thtd-center">{{}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

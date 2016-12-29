@@ -1,22 +1,6 @@
 export default ($scope, $rootScope, $stateParams, qService, populationRes) => { 
 	'ngInject';
-    (function() {
-      document.body.scrollIntoView();
-  })();
-    //年份选择按钮
-    $scope.isMenu1 = false;
-    $scope.toggleMenu1 =() => {
-      $scope.isMenu1 = !$scope.isMenu1;
-  };
 
-	//切换表格
-	$scope.datashow1 = false;	
-    $scope.showPopulationDetail1 = () =>{
-     $scope.datashow1= !$scope.datashow1;
- };
- $scope.showPopulationDetail2 = function(){
-     $scope.datashow2= !$scope.datashow2;
- };
 	//关联度值数据
 	var relate1 = [0.825, 0.827, 0.829,0.826, 0.829, 0.831, 0.836, 0.834, 0.836, 0.838];
 	var relate2 = [0.839, 0.837, 0.836,0.838, 0.839, 0.834, 0.835, 0.836, 0.837, 0.838];
