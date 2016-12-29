@@ -9,21 +9,13 @@
             <div class="control-area">
                 <span class="title">操作图表</span>
                 <div class="content">
-                    <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">切换图表类型<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
-                    <div style="position: relative;">
-                        <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
-                            <li><a ng-click="changeTotalChart('spline')">曲线图</a></li>
-                            <li><a ng-click="changeTotalChart('column')">直方图</a></li>
-                            <li class="divider"></li>
-                            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
-                        </ul>
-                    </div>
+                    123
                 </div>
             </div>
             <div class="chart-area">
                 <span class="title">图表</span>
                 <div class="content">
-                    <highchart  id="charttotal" config="TotalPowerGDPChart"></highchart>
+                    <highchart style="height: 350px" id="discharge" config="discharge"></highchart>
                 </div>
             </div>
             <div class="one-word">
