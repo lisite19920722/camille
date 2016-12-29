@@ -8,6 +8,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     var airQualityGetHeaders = {
 
     };
+    $rootScope.loading=true;
     var airQualityGetPromise = qService.httpGetWithToken(environmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
     airQualityGetPromise.then(function(data){
         // console.log(data.data);
@@ -1651,5 +1652,6 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     }, function(error){
         console.log('发送失败');
     });
+    $rootScope.loading=false;
     //-------------------------airQualityGetPromise结束--------------------------
 };

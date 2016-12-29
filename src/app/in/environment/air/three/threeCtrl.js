@@ -28,6 +28,7 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
 
     };
     var airQualityGetPromise = qService.httpGetWithToken(environmentRes.getAirQuality, airQualityGetParams, airQualityGetHeaders);
+    $rootScope.loading=true;
     airQualityGetPromise.then(function(data){
         // console.log(data.data);
         //盒子2的Highcharts的日期,若今日是6月8日,box2Date就是6月1日~6月7日
@@ -139,8 +140,10 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     }, function(error){
         console.log('发送失败');
     });
+    $rootScope.loading=false;
     //-------------------------airQualityGetPromise结束--------------------------
     //-------------------------airPollutionGetPromise----------------------------
+    $rootScope.loading=true;
     var airPollutionGetParams = {
         // 'id':1,
     };
@@ -279,5 +282,6 @@ export default ($scope, $rootScope, qService, environmentRes, $timeout) => {
     }, function(error){
         console.log('发送失败');
     });
+    $rootScope.loading=false;
     //-------------------------airPollutionGetPromise结束--------------------------
 };

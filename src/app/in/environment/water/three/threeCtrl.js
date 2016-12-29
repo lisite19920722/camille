@@ -8,14 +8,17 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
     var waterQualityGetHeaders = {
 
     };
+    $rootScope.loading=true;
     var waterQualityGetPromise = qService.httpGetWithToken(environmentRes.getWaterQuality, waterQualityGetParams, waterQualityGetHeaders);
     waterQualityGetPromise.then(function(data){
         // console.log(data.data);
     }, function(error){
         console.log('发送失败');
     });
+    $rootScope.loading=false;
     //-------------------------waterQualityGetPromise结束--------------------------
     //--------------------------盒子3-----------------------------
+    $rootScope.loading=true;
     $http({method: 'GET', url: '/app/in/environment/water/three/waterQuality.json'}).
     success(function(data, status, headers, config) {
         // console.log(data);
@@ -25,7 +28,9 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
     error(function(data, status, headers, config) {
         console.log(data);
     });
+    $rootScope.loading=false;
 
+    $rootScope.loading=true;
     $http({method: 'GET', url: '/app/in/environment/water/three/wasteWater.json'}).
     success(function(data, status, headers, config) {
         // console.log(data);
@@ -34,6 +39,7 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
     error(function(data, status, headers, config) {
         console.log(data);
     });
+    $rootScope.loading=false;
     /**
      * 变量区
      *

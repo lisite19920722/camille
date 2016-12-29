@@ -9,6 +9,7 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
 
     };
     var waterPollutionGetPromise = qService.httpGetWithToken(environmentRes.getWaterPollution, waterPollutionGetParams, waterPollutionGetHeaders);
+    $rootScope.loading=true;
     waterPollutionGetPromise.then(function(data){
         // console.log(data.data);
         $scope.box1Date=data.data[0];
@@ -148,5 +149,6 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
     }, function(error){
         console.log('发送失败');
     });
+    $rootScope.loading=false;
     //--------------------------waterPollutionGetPromise----------------------------
 };
