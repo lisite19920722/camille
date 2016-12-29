@@ -113,225 +113,225 @@
 </div>
 <!--盒子4-->
 <!--<div style="height:{{windowHeight}}px;overflow: scroll">-->
-    <!--&lt;!&ndash;第四个框右侧部分&ndash;&gt;-->
-    <!--<div class="panel panel-primary" style="margin-bottom:0; border-bottom:solid white;border-left: 0;border-right: 0">-->
-        <!--<div class="panel-heading" style="margin-top: 51px">-->
-            <!--<h4>当前空气质量分析</h4>-->
-        <!--</div>-->
-        <!--<div class="panel-body" style="padding-bottom:0;">-->
-            <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;空气污染物主要包括烟尘、总悬浮颗粒物、可吸入颗粒物(PM10)、细颗粒物(PM2.5) 、二氧化硫、一氧化碳、臭氧、挥发性有机化合物等。</p>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;下拉框部分&ndash;&gt;-->
-    <!--<div class="panel panel-primary" style="margin-bottom:5px; border-top:solid white; border-left: 0;border-right: 0">-->
-        <!--<a href="" class="list-group-item">-->
-            <!--<i class="fa fa-calendar fa-fw " style="color: #009f95"></i> 日期-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg" style=" width:40%">2016年6月1日</span> &ndash;&gt;-->
-            <!--<span class="badge" style=" width:40%">{{box4Today}}</span>-->
-        <!--</a>-->
-        <!--<a href="" class="list-group-item" ng-click="openAQI1List()">-->
-                        <!--<span class="badge">-->
-                            <!--<i class="fa fa-chevron-up" ng-if="updown11"></i>-->
-                            <!--<i class="fa fa-chevron-down" ng-if="updown12"></i>-->
-                        <!--</span>-->
-            <!--<span class="badge">{{box24Index.aqi}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg ">65</span> &ndash;&gt;-->
-            <!--<i class="fa fa-leaf " style="color: #3eae1d"></i> 空气质量(AQI)-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isAQI1open">-->
-            <!--<i></i>-->
-            <!--<span>&nbsp;&nbsp;空气质量AQI>100时，开始污染预警,AQI值越大，空气污染越严重。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openmainpollution1List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown21"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown22"></i>-->
-            <!--</span>-->
-            <!--<div class="badge">{{box24Index.firstElement}}</div>-->
-            <!--&lt;!&ndash; <div class="badge fc-nobg">PM2.5</div> &ndash;&gt;-->
-            <!--<i class="fa fa-bell-o" style="color: #e10602"></i> 首要污染物-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="ismainpollution1open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span>&nbsp;&nbsp;首要污染物是指空气污染中影响最大的污染物,近些年太仓主要污染物为PM2.5以及二氧化硫。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openPM251List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown31"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown32"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.pm25}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg" >45</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> PM2.5-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isPM251open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span class="fc-list-content">&nbsp;&nbsp;细颗粒物又称细粒、PM2.5。为当前空气污染的主要污染物之一。当PM2.5>75μg/m³时,开始污染预警。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openPM101List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown41"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown42"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.pm10}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg" >54</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> PM10-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isPM101open">-->
-            <!--<i class="text-success"></i>&nbsp;&nbsp;-->
-            <!--<span class="fc-list-content">可吸入颗粒物是指空气动力学当量直径≤10微米的颗粒物,又称为PM10。当PM10>150μg/m³时,开始污染预警。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openSO21List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown51"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown52"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.so2}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg">68</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 二氧化硫-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isSO21open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span class="fc-list-content">&nbsp;&nbsp;二氧化硫是大气主要污染物之一，太仓二氧化硫污染主要源于港区电厂废气排放。当SO2>150μg/m³时,开始污染预警。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openNO21List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown61"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown62"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.no2}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg">47</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 二氧化氮-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isNO21open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span class="fc-list-content">&nbsp;&nbsp;二氧化氮除自然来源外,主要来自于燃料的燃烧、城市汽车尾气。此外，工业生产过程也可产生一些二氧化氮。当NO2>80ug/m3时,开始污染预警。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openCO1List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown71"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown72"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.co}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg">63</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 一氧化碳-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isCO1open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span class="fc-list-content">&nbsp;&nbsp;一氧化碳是大气中分布最广和数量最多的污染物，也是燃烧过程中生成的重要污染物之一。当CO>4mg/m³时,开始污染预警。</span>-->
-        <!--</li>-->
-        <!--<a href="" class="list-group-item" ng-click="openO31List()">-->
-            <!--<span class="badge">-->
-                <!--<i class="fa fa-chevron-up" ng-if="updown81"></i>-->
-                <!--<i class="fa fa-chevron-down" ng-if="updown82"></i>-->
-            <!--</span>-->
-            <!--<span class="badge fc-nobg">{{box24Index.o3}}</span>-->
-            <!--&lt;!&ndash; <span class="badge fc-nobg">74</span> &ndash;&gt;-->
-            <!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 臭氧-->
-        <!--</a>-->
-        <!--<li class="list-group-item" ng-if="isO31open">-->
-            <!--<i class="text-success "></i>-->
-            <!--<span class="fc-list-content">&nbsp;&nbsp;臭氧是大气污染一部分,吸入少量对人体有益,吸入过量对人体健康有一定危害。当O3>160μg/m³时,开始污染预警。</span>-->
-        <!--</li>-->
-    <!--</div>-->
-    <!--&lt;!&ndash;第四个框左侧highchart部分&ndash;&gt;-->
-    <!--<div class="panel panel-primary" style="margin-top:5px; border-left:0; border-right: 0; border-bottom: 0">-->
-        <!--<div class="panel-heading">-->
-            <!--<h4>实时空气质量变化情况</h4>-->
-        <!--</div>-->
-        <!--<div class="panel-body" style="padding:0">-->
-            <!--<div>-->
-                <!--<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">-->
-                    <!--<button class="navbar-brand" style="background: #F7F7F7;border: 0px">空气质量指标</button>-->
-                    <!--<button class="btn btn-default navbar-btn" role="button">AQI</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">PM2.5</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">PM10</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">二氧化硫</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">二氧化氮</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">一氧化碳</button>-->
-                    <!--<button href="#" class="btn btn-default navbar-btn " role="button">臭氧</button>-->
-                <!--</nav>-->
-                <!--<div>-->
-                    <!--<h5>-->
-                        <!--<span style="color:#DDDF0D">&nbsp&nbsp&nbsp&nbsp&nbsp黄色线&#45;&#45;&#45;&#45;</span>-->
-                        <!--轻度污染线-->
+<!--&lt;!&ndash;第四个框右侧部分&ndash;&gt;-->
+<!--<div class="panel panel-primary" style="margin-bottom:0; border-bottom:solid white;border-left: 0;border-right: 0">-->
+<!--<div class="panel-heading" style="margin-top: 51px">-->
+<!--<h4>当前空气质量分析</h4>-->
+<!--</div>-->
+<!--<div class="panel-body" style="padding-bottom:0;">-->
+<!--<p>&nbsp;&nbsp;&nbsp;&nbsp;空气污染物主要包括烟尘、总悬浮颗粒物、可吸入颗粒物(PM10)、细颗粒物(PM2.5) 、二氧化硫、一氧化碳、臭氧、挥发性有机化合物等。</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;下拉框部分&ndash;&gt;-->
+<!--<div class="panel panel-primary" style="margin-bottom:5px; border-top:solid white; border-left: 0;border-right: 0">-->
+<!--<a href="" class="list-group-item">-->
+<!--<i class="fa fa-calendar fa-fw " style="color: #009f95"></i> 日期-->
+<!--&lt;!&ndash; <span class="badge fc-nobg" style=" width:40%">2016年6月1日</span> &ndash;&gt;-->
+<!--<span class="badge" style=" width:40%">{{box4Today}}</span>-->
+<!--</a>-->
+<!--<a href="" class="list-group-item" ng-click="openAQI1List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown11"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown12"></i>-->
+<!--</span>-->
+<!--<span class="badge">{{box24Index.aqi}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg ">65</span> &ndash;&gt;-->
+<!--<i class="fa fa-leaf " style="color: #3eae1d"></i> 空气质量(AQI)-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isAQI1open">-->
+<!--<i></i>-->
+<!--<span>&nbsp;&nbsp;空气质量AQI>100时，开始污染预警,AQI值越大，空气污染越严重。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openmainpollution1List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown21"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown22"></i>-->
+<!--</span>-->
+<!--<div class="badge">{{box24Index.firstElement}}</div>-->
+<!--&lt;!&ndash; <div class="badge fc-nobg">PM2.5</div> &ndash;&gt;-->
+<!--<i class="fa fa-bell-o" style="color: #e10602"></i> 首要污染物-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="ismainpollution1open">-->
+<!--<i class="text-success "></i>-->
+<!--<span>&nbsp;&nbsp;首要污染物是指空气污染中影响最大的污染物,近些年太仓主要污染物为PM2.5以及二氧化硫。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openPM251List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown31"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown32"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.pm25}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg" >45</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> PM2.5-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isPM251open">-->
+<!--<i class="text-success "></i>-->
+<!--<span class="fc-list-content">&nbsp;&nbsp;细颗粒物又称细粒、PM2.5。为当前空气污染的主要污染物之一。当PM2.5>75μg/m³时,开始污染预警。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openPM101List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown41"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown42"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.pm10}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg" >54</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> PM10-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isPM101open">-->
+<!--<i class="text-success"></i>&nbsp;&nbsp;-->
+<!--<span class="fc-list-content">可吸入颗粒物是指空气动力学当量直径≤10微米的颗粒物,又称为PM10。当PM10>150μg/m³时,开始污染预警。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openSO21List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown51"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown52"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.so2}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg">68</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 二氧化硫-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isSO21open">-->
+<!--<i class="text-success "></i>-->
+<!--<span class="fc-list-content">&nbsp;&nbsp;二氧化硫是大气主要污染物之一，太仓二氧化硫污染主要源于港区电厂废气排放。当SO2>150μg/m³时,开始污染预警。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openNO21List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown61"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown62"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.no2}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg">47</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 二氧化氮-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isNO21open">-->
+<!--<i class="text-success "></i>-->
+<!--<span class="fc-list-content">&nbsp;&nbsp;二氧化氮除自然来源外,主要来自于燃料的燃烧、城市汽车尾气。此外，工业生产过程也可产生一些二氧化氮。当NO2>80ug/m3时,开始污染预警。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openCO1List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown71"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown72"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.co}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg">63</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 一氧化碳-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isCO1open">-->
+<!--<i class="text-success "></i>-->
+<!--<span class="fc-list-content">&nbsp;&nbsp;一氧化碳是大气中分布最广和数量最多的污染物，也是燃烧过程中生成的重要污染物之一。当CO>4mg/m³时,开始污染预警。</span>-->
+<!--</li>-->
+<!--<a href="" class="list-group-item" ng-click="openO31List()">-->
+<!--<span class="badge">-->
+<!--<i class="fa fa-chevron-up" ng-if="updown81"></i>-->
+<!--<i class="fa fa-chevron-down" ng-if="updown82"></i>-->
+<!--</span>-->
+<!--<span class="badge fc-nobg">{{box24Index.o3}}</span>-->
+<!--&lt;!&ndash; <span class="badge fc-nobg">74</span> &ndash;&gt;-->
+<!--<i class="fa  fa-warning  fa-fw " style="color: #f7b500"></i> 臭氧-->
+<!--</a>-->
+<!--<li class="list-group-item" ng-if="isO31open">-->
+<!--<i class="text-success "></i>-->
+<!--<span class="fc-list-content">&nbsp;&nbsp;臭氧是大气污染一部分,吸入少量对人体有益,吸入过量对人体健康有一定危害。当O3>160μg/m³时,开始污染预警。</span>-->
+<!--</li>-->
+<!--</div>-->
+<!--&lt;!&ndash;第四个框左侧highchart部分&ndash;&gt;-->
+<!--<div class="panel panel-primary" style="margin-top:5px; border-left:0; border-right: 0; border-bottom: 0">-->
+<!--<div class="panel-heading">-->
+<!--<h4>实时空气质量变化情况</h4>-->
+<!--</div>-->
+<!--<div class="panel-body" style="padding:0">-->
+<!--<div>-->
+<!--<nav class="navbar navbar-default" role="navigation" du-scroll-container="scroll-container">-->
+<!--<button class="navbar-brand" style="background: #F7F7F7;border: 0px">空气质量指标</button>-->
+<!--<button class="btn btn-default navbar-btn" role="button">AQI</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">PM2.5</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">PM10</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">二氧化硫</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">二氧化氮</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">一氧化碳</button>-->
+<!--<button href="#" class="btn btn-default navbar-btn " role="button">臭氧</button>-->
+<!--</nav>-->
+<!--<div>-->
+<!--<h5>-->
+<!--<span style="color:#DDDF0D">&nbsp&nbsp&nbsp&nbsp&nbsp黄色线&#45;&#45;&#45;&#45;</span>-->
+<!--轻度污染线-->
 
-                        <!--<span style="color:#DF5353">&nbsp&nbsp&nbsp&nbsp&nbsp红色线&#45;&#45;&#45;&#45;</span>-->
-                        <!--严重污染线-->
-                    <!--</h5>-->
-                <!--</div>-->
-                <!--<div style="overflow: auto; overflow-x:hidden;height:620px;width: 100%" id="scroll-container"-->
-                     <!--data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">-->
-                    <!--<p id="airQualityAnchorTop"></p>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor1">-->
-                            <!--<highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px;">-->
-                            <!--<highchart style="width:100%;heightz:250px;"-->
-                                       <!--config="airQualityOptions.currentAqiLineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor2">-->
-                            <!--<highchart style="width:100%;height:250px"-->
-                                       <!--config="airQualityOptions.pm25Option"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentPm25LineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor3">-->
-                            <!--<highchart style="width:100%;height:250px"-->
-                                       <!--config="airQualityOptions.pm10Option"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentPm10LineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor4">-->
-                            <!--<highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2-->
-                            <!--</highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentSo2LineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor5">-->
-                            <!--<highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentNo2LineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor6">-->
-                            <!--<highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentCoLineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<div class="col-md-4" id="airQualityAnchor7">-->
-                            <!--<highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>-->
-                        <!--</div>-->
-                        <!--<div class="col-md-8" style="left:10px">-->
-                            <!--<highchart style="width:100%;height:250px;"-->
-                                       <!--config="airQualityOptions.currentO3LineOption"></highchart>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
+<!--<span style="color:#DF5353">&nbsp&nbsp&nbsp&nbsp&nbsp红色线&#45;&#45;&#45;&#45;</span>-->
+<!--严重污染线-->
+<!--</h5>-->
+<!--</div>-->
+<!--<div style="overflow: auto; overflow-x:hidden;height:620px;width: 100%" id="scroll-container"-->
+<!--data-spy="scroll" data-target="#navbarExample" data-offset="50" class="scrollspy-example">-->
+<!--<p id="airQualityAnchorTop"></p>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor1">-->
+<!--<highchart style="width:100%;height:250px" config="airQualityOptions.aqiOption"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px;">-->
+<!--<highchart style="width:100%;heightz:250px;"-->
+<!--config="airQualityOptions.currentAqiLineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor2">-->
+<!--<highchart style="width:100%;height:250px"-->
+<!--config="airQualityOptions.pm25Option"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentPm25LineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor3">-->
+<!--<highchart style="width:100%;height:250px"-->
+<!--config="airQualityOptions.pm10Option"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentPm10LineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor4">-->
+<!--<highchart style="width:100%;height:250px" config="airQualityOptions.so2Option">SO2-->
+<!--</highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentSo2LineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor5">-->
+<!--<highchart style="width:100%;height:250px" config="airQualityOptions.no2Option"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentNo2LineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor6">-->
+<!--<highchart style="width:100%;height:250px" config="airQualityOptions.coOption"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentCoLineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-4" id="airQualityAnchor7">-->
+<!--<highchart style="width:100%;height:250px" config="airQualityOptions.o3Option"></highchart>-->
+<!--</div>-->
+<!--<div class="col-md-8" style="left:10px">-->
+<!--<highchart style="width:100%;height:250px;"-->
+<!--config="airQualityOptions.currentO3LineOption"></highchart>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <!--</div>-->
 <!--盒子4结束-->
