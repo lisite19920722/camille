@@ -27,21 +27,21 @@
       </div>
       <div class="one-word">
         <span class="title">一句话解读</span>
-        <span class="content" >数据分析：<span id="school1">{{school1}}</span></span>
-        <span class="content" >结论：<span id="school2">{{school2}}</span></span>
+        <span class="content" >
+        <li>数据分析：<span id="school1">{{school1}}</span></li>
+        <br>
+        <li>结论：<span id="school2">{{school2}}</span></li>
+        </span>
       </div>
       <div class="calculate-model">
         <span class="title">预测模型</span>
         <span class="content">人口与教育分析预测采用的是灰色预测模型。</span>
       </div>
       <div class="detail-data">
-        <span class="title">数据详情</span>
-        <div class="content" style="padding:5px;"><center>{{school.options.title.text}}</center></div> 
+        <span class="title">{{school.options.title.text}}详情</span>
         <table class="table table-bordered table-condensed content table-hover">
-         
-         
           <tr style="background-color: rgba(99,99,99,.1);">
-             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+             <td>地区</td>
              <td>小学数量（所）</td>
              <td>初中数量（所）</td>
              <td>高中数量（所）</td>
