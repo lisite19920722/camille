@@ -1,3 +1,53 @@
- <div id="maincontainer" style="height:400px"></div>
- 
- 
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="labor-two-module">
+            <div class="current-position">
+                <span class="title">当前位置</span>
+                <span class="content">人口 -> 劳动力人口与经济关联分析预测 -> 劳动力总人口与GDP关联分析预测</span>
+            </div>
+            <div class="control-area">
+                <span class="title">操作图表</span>
+                <div class="content">
+                    <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+                    <div style="position: relative;">
+                        <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+                            <li ng-repeat="year in yearSelect"><a ng-click="toggleData1(year)">{{year}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-area">
+                <span class="title">图表</span>
+                <div class="content">
+                   <div id="main" style="height:480px;"></div>
+                 </div>
+            </div>
+            <div class="one-word">
+                <span class="title">一句话解读</span>
+                <span class="content"><marquee>{{one}}</marquee></span>
+            </div>
+            <div class="calculate-model">
+                <span class="title">预测模型</span>
+                <span class="content">劳动力总人口与GDP关联分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
+            </div>
+            <div>
+                <span class="title">数据详情</span>
+                <table style="background-color: white" class="table table-bordered table-condensed content table-hover">
+                    <tr style="text-align: center;">
+                        <td>年份</td>
+                        <td>人口(人)</td>
+                        <td>GDP(万亿元)</td>
+                        <td>关联度</td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>{{firstChart.options.xAxis.categories[0]}}</td>
+                        <td>{{firstChart.series[0].data[0]}}</td>
+                        <td>{{firstChart.series[2].data[0]}}</td>
+                        <td>{{firstChart.series[1].data[0]}}</td>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

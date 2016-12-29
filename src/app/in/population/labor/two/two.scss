@@ -1,0 +1,95 @@
+.labor-two-module {
+	background-color: $barColor;
+	@mixin box-padding() {
+		
+	}
+	@mixin title() {
+		display: block;
+		padding: 3px 15px;
+		font-size: 13px;
+		color: rgb(153, 153, 153);
+	}
+	@mixin content() {
+		background-color: #fff;
+		box-shadow: 0 10px 10px -10px $shadowColor inset,
+					0 -10px 10px -10px $shadowColor inset;
+		display: block;
+	}
+	.current-position {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 5px 15px 15px;
+			@include content();		
+		}
+	}
+	.control-area {
+		@include box-padding();
+		.title {
+			@include title();
+		}	
+		.content {
+			padding: 10px 15px 15px;
+			position: relative;
+			@include content();
+			a {
+				font-size: 13px;
+			}
+			.dropdown-menu {
+				left: 0;
+				top: 0;
+				min-width: 117px;
+				text-align: center;
+				.forcast {
+					color: rgba(68, 170, 213, 1);
+				}
+			}
+		}
+	}
+	.chart-area {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 5px 0 15px;
+			@include content();
+		}
+	}
+	.one-word {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			padding: 10px 15px 10px;
+			@include content();
+		}
+	}
+	.calculate-model {
+		@include box-padding();
+		.title {
+			@include title();
+		}	
+		.content {
+			padding: 5px 15px 15px;
+			@include content();
+		}
+	}
+	.detail-data {
+		@include box-padding();
+		.title {
+			@include title();
+		}
+		.content {
+			td {
+				text-align: center;
+			}
+			background-color: #fff;
+			box-shadow: 0 5px 5px -5px $shadowColor inset,
+						0 -5px 5px -5px $shadowColor inset;
+		}	
+	}
+}
