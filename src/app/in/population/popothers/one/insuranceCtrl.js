@@ -84,8 +84,15 @@ export default ($scope, $rootScope, qService, populationRes) => {
         chart: {
             zoomType: 'xy'
         },
+         exporting: {
+                    enabled: false, // 取消打印menu
+                },
+        
         title: {
-            text: '太仓市2016至2025年城镇养老保险基金分析预测'
+            text: '太仓市2016至2025年城镇养老保险基金分析预测',
+            style:{
+                fontSize: "13px",
+            }
         },
         credits:{
             enabled:false

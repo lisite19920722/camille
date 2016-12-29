@@ -1,64 +1,48 @@
-<div style="overflow-y:scroll;height: 450px;width: 100%;">    
-        <div style="border:1px solid lightblue;background:lightblue">
-          <h4 style="margin-top:10px;margin-left:10px">就业情况分析预测</h4>
-        </div> 
-         <div>
-              <highchart style="width:100%" config="jobf"></highchart>
-         </div>  
-     <div  style="padding-left:0px">
-        <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
-         <span class="text-white font-thin h1 block"><span style="background:green">81.07%</span></span>
-         <span class="text-xs"><span>2016</span>年太仓市就业率</span>
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="structure-one-module">
+      <div class="current-position">
+        <span class="title">当前位置</span>
+        <span class="content">人口 -> 民生分析预测BI -> 人口与就业</span>
       </div>
-     </div>   
-     <div  style="margin-top:10px;padding-left:0px">
-      <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
-        <span class="text-white font-thin h1 block"  style="background:green">45.7万</span>
-        <span class="text-xs">2016年太仓市就业人数</span>
-        </div> 
-      </div>    
-    <div class="pull-left">             
-      <span class="fa-stack fa-lg" style="margin-left:5px">
-        <i class="fa fa-circle fa-stack-2x text-info"></i>
-        <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
-        <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
-      </span>
-      <span class="h4">一句话解读</span>             
-      <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
-        <small class="block m-t-xs">
-          <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i>
-          <div style="width:94%;float:left;margin-bottom:0.4em;">
-            <span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span>
+      <div class="control-area">
+        <span class="title">操作图表</span>
+        <div class="content">
+          <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择
+          <i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+          <div style="position:relative;">
+            <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+              <li ng-repeat="bttn in buttonMap3" ng-model="myYear"><a ng-model="predictionModal" style="margin-bottom: 1px;" btn-radio="bttn.radio" ng-click="btn_click3(bttn)">{{bttn.label}}</a></li>
+            </ul>
           </div>
-        </small>
-        <small class="block m-t-xs">
-          <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i>
-          <div style="width:94%;float:left;margin-bottom:0.4em;">
-            <span> 就业人数分析预测采用的是灰色预测模型。</span>
-          </div>
-        </small> 
+        </div>
       </div>
-    </div>                                       
-    <div class="btn-group dropdown" style="width:100%">
-     
-      <button class="btn btn-success" data-toggle="dropdown" style="width:50%" aria-expanded="false" ng-click="ShowClick1()"">年份选择<span class="caret"></span></button>
-      <ul class="dropdown-menu" ng-show="show1">
-        <li><a ng-repeat="bttn in buttonMap3" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click3(bttn)">{{bttn.label}}</a></li>
-      </ul>
-      <button ng-click="showPopulationDetail()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-    </div>                                  
-  
-  
-
-
-      <div class="bg-white fc-datatable"  ng-if="totalshow" style="border:0px">
-        <div class="panel panel-default paddingmargin0em" >
-          <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-      <tr>
-        <td colspan="4"><center><strong>{{employyear}}年就业情况分析预测表</strong></center> </td>
-      </tr>
-      <tr>
-                 <td>年份</td>
+      <div class="chart-area">
+        <span class="title">图表</span>
+        <div class="content">
+          <highchart  id="jobf" config="jobf"></highchart>
+          
+         
+        </div>
+      </div>
+      <div class="one-word">
+        <span class="title">一句话解读</span>
+        <span class="content" >数据分析：<span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span></span>
+        
+      </div>
+      <div class="calculate-model">
+        <span class="title">预测模型</span>
+        <span class="content">就业人数分析预测采用的是灰色预测模型。</span>
+      </div>
+      <div class="detail-data">
+        <span class="title">数据详情</span>
+        <div class="content" style="padding:5px;"><center>{{employyear}}年就业情况分析预测表</center></div> 
+        <table class="table table-bordered table-condensed content table-hover">
+         
+         
+         
+       <tr style="background-color: rgba(99,99,99,.1);">
+                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                  <td>劳动力人口（万）</td>
                  <td>就业人口（万）</td>
                  <td>就业率</td>
@@ -122,64 +106,47 @@
                  <td>{{jobf.series[0].data[9]}}</td>
                  <td>{{jobf.series[1].data[9]}}</td>
                  <td>{{rate[9]}}%</td>
-              </tr>        
-    </table>
-  </div>
-</div>
-<br>
-
-<hr>
-  <div>
-    <highchart style="height:500px;" config="jobt"></highchart>
-  </div>
-    <div class="pull-left">
-      <div style="height:15px;"></div>
-      <span class="fa-stack fa-lg" style="margin-left:5px">
-        <i class="fa fa-circle fa-stack-2x text-info"></i>
-        <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
-        <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
-      </span>
-      <span class="h4">一句话解读</span>     
-      <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
-        <small class="block m-t-xs">
-          <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span></div>
-        </small>
-        <small class="block m-t-xs">
-          <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span id="conclusion">结论：第一产业比重逐年下降，第二、三产业比重上升，将成为影响人口就业结构和城乡结构变化的主要因素。</span></div>
-        </small>
-        <small class="block m-t-xs">
-          <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i>
-          <div style="width:94%;float:left;margin-bottom:0.4em;">
-            <span> 就业结构分析预测采用的是灰色预测模型法。</span>
-          </div>
-        </small> 
+              </tr>    
+        </table>
       </div>
-    </div>
-    
- 
-    <div class="btn-group dropdown" style="width:100%">
-      <button class="btn btn-success" data-toggle="dropdown"  aria-expanded="false" ng-click="ShowClick2()" style="width:50%">年份选择<span class="caret"></span></button>
-      <ul class="dropdown-menu" ng-show="show2">
-        <li><a ng-repeat="bttn in buttonMap1" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</a></li>
-      </ul>
-      <button ng-click="showPopulationDetail1()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-    </div>
-
-    
-  
-<div class="bg-white fc-datatable"  ng-if="totalshow1" style="border:0px">
-        <div class="panel panel-default paddingmargin0em" >
-          <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-
-            <tr class="ng-scope ng-isolate-scope">
-              <td colspan="5">
-              <center><strong>
-                   {{employyear1}}年就业结构变化分析预测表
-              </strong></center> 
-              </td>
-            </tr>
-            <tr>
-                 <td>年份</td>
+            <div class="control-area">
+        <span class="title">操作图表</span>
+        <div class="content">
+          <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择
+          <i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+          <div style="position:relative;">
+            <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+              <li ng-repeat="bttn in buttonMap1" ng-model="myYear"><a ng-model="predictionModal" style="margin-bottom: 1px;" btn-radio="bttn.radio" ng-click="btn_click1(bttn)">{{bttn.label}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="chart-area">
+        <span class="title">图表</span>
+        <div class="content">
+          <highchart  id="jobt" config="jobt"></highchart>
+          
+         
+        </div>
+      </div>
+      <div class="one-word">
+        <span class="title">一句话解读</span>
+        <span class="content" >数据分析：<span id="abc">数据分析：最近几年，太仓就业形势良好，在劳动力人口平稳增长的背景下，就业人口也呈平稳增长态势。</span>
+        </span>
+        <span class="content" ><span id="conclusion">结论：第一产业比重逐年下降，第二、三产业比重上升，将成为影响人口就业结构和城乡结构变化的主要因素。</span>
+        </span>
+      </div>
+      <div class="calculate-model">
+        <span class="title">预测模型</span>
+        <span class="content">就业结构分析预测采用的是灰色预测模型法。</span>
+      </div>
+      <div class="detail-data">
+        <span class="title">数据详情</span>
+        <div class="content" style="padding:5px;"><center> {{employyear1}}年就业结构变化分析预测表</center></div> 
+        <table class="table table-bordered table-condensed content table-hover">
+                 
+              <tr style="background-color: rgba(99,99,99,.1);">
+                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                  <td>就业人数（万）</td>
                  <td>第一产业人口比</td>
                  <td>第二产业人口比</td>
@@ -254,13 +221,27 @@
                  <td>{{jobt.series[1].data[9]}}%</td>
                  <td>{{jobt.series[2].data[9]}}%</td>
                  <td>{{jobt.series[3].data[9]}}%</td>
-              </tr>                
-            </table>
-          </div>
-        </div>
-  
-  
-
-
+              </tr>          
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+ <div  style="padding-left:0px">
+        <div class="block panel padder-v cgq_bg-lightgreen item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
+         <span class="text-white font-thin h1 block"><span style="background:green">81.07%</span></span>
+         <span class="text-xs"><span>2016</span>年太仓市就业率</span>
+      </div>
+      </div>
+<div  style="margin-top:10px;padding-left:0px">
+      <div class="block panel padder-v cgq_bg-lightyellow item cgq_marginaround1em cgq_contentwidth" style="background:lightblue">
+        <span class="text-white font-thin h1 block"  style="background:green">45.7万</span>
+        <span class="text-xs">2016年太仓市就业人数</span>
+        </div> 
+      </div>  
+
+
+
 

@@ -268,8 +268,14 @@ var jobfcolor=new Array('#7cb5ec','#000000');
         chart: {
             type: 'areaspline'
         },
+        exporting:{
+          enabled: false,
+        },
         title: {
-            text: '太仓市2016至2025年就业人数分析预测'
+            text: '太仓市2016至2025年就业人数分析预测',
+            style:{
+              fontSize: "14px",
+            }
         },
         legend: {
             layout: 'vertical',
@@ -339,8 +345,14 @@ $scope.jobt ={
         chart: {
             zoomType: 'xy'
         },
+        exporting:{
+           enabled:false,
+        },
         title: {
             text: '太仓市2016至2025年就业结构变化分析预测',
+            style:{
+              fontSize: "14px",
+            },
             x: -20 //center
         },
         credits:{
