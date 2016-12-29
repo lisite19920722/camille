@@ -24,28 +24,21 @@
             </div>
             <div class="one-word">
                 <span class="title">一句话解读</span>
-                <span class="content"><marquee>{{one}}</marquee></span>
+                <span class="content"><marquee>数据分析：在经济发展水平对人口的影响中，关联度最高的是第二产业总值，其次是第三产业总值。结论：第一产业比重逐年下降，第二、三产业比重上升，将成为影响人口就业结构和城乡结构变化的主要因素</marquee></span>
             </div>
             <div class="calculate-model">
                 <span class="title">预测模型</span>
-                <span class="content">劳动力总人口与GDP关联分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
+                <span class="content">劳动力人口与各项经济指标关联度分析预测采用的是灰色预测模型、灰色关联分析法和回归分析法。</span>
             </div>
             <div>
                 <span class="title">数据详情</span>
                 <table style="background-color: white" class="table table-bordered table-condensed content table-hover">
-                    <tr style="text-align: center;">
-                        <td>年份</td>
-                        <td>人口(人)</td>
-                        <td>GDP(万亿元)</td>
-                        <td>关联度</td>
+                    <tr ng-repeat="all in totaldata.tabledata" style="text-align: center;">
+                        <td>{{all.yearvalue}}</td>
+                        <td>{{all.Fp}}</td>
+                        <td>{{all.Sp}}</td>
+                        <td>{{all.Tp}}</td>
                     </tr>
-                    <tr style="text-align: center;">
-                        <td>{{firstChart.options.xAxis.categories[0]}}</td>
-                        <td>{{firstChart.series[0].data[0]}}</td>
-                        <td>{{firstChart.series[2].data[0]}}</td>
-                        <td>{{firstChart.series[1].data[0]}}</td>
-                    </tr>
-                    
                 </table>
             </div>
         </div>
