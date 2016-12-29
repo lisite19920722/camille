@@ -17,7 +17,7 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
     //一句话解读数据,及初始化
     $scope.oneWord = ['GDP增长趋势陡峭,劳动力人口增长较平稳，两者关联度逐年增加。', 'GDP平稳增长,劳动力人口增长较平稳，两者关联度基本不增加。', 'GDP增长量有所波动,劳动力人口基本不增长，两者关联度逐年增加。'];
     $scope.one = $scope.yearSelect1[0].concat($scope.oneWord[0]);
-    
+    $rootScope.loading = true;
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData,{},{})
     .then((resource) => {
 
