@@ -19,6 +19,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     }
     $scope.data = null;
     var popData;
+    $rootScope.loading = true;
     var promise = qService.httpGetWithToken(populationRes.getPopulationStructurePreData, {}, {});
     promise.then(function(rc){
     	popData = rc.data;
@@ -696,6 +697,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
         $scope.womanpre = rateF20;
 
         $scope.change = function(btn) {
+            $rootScope.loading = true;
             //  var columnColors = new Array('#7CADDF', '#327EBD', '#195489', '#1FC22B', '#FB9705', '#F26200');
 
             if (btn.name === 2020) {
@@ -940,6 +942,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
                     data: female45
                 }]
             }
+            $rootScope.loading = false;
         };
 
         $scope.age_ration = {
@@ -1194,5 +1197,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
                 data: female20
             }]
         };
-    })
+    }).finally(function() {
+        $rootScope.loading = false;
+    });
 };

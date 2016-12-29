@@ -5,6 +5,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
     })();
     $scope.data = null;
     var popData;
+    $rootScope.loading = true;
     var promise = qService.httpGetWithToken(populationRes.getSumPopulationData, {}, {});
     promise.then(function(rc) {       
         popData = rc.data; 
@@ -353,5 +354,7 @@ export default ($scope, $rootScope, qService, populationRes) => {
             { "lng": 121.070907, "lat": 31.556999, "count": 16 },
             { "lng": 121.190549, "lat": 31.467665, "count": 16 }
         ];
+    }).finally(function() {
+        $rootScope.loading = false;
     });
 };
