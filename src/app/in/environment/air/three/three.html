@@ -1,170 +1,283 @@
-<!--盒子3-->
-<div class="panel panel-primary" style="margin-bottom:0;border-bottom: 0;border-left:0; border-right: 0;
-    height:{{windowHeight}}px;overflow: scroll">
-    <!--最上标题栏-->
-    <div class="panel-heading" style="margin-top: 51px">
-        <h4>分地区空气质量分析预测</h4>
-    </div>
-    <div class="panel-body" style="padding:0">
-        <!--第三个框右侧栏-->
-        <div style="font-size:16px;">
-            <div class="pull-left">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                    <i class="fa  fa-leaf fa-stack-1x text-white"></i>
-                </span>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <div class="power-one-module">
+            <div class="current-position">
+                <span class="title">当前位置</span>
+                <span class="content">环境 -> 空气质量分析预测 -> 分地区空气质量分析预测</span>
             </div>
-            <h4 style="margin-top:0.5em;padding-left:0;">空气质量预测</h4>
-            <button class="btn btn-primary" ng-click="airQualityBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
-                <span class="fa fa-hand-o-right">
-                    <span class="fc-button-font">城区空气质量预测</span>
-                </span>
-            </button>
-            <br/>
-            <span class="fa fa-leaf" ng-if="istownairquality">
-                <span class="fc-button-font">未来24小时太仓城区空气质量</span>
-            </span>
-        </div>
-        <div ng-show="mapTableStatus.airQuality" style="margin-top:5px;">
-            <table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">
-                <tr>
-                    <th style="width:29%">监测点</th>
-                    <th style="width:15%">AQI</th>
-                    <th style="width:20%">污染物</th>
-                    <th style="width:18%">PM2.5</th>
-                    <th style="width:18%">SO2</th>
-                </tr>
-            </table>
-        </div>
-        <div style="overflow: auto; overflow-x:hidden;height:120px;border-bottom:solid 1px lightgrey;"
-             ng-show="mapTableStatus.airQuality">
-            <table class="table table-hover table-responsive" style="font-size:14px">
-                <tr>
-                    <td style="width:29%">太仓市监测站</td>
-                    <td style="width:15%">
-                        <span>{{box2AQI[0].aqi}}</span>
-                        <!-- <span>78</span> -->
-                    </td>
-                    <td style="width:20%">
-                        <span>{{box2AQI[0].firstElement}}</span>
-                        <!-- <span>PM2.5</span> -->
-                    </td>
-                    <td style="width:18%">
-                        <span>{{box2AQI[0].pm25}}</span>
-                        <!-- <span>45</span> -->
-                    </td>
-                    <td style="width:18%">
-                        <span>{{box2AQI[0].so2}}</span>
-                        <!-- <span>12</span> -->
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width:29%">科教新城监测站</td>
-                    <td style="width:15%">
-                        <span>{{box2AQI[1].aqi}}</span>
-                        <!-- <span>62</span> -->
-                    </td>
-                    <td style="width:20%">
-                        <!-- <span>PM10</span> -->
-                        <span>{{box2AQI[1].firstElement}}</span>
-                    </td>
-                    <td style="width:18%">
-                        <!-- <span>37</span> -->
-                        <span>{{box2AQI[1].pm25}}</span>
-                    </td>
-                    <td style="width:18%">
-                        <!-- <span>18</span> -->
-                        <span>{{box2AQI[1].so2}}</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div style="font-size:16px;">
-            <div class="pull-left">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                        <i class="fa  fa-bar-chart  fa-stack-1x text-white"></i>
-                    </span>
+            <div class="control-area">
+                <span class="title">操作图表</span>
+                <div class="content">
+                    <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">切换图表类型<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+                    <div style="position: relative;">
+                        <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+                            <li><a ng-click="changeTotalChart('spline')">曲线图</a></li>
+                            <li><a ng-click="changeTotalChart('column')">直方图</a></li>
+                            <li class="divider"></li>
+                            <li><a ng-click="changeTotalChart('area')">区域图</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h4 style="margin-top:0.5em;padding-left:0;">工业废气排放分析</h4>
-            <button class="btn btn-primary" ng-click="wasteAirBtn()" style="margin-top:0.5em;margin-bottom:0.3em">
-                <span class="fa fa-hand-o-right">
-                    <span class="fc-button-font">工业废气排放分析</span>
-                </span>
-            </button>
-            <br/>
-            <span class="fa fa-bar-chart" ng-if="istownwasteair">
-                <span class="fc-button-font">监测到废气排放均达标</span>
-            </span>
-        </div>
-        <div ng-show="mapTableStatus.wasteAir">
-            <table class="table table-hover table-responsive"
-                   style="font-size:14px;margin-bottom:0px;padding:0px">
-                <tr>
-                    <th style="width:40%">企业</th>
-                    <!-- <th style="width:20%">流量<br>(万m³)</th> -->
-                    <th style="width:20%;text-align:center;">烟尘<br>(mg/m³)</th>
-                    <th style="width:20%;text-align:center;">SO2<br>(mg/m³)</th>
-                    <th style="width:20%;text-align:center;">氮氧化物<br>(mg/m³)</th>
-                </tr>
-
-            </table>
-        </div>
-        <div style="overflow: auto; overflow-x:hidden;height:120px" ng-show="mapTableStatus.wasteAir">
-            <table class="table table-hover table-responsive"
-                   style="font-size:14px;margin-bottom:0;padding:0px">
-                <tr style="width:100%">
-                    <td style="width:40%">太仓港协鑫发电</td>
-                    <!-- <td>
-                        <span>{{pollutionDischarge[0]}}</span>
-                    </td> -->
-                    <td style="width:20%;text-align:center;">
-                        <span>{{pollutionSmoke[0]}}</span>
-                    </td>
-                    <td style="width:20%;text-align:center;">
-                        <span>{{pollutionSo2[0]}}</span>
-                    </td>
-                    <td style="width:20%;text-align:center;">
-                        <span>{{pollutionNo[0]}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>玖龙纸业</td>
-                    <!-- <td>
-                        <span>{{pollutionDischarge[1]}}</span>
-                    </td> -->
-                    <td>
-                        <span style="text-align:center;">{{pollutionSmoke[1]}}</span>
-                    </td>
-                    <td>
-                        <span style="text-align:center;">{{pollutionSo2[1]}}</span>
-                    </td>
-                    <td>
-                        <span style="text-align:center;">{{pollutionNo[1]}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>华能国际电力</td>
-                    <!-- <td>
-                        <span>{{pollutionDischarge[2]}}</span>
-                    </td> -->
-                    <td>
-                        <span style="text-align:center;">{{pollutionSmoke[2]}}</span>
-                    </td>
-                    <td>
-                        <span style="text-align:center;">{{pollutionSo2[2]}}</span>
-                    </td>
-                    <td>
-                        <span style="text-align:center;">{{pollutionNo[2]}}</span>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <!--第三个框左侧地图-->
-        <div class="panel panel-default"
-             style="border-color:lightgrey;border-style: solid;border-width: 1px;margin:0.8em;height:450px">
-            <div style="height: 450px; border: #ccc solid 1px;" id="map_canvas"></div>
+            <div class="chart-area">
+                <span class="title">图表</span>
+                <div class="content">
+                    <highchart  id="charttotal" config="TotalPowerGDPChart"></highchart>
+                </div>
+            </div>
+            <div class="one-word">
+                <span class="title">一句话解读</span>
+                <span class="content">{{oneword}}</span>
+            </div>
+            <div class="calculate-model">
+                <span class="title">预测模型</span>
+                <span class="content">格兰杰因果检验模型和误差修正模型的组合模型</span>
+            </div>
+            <div class="detail-data">
+                <span class="title">数据详情</span>
+                <table class="table table-bordered table-condensed content table-hover">
+                    <tr style="background-color: rgba(99,99,99,.1);">
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td>GDP同比增长率</td>
+                        <td>工业用电量同比增长率</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[0]}}</td>
+                        <td>{{gdprate[0]}}%</td>
+                        <td>{{powerrate[0]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[1]}}</td>
+                        <td>{{gdprate[1]}}%</td>
+                        <td>{{powerrate[1]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[2]}}</td>
+                        <td>{{gdprate[2]}}%</td>
+                        <td>{{powerrate[2]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[3]}}</td>
+                        <td>{{gdprate[3]}}%</td>
+                        <td>{{powerrate[3]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[4]}}</td>
+                        <td>{{gdprate[4]}}%</td>
+                        <td>{{powerrate[4]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[5]}}</td>
+                        <td>{{gdprate[5]}}%</td>
+                        <td>{{powerrate[5]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[6]}}</td>
+                        <td>{{gdprate[6]}}%</td>
+                        <td>{{powerrate[6]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[7]}}</td>
+                        <td>{{gdprate[7]}}%</td>
+                        <td>{{powerrate[7]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[8]}}</td>
+                        <td>{{gdprate[8]}}%</td>
+                        <td>{{powerrate[8]}}%</td>
+                    </tr>
+                    <tr>
+                        <td>{{yearvalue[9]}}</td>
+                        <td>{{gdprate[9]}}%</td>
+                        <td>{{powerrate[9]}}%</td>
+                    </tr>
+                    <tr style="background-color: rgba(68, 170, 213, .1);">
+                        <td>{{yearvalue[10]}}</td>
+                        <td>{{gdprate[10]}}%</td>
+                        <td>{{powerrate[10]}}%</td>
+                    </tr>
+                    <tr style="background-color: rgba(68, 170, 213, .1);">
+                        <td>{{yearvalue[11]}}</td>
+                        <td>{{gdprate[11]}}%</td>
+                        <td>{{powerrate[11]}}%</td>
+                    </tr>
+                    <tr style="background-color: rgba(68, 170, 213, .1);">
+                        <td>{{yearvalue[12]}}</td>
+                        <td>{{gdprate[12]}}%</td>
+                        <td>{{powerrate[12]}}%</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+<!--盒子3-->
+<!--<div class="panel panel-primary" style="margin-bottom:0;border-bottom: 0;border-left:0; border-right: 0;-->
+    <!--height:{{windowHeight}}px;overflow: scroll">-->
+    <!--&lt;!&ndash;最上标题栏&ndash;&gt;-->
+    <!--<div class="panel-heading" style="margin-top: 51px">-->
+        <!--<h4>分地区空气质量分析预测</h4>-->
+    <!--</div>-->
+    <!--<div class="panel-body" style="padding:0">-->
+        <!--&lt;!&ndash;第三个框右侧栏&ndash;&gt;-->
+        <!--<div style="font-size:16px;">-->
+            <!--<div class="pull-left">-->
+                <!--<span class="fa-stack fa-lg">-->
+                    <!--<i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>-->
+                    <!--<i class="fa  fa-leaf fa-stack-1x text-white"></i>-->
+                <!--</span>-->
+            <!--</div>-->
+            <!--<h4 style="margin-top:0.5em;padding-left:0;">空气质量预测</h4>-->
+            <!--<button class="btn btn-primary" ng-click="airQualityBtn()" style="margin-top:0.5em;margin-bottom:0.3em">-->
+                <!--<span class="fa fa-hand-o-right">-->
+                    <!--<span class="fc-button-font">城区空气质量预测</span>-->
+                <!--</span>-->
+            <!--</button>-->
+            <!--<br/>-->
+            <!--<span class="fa fa-leaf" ng-if="istownairquality">-->
+                <!--<span class="fc-button-font">未来24小时太仓城区空气质量</span>-->
+            <!--</span>-->
+        <!--</div>-->
+        <!--<div ng-show="mapTableStatus.airQuality" style="margin-top:5px;">-->
+            <!--<table class="table table-hover table-responsive" style="font-size:14px;margin-bottom:0px">-->
+                <!--<tr>-->
+                    <!--<th style="width:29%">监测点</th>-->
+                    <!--<th style="width:15%">AQI</th>-->
+                    <!--<th style="width:20%">污染物</th>-->
+                    <!--<th style="width:18%">PM2.5</th>-->
+                    <!--<th style="width:18%">SO2</th>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+        <!--<div style="overflow: auto; overflow-x:hidden;height:120px;border-bottom:solid 1px lightgrey;"-->
+             <!--ng-show="mapTableStatus.airQuality">-->
+            <!--<table class="table table-hover table-responsive" style="font-size:14px">-->
+                <!--<tr>-->
+                    <!--<td style="width:29%">太仓市监测站</td>-->
+                    <!--<td style="width:15%">-->
+                        <!--<span>{{box2AQI[0].aqi}}</span>-->
+                        <!--&lt;!&ndash; <span>78</span> &ndash;&gt;-->
+                    <!--</td>-->
+                    <!--<td style="width:20%">-->
+                        <!--<span>{{box2AQI[0].firstElement}}</span>-->
+                        <!--&lt;!&ndash; <span>PM2.5</span> &ndash;&gt;-->
+                    <!--</td>-->
+                    <!--<td style="width:18%">-->
+                        <!--<span>{{box2AQI[0].pm25}}</span>-->
+                        <!--&lt;!&ndash; <span>45</span> &ndash;&gt;-->
+                    <!--</td>-->
+                    <!--<td style="width:18%">-->
+                        <!--<span>{{box2AQI[0].so2}}</span>-->
+                        <!--&lt;!&ndash; <span>12</span> &ndash;&gt;-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td style="width:29%">科教新城监测站</td>-->
+                    <!--<td style="width:15%">-->
+                        <!--<span>{{box2AQI[1].aqi}}</span>-->
+                        <!--&lt;!&ndash; <span>62</span> &ndash;&gt;-->
+                    <!--</td>-->
+                    <!--<td style="width:20%">-->
+                        <!--&lt;!&ndash; <span>PM10</span> &ndash;&gt;-->
+                        <!--<span>{{box2AQI[1].firstElement}}</span>-->
+                    <!--</td>-->
+                    <!--<td style="width:18%">-->
+                        <!--&lt;!&ndash; <span>37</span> &ndash;&gt;-->
+                        <!--<span>{{box2AQI[1].pm25}}</span>-->
+                    <!--</td>-->
+                    <!--<td style="width:18%">-->
+                        <!--&lt;!&ndash; <span>18</span> &ndash;&gt;-->
+                        <!--<span>{{box2AQI[1].so2}}</span>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+        <!--<div style="font-size:16px;">-->
+            <!--<div class="pull-left">-->
+                    <!--<span class="fa-stack fa-lg">-->
+                        <!--<i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>-->
+                        <!--<i class="fa  fa-bar-chart  fa-stack-1x text-white"></i>-->
+                    <!--</span>-->
+            <!--</div>-->
+            <!--<h4 style="margin-top:0.5em;padding-left:0;">工业废气排放分析</h4>-->
+            <!--<button class="btn btn-primary" ng-click="wasteAirBtn()" style="margin-top:0.5em;margin-bottom:0.3em">-->
+                <!--<span class="fa fa-hand-o-right">-->
+                    <!--<span class="fc-button-font">工业废气排放分析</span>-->
+                <!--</span>-->
+            <!--</button>-->
+            <!--<br/>-->
+            <!--<span class="fa fa-bar-chart" ng-if="istownwasteair">-->
+                <!--<span class="fc-button-font">监测到废气排放均达标</span>-->
+            <!--</span>-->
+        <!--</div>-->
+        <!--<div ng-show="mapTableStatus.wasteAir">-->
+            <!--<table class="table table-hover table-responsive"-->
+                   <!--style="font-size:14px;margin-bottom:0px;padding:0px">-->
+                <!--<tr>-->
+                    <!--<th style="width:40%">企业</th>-->
+                    <!--&lt;!&ndash; <th style="width:20%">流量<br>(万m³)</th> &ndash;&gt;-->
+                    <!--<th style="width:20%;text-align:center;">烟尘<br>(mg/m³)</th>-->
+                    <!--<th style="width:20%;text-align:center;">SO2<br>(mg/m³)</th>-->
+                    <!--<th style="width:20%;text-align:center;">氮氧化物<br>(mg/m³)</th>-->
+                <!--</tr>-->
+
+            <!--</table>-->
+        <!--</div>-->
+        <!--<div style="overflow: auto; overflow-x:hidden;height:120px" ng-show="mapTableStatus.wasteAir">-->
+            <!--<table class="table table-hover table-responsive"-->
+                   <!--style="font-size:14px;margin-bottom:0;padding:0px">-->
+                <!--<tr style="width:100%">-->
+                    <!--<td style="width:40%">太仓港协鑫发电</td>-->
+                    <!--&lt;!&ndash; <td>-->
+                        <!--<span>{{pollutionDischarge[0]}}</span>-->
+                    <!--</td> &ndash;&gt;-->
+                    <!--<td style="width:20%;text-align:center;">-->
+                        <!--<span>{{pollutionSmoke[0]}}</span>-->
+                    <!--</td>-->
+                    <!--<td style="width:20%;text-align:center;">-->
+                        <!--<span>{{pollutionSo2[0]}}</span>-->
+                    <!--</td>-->
+                    <!--<td style="width:20%;text-align:center;">-->
+                        <!--<span>{{pollutionNo[0]}}</span>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>玖龙纸业</td>-->
+                    <!--&lt;!&ndash; <td>-->
+                        <!--<span>{{pollutionDischarge[1]}}</span>-->
+                    <!--</td> &ndash;&gt;-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionSmoke[1]}}</span>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionSo2[1]}}</span>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionNo[1]}}</span>-->
+                    <!--</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td>华能国际电力</td>-->
+                    <!--&lt;!&ndash; <td>-->
+                        <!--<span>{{pollutionDischarge[2]}}</span>-->
+                    <!--</td> &ndash;&gt;-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionSmoke[2]}}</span>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionSo2[2]}}</span>-->
+                    <!--</td>-->
+                    <!--<td>-->
+                        <!--<span style="text-align:center;">{{pollutionNo[2]}}</span>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;第三个框左侧地图&ndash;&gt;-->
+        <!--<div class="panel panel-default"-->
+             <!--style="border-color:lightgrey;border-style: solid;border-width: 1px;margin:0.8em;height:450px">-->
+            <!--<div style="height: 450px; border: #ccc solid 1px;" id="map_canvas"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 <!--盒子3结束-->
