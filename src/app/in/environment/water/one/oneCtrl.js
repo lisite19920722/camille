@@ -121,6 +121,16 @@ export default ($scope, $rootScope, qService, environmentRes, $http) => {
                     {yearvalue:$scope.box1Date[6], JLfactory:4711,Afactory:1717,Bfactory:508,Cfactory:1489,Dfactory:1568}
                 ]
         };
+        $scope.totaldata1 = {
+            tabledata:
+                [
+                    {yearvalue:'日期',JLfactory:'太仓市佳煌针织印染有限公司（吨）' ,Afactory:'洛克伍德燃料有限公司（吨）',Bfactory:'太仓虹盛印染厂（吨）',Cfactory:'太仓市金佳漂染厂（吨）',Dfactory:'江苏长乐纤维科技有限公司（吨）'},
+                    {yearvalue:$scope.box1Date[3], JLfactory:4660,Afactory:1444,Bfactory:1134,Cfactory:902,Dfactory:2567},
+                    {yearvalue:$scope.box1Date[4], JLfactory:4893,Afactory:1568,Bfactory:616,Cfactory:2037,Dfactory:2015},
+                    {yearvalue:$scope.box1Date[5], JLfactory:4559,Afactory:1862,Bfactory:349,Cfactory:1813,Dfactory:1892},
+                    {yearvalue:$scope.box1Date[6], JLfactory:4711,Afactory:1717,Bfactory:508,Cfactory:1489,Dfactory:1568}
+                ]
+        };
         // $scope.totaldata = {
         //     tabledata:
         //     [
