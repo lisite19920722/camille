@@ -120,8 +120,14 @@ $scope.school={
         chart: {
             type: 'column'
         },
+        exporting: {
+                    enabled: false, // 取消打印menu
+                },
         title: {
-            text: '太仓市各乡镇2025年年度学校数量分析预测'
+            text: '太仓市各乡镇2025年年度学校数量分析预测',
+            style: {
+                        fontSize: "15px",
+                    }
         },
         credits:{
             enabled:false

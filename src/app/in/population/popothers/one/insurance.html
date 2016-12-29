@@ -1,53 +1,46 @@
-<div  style="overflow-y:scroll;height: 450px;width: 100%;">
-        <div style="border:1px solid lightblue;background:lightblue">
-          <h4 style="margin-top:10px;margin-left:10px">人口与城镇养老保险基金预测</h4>
-        </div>          
-            
-          <div class="col-md-8 chart-panel" >
-            <highchart config="money"  style="width:100%"></highchart>
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="structure-one-module">
+      <div class="current-position">
+        <span class="title">当前位置</span>
+        <span class="content">人口 -> 民生分析预测BI -> 人口与城镇基本养老保险分析预测</span>
+      </div>
+      <div class="control-area">
+        <span class="title">操作图表</span>
+        <div class="content">
+          <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">年份选择
+          <i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+          <div style="position:relative;">
+            <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+              <li ng-repeat="bttn in buttonMap1" ng-model="myYear"><a ng-model="predictionModal" style="margin-bottom: 1px;" btn-radio="bttn.radio" ng-click="btn_click5(bttn)">{{bttn.label}}</a></li>
+            </ul>
           </div>
-         
-          
-              <div style="height:15px;"></div>
-              <span class="fa-stack fa-lg" style="margin-left:5px">
-                <i class="fa fa-circle fa-stack-2x text-info"></i>
-                <i class="fa fa-lightbulb-o fa-stack-1x text-white fa-spin fa-fw" aria-hidden="true"></i>
-                <i class="icon-bulb fa-stack-1x text-white fa-spin icon-bulb-position"></i>
-              </span>
-              <span class="h4">一句话解读</span>
-              <br>
-              <div class="media-body clear" style="width:100%;margin-left:9px;padding-right:26px" >
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">数据分析：<span id="insurance1">{{insurance1}}</span></div>
-                </small>
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;">结论：<span id="insurance2">{{insurance2}}</span></div>
-                </small>
-                <small class="block m-t-xs">
-                  <i class="fa fa-circle" style="width:6%;float:left;margin-top:0.2em;"></i><div style="width:94%;float:left;margin-bottom:0.4em;"><span>人口与城镇养老保险基金分析预测采用的是灰色预测模型法。</span></div>
-                </small>
-              </div>
-              <div style="height:10px"></div>
-          
-            <div class="btn-group dropdown" style="width:100%">
-              <button class="btn btn-success" data-toggle="dropdown" aria-expanded="false" ng-click="toggleMenu1()" style="width:50%">年份选择<span class="caret"></span></button>
-              <ul class="dropdown-menu" ng-show="isMenu">
-                <li><a ng-repeat="bttn in buttonMap1" ng-model="predictionModal" style="width:150px;margin-left: 4px;margin-bottom:2px;margin-right:1px" btn-radio="bttn.radio" ng-click="btn_click5(bttn)">{{bttn.label}}</a></li>
-              </ul>
-              <button ng-click="showPopulationDetail2()" style="width:50%" class="btn m-b-xs btn-primary cgq-fixed-buttonwidth">详细数据</button>
-            </div>    
+        </div>
+      </div>
+      <div class="chart-area">
+        <span class="title">图表</span>
+        <div class="content">
+          <highchart  id="money" config="money"></highchart>
           
          
-        
-        <div class="bg-white fc-datatable"  ng-if="totalshow2" style="border:0px">
-          <div class="panel panel-default paddingmargin0em" >
-            <table st-table="rowCollectionBasic" class="table table-bordered table-striped">
-              <tr>
-              <td colspan="6"><center><strong>{{insuranceyear}}年人口与城镇养老保险基金预测表</strong></center>
-              </td>
-              </tr>
-              <tr>
-                 <td>年份</td>
+        </div>
+      </div>
+      <div class="one-word">
+        <span class="title">一句话解读</span>
+        <span class="content" >数据分析：<span id="insurance1">{{insurance1}}</span></span>
+        <span class="content" >结论：<span id="insurance2">{{insurance2}}</span></span>
+      </div>
+      <div class="calculate-model">
+        <span class="title">预测模型</span>
+        <span class="content">人口与城镇养老保险基金分析预测采用的是灰色预测模型。</span>
+      </div>
+      <div class="detail-data">
+        <span class="title">数据详情</span>
+        <div class="content" style="padding:5px;"><center>{{insuranceyear}}年人口与城镇养老保险基金预测表</center></div> 
+        <table class="table table-bordered table-condensed content table-hover">
+         
+              <tr style="background-color: rgba(99,99,99,.1);">
+                 <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                  <td>养老保险基金（亿）</td>
                  <td>老年人口比例</td>
                  <td>就业人口比例</td>
@@ -111,8 +104,11 @@
                  <td>{{money.series[0].data[9]}}</td>
                  <td>{{money.series[1].data[9]}}%</td>
                  <td>{{money.series[2].data[9]}}%</td>
-              </tr>              
-            </table>
-          </div>
-        </div>  
+              </tr>          
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
+
+
