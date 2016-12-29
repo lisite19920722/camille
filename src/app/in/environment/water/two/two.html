@@ -1,4 +1,4 @@
-<!-- 盒子2 -->
+<!--&lt;!&ndash; 盒子2 &ndash;&gt;-->
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="power-one-module">
@@ -7,9 +7,26 @@
                 <span class="content">环境 -> 水质量评价分析 -> 污水处理厂废水排放分析</span>
             </div>
             <div class="control-area">
-                <span class="title">操作图表</span>
+                <span class="title">污水处理厂废水排放分析</span>
                 <div class="content">
-                    123
+                    <div style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">
+                        <p><i class="fa fa-bars"></i><span class="fc-font-title" style="margin-left:0.5em">各污水处理厂废水排放量</span>
+                        </p>
+                        <div>
+                            <button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth">废水排放量
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <p><i class="fa fa-bars"></i><span style="margin-left:0.5em">所排放废水中各污染指标</span></p>
+                        <button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary">溶解氧浓度</button>
+                        <button style="margin-left: 5px" ng-click="changePollutionType3()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;&nbsp;氨氮浓度&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                        <br>
+                        <button style="margin-top: 3px" ng-click="changePollutionType4()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;总磷浓度&nbsp;&nbsp;</button>
+                        <button style="margin-top: 3px;margin-left: 5px" ng-click="changePollutionType5()"
+                                class="btn m-b-xs btn-primary">高锰酸钾浓度
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="chart-area">
@@ -20,86 +37,7 @@
             </div>
             <div class="one-word">
                 <span class="title">一句话解读</span>
-                <span class="content">{{oneword}}</span>
-            </div>
-            <div class="calculate-model">
-                <span class="title">预测模型</span>
-                <span class="content">格兰杰因果检验模型和误差修正模型的组合模型</span>
-            </div>
-            <div class="detail-data">
-                <span class="title">数据详情</span>
-                <table class="table table-bordered table-condensed content table-hover">
-                    <tr style="background-color: rgba(99,99,99,.1);">
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td>GDP同比增长率</td>
-                        <td>工业用电量同比增长率</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[0]}}</td>
-                        <td>{{gdprate[0]}}%</td>
-                        <td>{{powerrate[0]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[1]}}</td>
-                        <td>{{gdprate[1]}}%</td>
-                        <td>{{powerrate[1]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[2]}}</td>
-                        <td>{{gdprate[2]}}%</td>
-                        <td>{{powerrate[2]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[3]}}</td>
-                        <td>{{gdprate[3]}}%</td>
-                        <td>{{powerrate[3]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[4]}}</td>
-                        <td>{{gdprate[4]}}%</td>
-                        <td>{{powerrate[4]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[5]}}</td>
-                        <td>{{gdprate[5]}}%</td>
-                        <td>{{powerrate[5]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[6]}}</td>
-                        <td>{{gdprate[6]}}%</td>
-                        <td>{{powerrate[6]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[7]}}</td>
-                        <td>{{gdprate[7]}}%</td>
-                        <td>{{powerrate[7]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[8]}}</td>
-                        <td>{{gdprate[8]}}%</td>
-                        <td>{{powerrate[8]}}%</td>
-                    </tr>
-                    <tr>
-                        <td>{{yearvalue[9]}}</td>
-                        <td>{{gdprate[9]}}%</td>
-                        <td>{{powerrate[9]}}%</td>
-                    </tr>
-                    <tr style="background-color: rgba(68, 170, 213, .1);">
-                        <td>{{yearvalue[10]}}</td>
-                        <td>{{gdprate[10]}}%</td>
-                        <td>{{powerrate[10]}}%</td>
-                    </tr>
-                    <tr style="background-color: rgba(68, 170, 213, .1);">
-                        <td>{{yearvalue[11]}}</td>
-                        <td>{{gdprate[11]}}%</td>
-                        <td>{{powerrate[11]}}%</td>
-                    </tr>
-                    <tr style="background-color: rgba(68, 170, 213, .1);">
-                        <td>{{yearvalue[12]}}</td>
-                        <td>{{gdprate[12]}}%</td>
-                        <td>{{powerrate[12]}}%</td>
-                    </tr>
-                </table>
+                <span class="content">太仓市主要污水处理厂近期废水排放分时间分厂区分析</span>
             </div>
         </div>
     </div>
@@ -107,37 +45,42 @@
 <!-- 污水总量Highcharts -->
 <!--<div class="panel panel-primary" style="margin-bottom:0;border-bottom: 0;border-left:0; border-right: 0;-->
 <!--height:{{windowHeight}}px;overflow: scroll">-->
-<!--<div class="panel-heading" style="margin-top: 51px">-->
-<!--<h4>污水处理厂废水排放分析</h4>-->
-<!--</div>-->
-<!--<div class="panel-body" style="padding:0">-->
-<!--&lt;!&ndash;Highcharts部分&ndash;&gt;-->
-<!--<div>-->
-<!--<highchart style="height: 350px" id="discharge" config="discharge"></highchart>-->
-<!--</div>-->
-<!--&lt;!&ndash;第二个框的右边栏部分&ndash;&gt;-->
-<!--<div>-->
-<!--<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;padding-top:1em;border-bottom:1px solid lightgrey;border-top:1px solid lightgrey;">-->
-<!--<p><i class="fa fa-bars" ></i><span class="fc-font-title" style="margin-left:0.5em">各污水处理厂废水排放量</span></p>-->
-<!--<div>-->
-<!--<button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth" >废水排放量</button>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">-->
-<!--<p><i class="fa fa-bars"></i><span style="margin-left:0.5em">所排放废水中各污染指标</span></p>-->
-<!--<button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary">溶解氧浓度</button>-->
-<!--<button style="margin-left: 5px" ng-click="changePollutionType3()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;&nbsp;氨氮浓度&nbsp;&nbsp;&nbsp;&nbsp;</button>-->
-<!--<br>-->
-<!--<button style="margin-top: 3px" ng-click="changePollutionType4()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;总磷浓度&nbsp;&nbsp;</button>-->
-<!--<button style="margin-top: 3px;margin-left: 5px" ng-click="changePollutionType5()" class="btn m-b-xs btn-primary">高锰酸钾浓度</button>-->
-<!--</div>-->
-<!--&lt;!&ndash;一句话解读&ndash;&gt;-->
-<!--<div class="col-md-12">-->
-<!--<i class="fa  fa-mortar-board (alias) fa-fw text-muted" style="color: #23b7e5"></i>-->
-<!--<span class="fc-font-title">一句话解读</span>	<br>-->
-<!--<span style="font-size:14px;margin-right:10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;太仓市主要污水处理厂近期废水排放分时间分厂区分析。</span>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+    <!--<div class="panel-heading" style="margin-top: 51px">-->
+        <!--<h4>污水处理厂废水排放分析</h4>-->
+    <!--</div>-->
+    <!--<div class="panel-body" style="padding:0">-->
+        <!--&lt;!&ndash;Highcharts部分&ndash;&gt;-->
+        <!--<div>-->
+            <!--<highchart style="height: 350px" id="discharge" config="discharge"></highchart>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;第二个框的右边栏部分&ndash;&gt;-->
+        <!--<div>-->
+            <!--<div class="col-md-12"-->
+                 <!--style="margin-bottom:1em;padding-bottom:1em;padding-top:1em;border-bottom:1px solid lightgrey;border-top:1px solid lightgrey;">-->
+                <!--<p><i class="fa fa-bars"></i><span class="fc-font-title" style="margin-left:0.5em">各污水处理厂废水排放量</span>-->
+                <!--</p>-->
+                <!--<div>-->
+                    <!--<button ng-click="changePollutionType1()" class="btn m-b-xs btn-primary  cgq_fixedwidth">废水排放量-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-md-12" style="margin-bottom:1em;padding-bottom:1em;border-bottom:1px solid lightgrey;">-->
+                <!--<p><i class="fa fa-bars"></i><span style="margin-left:0.5em">所排放废水中各污染指标</span></p>-->
+                <!--<button ng-click="changePollutionType2()" class="btn m-b-xs btn-primary">溶解氧浓度</button>-->
+                <!--<button style="margin-left: 5px" ng-click="changePollutionType3()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;&nbsp;氨氮浓度&nbsp;&nbsp;&nbsp;&nbsp;</button>-->
+                <!--<br>-->
+                <!--<button style="margin-top: 3px" ng-click="changePollutionType4()" class="btn m-b-xs btn-primary">&nbsp;&nbsp;总磷浓度&nbsp;&nbsp;</button>-->
+                <!--<button style="margin-top: 3px;margin-left: 5px" ng-click="changePollutionType5()"-->
+                        <!--class="btn m-b-xs btn-primary">高锰酸钾浓度-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;一句话解读&ndash;&gt;-->
+            <!--<div class="col-md-12">-->
+                <!--<i class="fa  fa-mortar-board (alias) fa-fw text-muted" style="color: #23b7e5"></i>-->
+                <!--<span class="fc-font-title">一句话解读</span> <br>-->
+                <!--<span style="font-size:14px;margin-right:10px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;太仓市主要污水处理厂近期废水排放分时间分厂区分析。</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 <!--</div>-->
 <!-- 盒子2结束 -->
