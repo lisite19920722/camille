@@ -278,14 +278,17 @@ var jobfcolor=new Array('#7cb5ec','#000000');
               fontSize: "14px",
             }
         },
+
+      
+
+
         legend: {
-            layout: 'vertical',
-            align: 'left',
-            verticalAlign: 'top',
-            x: 100,
-            y: 45,
-            floating: true,
-            borderWidth: 1,
+           
+            align: 'center',
+            verticalAlign: 'bottom',
+            
+            
+            borderWidth: 0,
             backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
         },
         xAxis: {
