@@ -33,7 +33,6 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
         function(ec) {
             // 基于准备好的dom，初始化echarts图表
             var myChart = ec.init(document.getElementById('main'));
-            // console.log("加载完成");
             var option = {
                 legend: {
                     x: 'center',
@@ -163,7 +162,6 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
         switch (year) {
             case $scope.yearSelect[0]:
                 {
-                    console.log('case1');
                     $scope.totaldata = {
 
                         tabledata: [
@@ -307,9 +305,6 @@ angular.module('camille').controller('labortwoCtrl', ['$scope', '$stateParams', 
                             myChart.setOption(option);
                         }
                     );
-                    console.log('执行到第一个了');
-
-
                     break;
                 }
             case $scope.yearSelect[1]:

@@ -6,8 +6,6 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
     $rootScope.loading = true;
     qService.httpGetWithToken(populationRes.getLaborGdpRelationPreData, {}, {})
         .then((resource) => {
-            console.log(resource.data);
-
             //第一产业数据
             var dataI1 = new Array(30);
             var iRate1 = new Array(30);
@@ -37,7 +35,6 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 dataI2[i / 5] = resource.data[i].preSecondGdp; //第二产业产值
                 dataI3[i / 5] = resource.data[i].preThirdGdp; //第三产业产值
             }
-            console.log(dataP1[0]);
             var comChart1 = (data1, data2, data3, year) => {
                 return {
                     options: {
@@ -165,7 +162,6 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                         break;
                     case $scope.yearSelect[1]:
                         $scope.populationPie = comChart1(dataP1[1], dataP2[1], dataP3[1], $scope.yearSelect[1]);
-                        console.log('执行到第二个了');
                         break;
                     case $scope.yearSelect[2]:
                         $scope.populationPie = comChart1(dataP1[2], dataP2[2], dataP3[2], $scope.yearSelect[2]);
@@ -325,7 +321,6 @@ export default ($scope, $rootScope, $stateParams, qService, populationRes) => {
                 }]
 
             };
-            console.log(resource);
         }, function(error) {
             console.log('发送失败');
         }).finally(function() {
