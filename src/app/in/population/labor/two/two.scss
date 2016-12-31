@@ -17,12 +17,15 @@
 	}
 	.current-position {
 		@include box-padding();
-		.title {
-			@include title();
-		}
 		.content {
 			padding: 5px 15px 15px;
-			@include content();		
+			@include content();	
+			background-color: #eee;
+			span {
+				color: #679;
+				border-bottom: 1px dashed #679;
+				text-shadow: #999 3px 3px 10px;
+			}
 		}
 	}
 	.control-area {
