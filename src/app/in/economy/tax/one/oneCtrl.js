@@ -46,6 +46,9 @@ $scope.selectedRange4 = 0;
           chart: {
             type:'column'
           },
+          exporting: {
+            enabled: false,
+          },
         },
         credits:{
             enabled:false,
