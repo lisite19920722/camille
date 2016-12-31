@@ -62,7 +62,7 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'kqoneCtrl'
     })
     .state('app.in.kq.two', {
-      url: '/one',
+      url: '/two',
       templateUrl: 'app/in/economy/kq/two/two.html',
       controller: 'kqoneCtrl'
     })

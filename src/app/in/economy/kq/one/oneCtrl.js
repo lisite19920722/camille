@@ -386,6 +386,9 @@ $scope.elecChart = {
         {
             type:'spline'
         },
+        exporting: {
+          enabled: false
+        },
     },
      credits:{
                 enabled:false,
