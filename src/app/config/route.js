@@ -41,12 +41,12 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'gdponeCtrl'
     })
     .state('app.in.gdp.two', {
-      url: '/one',
+      url: '/two',
       templateUrl: 'app/in/economy/gdp/two/two.html',
       controller: 'gdptwoCtrl'
     })
     .state('app.in.gdp.three', {
-      url: '/one',
+      url: '/three',
       templateUrl: 'app/in/economy/gdp/three/three.html',
       controller: 'gdpthreeCtrl'
     })

@@ -1,62 +1,50 @@
-<header>
-  <hgroup>
-    <h4>当前位置:</h4>
-  </hgroup>
-  <nav>
-    <span>经济</span>>>
-    <span>GDP</span>>>
-    <span>分产业GDP</span>
-  </nav>
-</header>
-<section style="height: {{containerHeight}}px">
-  <div id="topheader">
-    年度GDP数据可视化
-  </div>
-  <div id="contain">
-    <highchart   id="chart1" config="industryyearGDPChart" style = "margin-left:15px"></highchart>
-  </div>
-  <div id="controlcontain">
-    <div class="showstyle"><span>图表展示方式</span></div>
-    <div class="ebutton ebuttonActive" ng-click = "industryexchange('column')" id="column">柱状图</div>
-    <div class="ebutton" ng-click = "industryexchange('line')" id="line">折线图</div>
-    <div class="ebutton" ng-click = "industryexchange('spline')" id="spline">曲线图</div>
-    <div class="ebutton" ng-click = "industryexchange('area')" id="area">区域图</div>
-  </div>
-  <details open>
-    <summary>一句话解读</summary>
-    <div id="sentence">
-      <i class="fa fa-circle" style="margin-top: 1%"></i>
-        <div>
-            <span>年度GDP预测模型为:基于时间序列的自回归积分滑动平均模型</span>
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="kq-two-module">
+      <div class="current-position">
+        <div class="content">
+          <span>经济 > GDP > 分产业GDP</span>
         </div>
+      </div>
+      <div class="control-area">
+        <span class="title">操作图表</span>
+        <div class="content">
+          <a type="button" name="" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)">图表展示方式<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
+          <div style="position: relative;">
+            <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
+                    <li><a ng-click="industryexchange('column')">直方图</a></li>
+                    <li><a ng-click="industryexchange('line')">折线图</a></li>
+                    <li><a ng-click="industryexchange('spline')">曲线图</a></li>
+                    <li><a ng-click="industryexchange('area')">区域图</a></li>
+                  </ul>
+          </div>
+        </div>
+      </div>
+      <div class="chart-area">
+        <span class="title">图表</span>
+        <div class="content">
+          <highchart  id="industryyearGDPChart" config="industryyearGDPChart"></highchart>
+        </div>
+      </div>
+      <div class="one-word">
+        <span class="title">一句话解读</span>
+        <span class="content">预测结果分析:预计今年GDP增速相对于上一年有所放缓</span>
+      </div>
+      <div class="calculate-model">
+        <span class="title">数据模型</span>
+        <span class="content">年度GDP预测模型为:基于时间序列的自回归积分滑动平均模型</span>
+      </div>
+      <div class="chart-area">
+        <span class="title">各产业详情</span>
+        <div class="content">
+          <a type="button" ng-click="checkfirst()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 15px;">第一产业</a>
+          <a type="button" ng-click="checksecond()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 10px;">第二产业</a>
+          <a type="button" ng-click="checkthird()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 10px;">第三产业</a>
+           <highchart config="primaryGDPChart" ng-if="first" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
+           <highchart    config="secondGDPChart" ng-if="second" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
+           <highchart    config="thirdGDPChart" ng-if="third" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
+        </div>
+      </div>
     </div>
-  </details>
-  <details open>
-    <summary>数据模型</summary>
-    <div id="sentence">
-         <i class="fa fa-circle"></i>
-             <div>
-                <span>预测结果分析:预计今年GDP增速相对于上一年有所放缓</span>
-             </div>
-    </div>
-  </details>
-  <div id="topheader">
-    年度GDP数据详情
   </div>
-  <div id="navid" style="margin-top: 20px;">
-      <div  class="nav3 navactive"id="first"ng-click = "checkfirst()">
-        <div>第一产业</div>
-      </div>
-      <div  class="nav3"id="second"ng-click = "checksecond()">
-        <div>第二产业</div>
-      </div>
-      <div  class="nav3"id="third"ng-click = "checkthird()">
-        <div>第三产业</div>
-      </div>
-  </div>
-  <div id="contain">
-    <highchart config="primaryGDPChart" ng-if="first"></highchart>
-     <highchart    config="secondGDPChart" ng-if="second"></highchart>
-     <highchart    config="thirdGDPChart" ng-if="third"></highchart>
-  </div>
-</section>
+</div>

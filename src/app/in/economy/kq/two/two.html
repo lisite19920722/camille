@@ -41,15 +41,9 @@
       <div class="chart-area">
         <span class="title">各指标图表</span>
         <div class="content">
-          <a type="button" ui-turn-on="myDropdown2" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 15px;">切换指标<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
-          <div style="position: relative;margin-left: 15px;">
-            <ul ui-shared-state="myDropdown2" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown2')" ui-outer-click-if="Ui.active('myDropdown2')" role="menu" ui-show="myDropdown2" ui-turn-off="myDropdown2">
-                    <li><a ng-click="checkfirst()">银行中长期贷款</a></li>
-                    <li><a ng-click="checksecond()">货运量</a></li>
-                    <li class="divider"></li>
-                    <li><a ng-click="checkthird()">工业用电量</a></li>
-                  </ul>
-          </div>
+          <a type="button" ng-click="checkfirst()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 15px;">银行中长期贷款</a>
+          <a type="button" ng-click="checksecond()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 10px;">货运量</a>
+          <a type="button" ng-click="checkthird()" class="btn btn-default" href="javascript:void(0)" style="margin: 10px 0 0 10px;">工业用电量</a>
           <highchart config="loanChart" ng-if="first" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
           <highchart config="transChart" ng-if="second" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
           <highchart config="elecChart" ng-if="third" style="border-top: 1px dashed rgb(153, 153, 153);margin-top: 10px;"></highchart>
