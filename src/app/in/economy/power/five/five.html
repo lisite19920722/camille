@@ -2,8 +2,9 @@
 	<div class="scrollable-content">
 		<div class="power-five-module">
 			<div class="current-position">
-				<span class="title">当前位置</span>
-				<span class="content">经济 -> 工业用电与经济增长关联分析 -> 企业用电量与企业产值关联分析</span>
+				<div class="content">
+					<span>经济 -> 用电 -> 规上企业用电量与产值增长率关联分析</span>
+				</div>
 			</div>
 			<div id="consumptionbyenterprise"></div>
 
@@ -29,7 +30,7 @@
 				            </ul>
 						</div>
 					</div>
-					<div style="display: inline-block;">
+					<div style="display: inline-block;margin-left: 10px;">
 						<a type="button" name="" ui-turn-on="myDropdown3" class="btn btn-default" href="javascript:void(0)">切换图表类型<i class="fa fa-caret-down" aria-hidden="true" style="margin-left: 5px;"></i></a>
 						<div style="position: relative;">
 							<ul ui-shared-state="myDropdown3" class="dropdown-menu" ui-outer-click="Ui.turnOff('myDropdown3')" ui-outer-click-if="Ui.active('myDropdown3')" role="menu" ui-show="myDropdown3" ui-turn-off="myDropdown3">
@@ -45,7 +46,7 @@
 			<div class="chart-area">
 				<span class="title">图表</span>
 				<div class="content">
-					<highchart config="SingleVocationChartByYear"></highchart>
+					<highchart config="SingleVocationChartByYear" style="border-bottom: 1px dashed rgb(153, 153, 153);"></highchart>
 					<highchart config="SingleVocationChart"></highchart>
 				</div>
 			</div>
@@ -133,7 +134,7 @@
 				</table>
 			</div>
 			<div class="detail-data">
-				<span class="title">{{yearmark}}年{{industryType}}数据详情</span>
+				<span class="title">{{yearmark}}年{{enterpriseType}}数据详情</span>
 				<table class="table table-bordered table-condensed content table-hover">
 					<tr style="background-color: rgba(99,99,99,.1);">
 						<td>年份</td>

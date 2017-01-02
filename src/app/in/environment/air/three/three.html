@@ -2,24 +2,19 @@
     <div class="scrollable-content">
         <div class="power-one-module">
             <div class="current-position">
-                <span class="title">当前位置</span>
-                <span class="content">环境 -> 空气质量分析预测 -> 分地区空气质量分析预测</span>
+                <div class="content">
+                    <span>环境 > 空气 > 分地区空气质量分析预测</span>
+                </div>
             </div>
             <div class="control-area">
                 <span class="title">操作地图</span>
                 <div class="content">
                     <div style="font-size:16px;">
-                        <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                        <i class="fa  fa-leaf fa-stack-1x text-white"></i>
-                        </span>
-                        空气质量预测
-                        <br>
-                        <span class="btn btn-primary pull-left" style="margin-left:4px;margin-bottom: 2px" ng-click="airQualityBtn()">
+                        <span class="btn btn-primary pull-left" style="margin-left:0;margin-bottom: 8px" ng-click="airQualityBtn()">
                             <span class="fa fa-hand-o-right">城区空气质量预测</span>
                         </span>
                         <br>
-                        <span class="fa fa-leaf" style="margin-left: 4px" ng-if="istownairquality">
+                        <span class="fa fa-leaf" style="margin-left: 0;font-size: 14px;" ng-if="istownairquality">
                             <span>未来24小时太仓城区空气质量</span>
                         </span>
                     </div>
@@ -71,23 +66,17 @@
                     </div>
                     <br>
                     <div style="font-size:16px;">
-                        <span class="fa-stack fa-lg">
-                        <i class="fa fa-circle fa-stack-2x" style="color:#93e0ff"></i>
-                        <i class="fa  fa-bar-chart  fa-stack-1x text-white"></i>
-                        </span>
-                        工业废气排放分析
-                        <br>
-                        <span class="btn btn-primary" style="margin-left: 4px" ng-click="wasteAirBtn()">
+                        <span class="btn btn-primary" style="margin-left: 0;margin-bottom: 8px;" ng-click="wasteAirBtn()">
                             <span class="fa fa-hand-o-right">工业废气排放分析</span>
                         </span>
                         <br>
-                        <span class="fa fa-bar-chart" style="margin-left: 4px" ng-if="istownwasteair">
+                        <span class="fa fa-bar-chart" style="margin-left: 0;font-size: 14px;" ng-if="istownwasteair">
                             <span>监测到废气排放均达标</span>
                         </span>
                     </div>
                     <div ng-show="mapTableStatus.wasteAir">
                         <table class="table table-hover table-responsive"
-                               style="font-size:14px;margin-bottom:0px;padding:0px">
+                               style="font-size:14px;margin-bottom:0px;margin-top:5px;padding:0px">
                             <tr>
                                 <th style="width:40%">企业</th>
                                 <th style="width:20%;text-align:center;">烟尘<br>(mg/m³)</th>

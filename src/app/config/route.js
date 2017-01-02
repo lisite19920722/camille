@@ -41,12 +41,12 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'gdponeCtrl'
     })
     .state('app.in.gdp.two', {
-      url: '/one',
+      url: '/two',
       templateUrl: 'app/in/economy/gdp/two/two.html',
       controller: 'gdptwoCtrl'
     })
     .state('app.in.gdp.three', {
-      url: '/one',
+      url: '/three',
       templateUrl: 'app/in/economy/gdp/three/three.html',
       controller: 'gdpthreeCtrl'
     })
@@ -62,7 +62,7 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'kqoneCtrl'
     })
     .state('app.in.kq.two', {
-      url: '/one',
+      url: '/two',
       templateUrl: 'app/in/economy/kq/two/two.html',
       controller: 'kqoneCtrl'
     })
@@ -109,7 +109,7 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'taxoneCtrl'
     })
     .state('app.in.tax.two', {
-      url: '/one',
+      url: '/two',
       templateUrl: 'app/in/economy/tax/two/two.html',
       controller: 'taxtwoCtrl'
     })
@@ -217,12 +217,12 @@ export default ($stateProvider, $urlRouterProvider, $locationProvider) => {
       controller: 'popothersoneCtrl'
     })
     .state('app.in.popothers.education', {
-      url: '/one',
+      url: '/education',
       templateUrl: 'app/in/population/popothers/one/education.html',
       controller: 'popotherseducationCtrl'
     })
     .state('app.in.popothers.insurance', {
-      url: '/one',
+      url: '/insurance',
       templateUrl: 'app/in/population/popothers/one/insurance.html',
       controller: 'popothersinsuranceCtrl'
     })

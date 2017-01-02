@@ -91,7 +91,7 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 					},
 		        },
 		        title: {
-		           text: $scope.enterpriseType,
+		           text: $scope.enterpriseType+"按年度走势",
 		           style: {
 		               fontSize: '15px'
 		           }
@@ -194,14 +194,13 @@ export default ($scope, $rootScope, qService, economyPowerRes) => {
 					},
 			    },
 			    title: {
-			       text: $scope.enterpriseType,
+			       text: $scope.enterpriseType+"按季度走势",
 			       style: {
 		               fontSize: '15px'
 		           }
 			    },
 			    subtitle: {
-			        text: $scope.yearmark+'年度',
-			        x: -20
+			        text: $scope.yearmark+'年度(点击上图中的点切换年份)',
 			    },
 			    xAxis: {
 			        categories: ['第一季度', '第二季度', '第三季度', '第四季度'],

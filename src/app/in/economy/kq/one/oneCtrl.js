@@ -160,6 +160,9 @@ $scope.range2=function(){
         {
             type:'spline'
         },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -228,7 +231,10 @@ $scope.loanChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -279,7 +285,10 @@ $scope.transChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -327,7 +336,10 @@ $scope.elecChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -385,6 +397,9 @@ $scope.elecChart = {
         chart: 
         {
             type:'spline'
+        },
+        exporting: {
+          enabled: false
         },
     },
      credits:{
@@ -460,6 +475,9 @@ $scope.keqiangChart={
         {
             type:'spline'
         },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -526,7 +544,10 @@ $scope.loanChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -576,7 +597,10 @@ $scope.transChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -623,7 +647,10 @@ $scope.elecChart = {
     options: {
         chart: {
             type: 'column'
-        }
+        },
+        exporting: {
+            enabled: false
+          }
     },
      credits:{
                 enabled:false,
@@ -720,6 +747,9 @@ $scope.elecChart = {
             {
                 type:'spline'
             },
+            exporting: {
+            enabled: false
+          }
         },
          credits:{
                     enabled:false,

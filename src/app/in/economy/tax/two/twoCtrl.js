@@ -46,6 +46,9 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
       chart: {
         type:'column'
       },
+      exporting: {
+            enabled: false
+          }
     },
     credits:{
         enabled:false,
@@ -321,6 +324,9 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
               chart: {
                 type:'column'
               },
+              exporting: {
+                enabled: false
+              }
             },
             credits:{
                 enabled:false,
@@ -615,6 +621,9 @@ export default ($scope, $rootScope, qService,economyTaxRes) => {
               chart: {
                 type:'column'
               },
+              exporting: {
+                enabled: false
+              }
             },
             credits:{
                 enabled:false,

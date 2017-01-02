@@ -86,6 +86,9 @@ export default ($scope, $rootScope, qService,economyGdpRes) => {
               chart: {
                 type:'column'
               },
+              exporting: {
+                enabled: false,
+              },
             },
             credits:{
                 enabled:false,
