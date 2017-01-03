@@ -48,18 +48,18 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
                 'X-Password': encryptPassword("12345", "system")
             };
             qService.httpPost(accountRes.accountAuthentication, {}, info, {}).then((data) => {
-                if (data.errorCode == "NO_ERROR") {
-                    // 存储登陆用户data和token
-                    AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
-                    $state.go('app.in.home');
-                } else if (data.code == "801") {
-                    $scope.errMessage = "密码已变更, 请重新登陆";
-                } else {
-                    $scope.errMessage = "出错了, 请重试";
-                }
-            }, (err) => {
+            if (data.code == "200") {
+                // 存储登陆用户data和token
+                AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
+                $state.go('app.in.home');
+            } else if (data.code == "801") {
+                $scope.errMessage = "账号/密码不匹配!";
+            } else {
                 $scope.errMessage = "出错了, 请重试";
-            });
+            }
+        }, (err) => {
+            $scope.errMessage = "网络错误";
+        });
     }();
 
     $scope.isAutoLogin = true;
