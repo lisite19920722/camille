@@ -4,9 +4,9 @@ export default($rootScope) => {
 	$rootScope.loading = false;
 
 	// disable the pulldown refresh in app
-	// try {
-	// 	workplat.forbiddenRefreshing();
-	// } catch(e) {
-	// 	console.log(e);
-	// }
+	try {
+		workplat.forbiddenRefreshing();
+	} catch(e) {
+		console.log(e);
+	}
 };

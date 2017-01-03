@@ -20,15 +20,35 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
         return typeof(value) == undefined || value == null;
     };
     // 自动登录
-    const autoLogin = () => {
-        if ($localStorage[AUTOLOGIN] && $localStorage[USERNAME] && $localStorage[PASSWORD]) {
+    // const autoLogin = () => {
+    //     if ($localStorage[AUTOLOGIN] && $localStorage[USERNAME] && $localStorage[PASSWORD]) {
+    //         let info = {
+    //             'X-Username': $localStorage[USERNAME],
+    //             'X-Password': encryptPassword($localStorage[PASSWORD], $localStorage[USERNAME])
+    //         };
+    //         qService.httpPost(accountRes.accountAuthentication, {}, info, {}).then((data) => {
+    //             if (data.errorCode == "NO_ERROR") {
+    //                 console.log("自动登录, 用户信息验证成功");
+    //                 // 存储登陆用户data和token
+    //                 AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
+    //                 $state.go('app.in.home');
+    //             } else if (data.code == "801") {
+    //                 $scope.errMessage = "密码已变更, 请重新登陆";
+    //             } else {
+    //                 $scope.errMessage = "出错了, 请重试";
+    //             }
+    //         }, (err) => {
+    //             $scope.errMessage = "出错了, 请重试";
+    //         });
+    //     }
+    // }();
+    const autoLogin = () => {    
             let info = {
-                'X-Username': $localStorage[USERNAME],
-                'X-Password': encryptPassword($localStorage[PASSWORD], $localStorage[USERNAME])
+                'X-Username': "system",
+                'X-Password': encryptPassword("12345", "system")
             };
             qService.httpPost(accountRes.accountAuthentication, {}, info, {}).then((data) => {
                 if (data.errorCode == "NO_ERROR") {
-                    console.log("自动登录, 用户信息验证成功");
                     // 存储登陆用户data和token
                     AuthTool.saveLoginInfo(data.data, data.headers[TOKEN_KEY]);
                     $state.go('app.in.home');
@@ -40,10 +60,9 @@ export default ($scope, $rootScope, $localStorage, $timeout, $state, $q, $sessio
             }, (err) => {
                 $scope.errMessage = "出错了, 请重试";
             });
-        }
     }();
 
-    $scope.isAutoLogin = false;
+    $scope.isAutoLogin = true;
     $scope.login = () => {
     	if (isNull($scope.loginAccount)) {
     		$scope.errMessage = "账号不能为空!";
